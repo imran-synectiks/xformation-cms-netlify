@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../../components/Layout'
 import ServiceRoll from '../../components/ServiceRoll'
 
-export default class BlogIndexPage extends React.Component {
+export default class ServiceIndexPage extends React.Component {
   render() {
     return (
       <Layout>

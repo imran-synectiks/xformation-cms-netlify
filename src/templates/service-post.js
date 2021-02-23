@@ -54,7 +54,7 @@ ServicePostTemplate.propTypes = {
   helmet: PropTypes.object,
 }
 
-const BlogPost = ({ data }) => {
+const ServicePost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
@@ -79,13 +79,13 @@ const BlogPost = ({ data }) => {
   )
 }
 
-BlogPost.propTypes = {
+ServicePost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default BlogPost
+export default ServicePost
 
 export const pageQuery = graphql`
   query ServicePostByID($id: String!) {
