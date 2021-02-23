@@ -12,6 +12,7 @@ export const ServicePostTemplate = ({
   description,
   tags,
   title,
+  page1,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
@@ -26,6 +27,7 @@ export const ServicePostTemplate = ({
               {title}
             </h1>
             <p>{description}</p>
+            <p>{page1.heading}</p>
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
