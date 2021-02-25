@@ -39,13 +39,7 @@ export const ServicePostTemplate = ({
               <br/> 
               {page1.description}
               <br/>
-              <div className="tile">
-                    <div className="tile is-parent is-vertical">
-                      <article className="tile is-child">
-                        <PreviewCompatibleImage imageInfo={page1.image} />
-                      </article>
-                    </div>
-                    </div>
+              {page1.image}
             </div>
             <div>
               {page2.heading}
@@ -92,7 +86,6 @@ ServicePostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
-  page1: PropTypes.string,
   testimonials: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
@@ -170,13 +163,7 @@ export const pageQuery = graphql`
         page1 {
           description
           heading
-          image {
-            childImageSharp {
-              fluid(maxWidth: 240, quality: 64) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
+          image
         }
         page2 {
           description
