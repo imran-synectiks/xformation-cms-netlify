@@ -34,7 +34,7 @@ export const ServicePostTemplate = ({
             </h1>
             <p>{description}</p>
             <Testimonials testimonials={testimonials} />
-            <div>
+            {/* <div>
               <h3>{page1.heading}</h3>               
               <p>{page1.description}</p>
               
@@ -50,7 +50,7 @@ export const ServicePostTemplate = ({
             <div>
             <h3>{page4.heading}</h3>               
               <p>{page4.description}</p>               
-            </div>
+            </div> */}
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
