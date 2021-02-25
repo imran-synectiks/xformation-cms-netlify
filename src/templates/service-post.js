@@ -35,32 +35,21 @@ export const ServicePostTemplate = ({
             <p>{description}</p>
             <Testimonials testimonials={testimonials} />
             <div>
-              {page1.heading}
-              <br/> 
-              {page1.description}
-              <br/>
-              {page1.image}
-            </div>
-            <div>
-              {page2.heading}
-              <br/> 
-              {page2.description}
-              <br/>
-             
-            </div>
-            <div>
-              {page3.heading}
-              <br/> 
-              {page3.description}
-              <br/>
+              <h3>{page1.heading}</h3>               
+              <p>{page1.description}</p>
               
             </div>
             <div>
-              {page4.heading}
-              <br/> 
-              {page4.description}
-              <br/>
-               
+            <h3>{page2.heading}</h3>               
+              <p>{page2.description}</p>             
+            </div>
+            <div>
+            <h3>{page3.heading}</h3>               
+              <p>{page3.description}</p>              
+            </div>
+            <div>
+            <h3>{page4.heading}</h3>               
+              <p>{page4.description}</p>               
             </div>
             <PostContent content={content} />
             {tags && tags.length ? (
@@ -92,7 +81,6 @@ ServicePostTemplate.propTypes = {
   page1: PropTypes.shape({
     heading: PropTypes.string,
     description: PropTypes.string,
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   }),
   page2: PropTypes.shape({
     heading: PropTypes.string,
@@ -163,7 +151,6 @@ export const pageQuery = graphql`
         page1 {
           description
           heading
-          image
         }
         page2 {
           description

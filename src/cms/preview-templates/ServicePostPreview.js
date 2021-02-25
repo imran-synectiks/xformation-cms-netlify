@@ -15,10 +15,6 @@ const ServicePostPreview = ({ entry, widgetFor,getAsset }) => {
       page1={{
         heading: entry.getIn(['data', 'page1', 'heading']),
         description: entry.getIn(['data', 'page1', 'description']),
-        image1: {
-          image: getAsset(entry.getIn(['data', 'page1', 'image1', 'image'])),
-          alt: entry.getIn(['data', 'page1', 'image1', 'alt']),
-        },
       }}
       page2={{
         heading: entry.getIn(['data', 'page2', 'heading']),
