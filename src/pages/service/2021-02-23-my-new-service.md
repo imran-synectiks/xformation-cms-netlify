@@ -7,5 +7,8 @@ featuredpost: true
 featuredimage: /img/apple-touch-icon.png
 tags:
   - My New Service
+testimonials:
+  - quote: hi
+    author: hi testi
 ---
 My New Service
