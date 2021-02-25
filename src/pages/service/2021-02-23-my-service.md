@@ -19,4 +19,7 @@ page4:
   heading: My Roll 4
   description: My Roll descp
   image: https://xformation-cms.netlify.app/static/277733984de58dd6d27eed18b510250d/1a97c/coffee.png
+testimonials:
+  - quote: hi
+    author: hi testi
 ---
