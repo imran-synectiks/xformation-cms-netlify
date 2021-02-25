@@ -38,10 +38,11 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: Page 1, name: page1, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text},{label: Image, name: image, widget: image}, ]}
-      - {label: Page 2, name: page2, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text},{label: Image, name: image, widget: image}, ]}
-      - {label: Page 3, name: page3, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text},{label: Image, name: image, widget: image}, ]}
-      - {label: Page 4, name: page4, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text},{label: Image, name: image, widget: image}, ]}
+      - {label: Page 1, name: page1, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text},{label: Image, name: image, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, ]}
+      - {label: Page 2, name: page2, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text},  ]}
+      - {label: Page 3, name: page3, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, ]}
+      - {label: Page 4, name: page4, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text},]}
+      - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
 
   - name: "pages"
     label: "Pages"
