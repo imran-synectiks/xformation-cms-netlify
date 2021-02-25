@@ -4,7 +4,7 @@ import { kebabCase } from 'lodash'
 import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
-import Testimonials from '../components/Testimonials'
+// import Testimonials from '../components/Testimonials'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
@@ -14,7 +14,7 @@ export const ServicePostTemplate = ({
   description,
   tags,
   title,
-  testimonials,
+  // testimonials,
   page1,
   page2,
   page3,
@@ -33,7 +33,7 @@ export const ServicePostTemplate = ({
               {title}
             </h1>
             <p>{description}</p>
-            <Testimonials testimonials={testimonials} />
+            {/* <Testimonials testimonials={testimonials} /> */}
             {/* <div>
               <h3>{page1.heading}</h3>               
               <p>{page1.description}</p>
@@ -75,7 +75,7 @@ ServicePostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
-  testimonials: PropTypes.array,
+  // testimonials: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
   page1: PropTypes.shape({
@@ -105,7 +105,7 @@ const ServicePost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        testimonials={post.frontmatter.testimonials}
+        // testimonials={post.frontmatter.testimonials}
         page1={post.frontmatter.page1}
         page2={post.frontmatter.page2}
         page3={post.frontmatter.page3}
@@ -144,10 +144,6 @@ export const pageQuery = graphql`
         title
         description
         tags
-        testimonials {
-          author
-          quote
-        }
         page1 {
           description
           heading
