@@ -4,7 +4,9 @@ import { kebabCase } from 'lodash'
 import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
+import Testimonials from '../components/Testimonials'
 import Content, { HTMLContent } from '../components/Content'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const ServicePostTemplate = ({
   content,
@@ -12,7 +14,11 @@ export const ServicePostTemplate = ({
   description,
   tags,
   title,
+  testimonials,
   page1,
+  page2,
+  page3,
+  page4,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
@@ -27,6 +33,24 @@ export const ServicePostTemplate = ({
               {title}
             </h1>
             <p>{description}</p>
+            <Testimonials testimonials={testimonials} />
+            <div>
+              <h3>{page1.heading}</h3>
+              <p>{page1.description}</p>
+
+            </div>
+            <div>
+            <h3>{page2.heading}</h3>
+              <p>{page2.description}</p>
+            </div>
+            <div>
+            <h3>{page3.heading}</h3>
+              <p>{page3.description}</p>
+            </div>
+            <div>
+            <h3>{page4.heading}</h3>
+              <p>{page4.description}</p>
+            </div>
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
@@ -51,8 +75,25 @@ ServicePostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
+  testimonials: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  page1: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+  }),
+  page2: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+  }),
+  page3: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+  }),
+  page4: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+  }),
 }
 
 const ServicePost = ({ data }) => {
@@ -64,6 +105,11 @@ const ServicePost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
+        testimonials={post.frontmatter.testimonials}
+        page1={post.frontmatter.page1}
+        page2={post.frontmatter.page2}
+        page3={post.frontmatter.page3}
+        page4={post.frontmatter.page4}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
@@ -98,6 +144,29 @@ export const pageQuery = graphql`
         title
         description
         tags
+        testimonials {
+          author
+          quote
+        }
+        page1 {
+          description
+          heading
+        }
+        page2 {
+          description
+          heading
+
+        }
+        page3 {
+          description
+          heading
+
+        }
+        page4 {
+          description
+          heading
+
+        }
       }
     }
   }
