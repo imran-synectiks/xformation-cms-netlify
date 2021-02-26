@@ -18,4 +18,7 @@ page3:
 page4:
   heading: Page 4 Heading
   description: Page 4 Description
+testimonials:
+  - quote: Testimonals 1
+    author: MyTestimonal
 ---
