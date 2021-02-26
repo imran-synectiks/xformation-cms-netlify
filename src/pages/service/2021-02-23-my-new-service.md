@@ -17,7 +17,7 @@ description: The Coffee Taster’s Flavor Wheel, the official resource used by
   Taster’s Flavor Wheel, the official resource used by coffee tasters, has been
   revised for the first time this year.
 page1:
-  heading: H1
+  heading: Page ONe
   description: The Coffee Taster’s Flavor Wheel, the official resource used by
     coffee tasters, has been revised for the first time this year.The Coffee
     Taster’s Flavor Wheel, the official resource used by coffee tasters, has
@@ -36,7 +36,7 @@ page1:
     image: /img/blog-index.jpg
     alt: Badebhai
 page2:
-  heading: h1g
+  heading: Page Two
   description: The Coffee Taster’s Flavor Wheel, the official resource used by
     coffee tasters, has been revised for the first time this year.The Coffee
     Taster’s Flavor Wheel, the official resource used by coffee tasters, has
@@ -52,7 +52,7 @@ page2:
     Taster’s Flavor Wheel, the official resource used by coffee tasters, has
     been revised for the first time this year.
 page3:
-  heading: H1
+  heading: Page Three
   description: The Coffee Taster’s Flavor Wheel, the official resource used by
     coffee tasters, has been revised for the first time this year.The Coffee
     Taster’s Flavor Wheel, the official resource used by coffee tasters, has
@@ -68,7 +68,7 @@ page3:
     Taster’s Flavor Wheel, the official resource used by coffee tasters, has
     been revised for the first time this year.
 page4:
-  heading: h3
+  heading: Page Four
   description: The Coffee Taster’s Flavor Wheel, the official resource used by
     coffee tasters, has been revised for the first time this year.The Coffee
     Taster’s Flavor Wheel, the official resource used by coffee tasters, has
