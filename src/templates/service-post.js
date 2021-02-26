@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import { Helmet } from 'react-helmet'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
-import Testimonials from '../components/Testimonials'
-import Content, { HTMLContent } from '../components/Content'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import React from "react";
+import PropTypes from "prop-types";
+import { kebabCase } from "lodash";
+import { Helmet } from "react-helmet";
+import { graphql, Link } from "gatsby";
+import Layout from "../components/Layout";
+import Testimonials from "../components/Testimonials";
+import Content, { HTMLContent } from "../components/Content";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 export const ServicePostTemplate = ({
   content,
@@ -21,11 +21,11 @@ export const ServicePostTemplate = ({
   page4,
   helmet,
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
 
   return (
     <section className="section">
-      {helmet || ''}
+      {helmet || ""}
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
@@ -34,22 +34,23 @@ export const ServicePostTemplate = ({
             </h1>
             <p>{description}</p>
             <Testimonials testimonials={testimonials} />
+            <div className='slide'>
             <div>
               <h3>{page1.heading}</h3>
               <p>{page1.description}</p>
-
             </div>
             <div>
-            <h3>{page2.heading}</h3>
+              <h3>{page2.heading}</h3>
               <p>{page2.description}</p>
             </div>
             <div>
-            <h3>{page3.heading}</h3>
+              <h3>{page3.heading}</h3>
               <p>{page3.description}</p>
             </div>
             <div>
-            <h3>{page4.heading}</h3>
+              <h3>{page4.heading}</h3>
               <p>{page4.description}</p>
+            </div>
             </div>
             <PostContent content={content} />
             {tags && tags.length ? (
@@ -68,8 +69,8 @@ export const ServicePostTemplate = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 ServicePostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
@@ -94,10 +95,10 @@ ServicePostTemplate.propTypes = {
     heading: PropTypes.string,
     description: PropTypes.string,
   }),
-}
+};
 
 const ServicePost = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
@@ -123,16 +124,16 @@ const ServicePost = ({ data }) => {
         title={post.frontmatter.title}
       />
     </Layout>
-  )
-}
+  );
+};
 
 ServicePost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
-}
+};
 
-export default ServicePost
+export default ServicePost;
 
 export const pageQuery = graphql`
   query ServicePostByID($id: String!) {
@@ -155,19 +156,16 @@ export const pageQuery = graphql`
         page2 {
           description
           heading
-
         }
         page3 {
           description
           heading
-
         }
         page4 {
           description
           heading
-
         }
       }
     }
   }
-`
+`;
