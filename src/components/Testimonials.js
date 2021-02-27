@@ -1,9 +1,13 @@
-import React from 'react'
+import {React, useState} from 'react'
 import PropTypes from 'prop-types'
 import { v4 } from 'uuid'
 
-const Testimonials = ({ testimonials }) => (
-  <div>
+const Testimonials = ({ testimonials }) => {
+  const [current, setCurrent] = useState(testimonials[0]);
+  const [active, setActive] = useState(0);
+  console.log(current)
+  return(
+    <div>
     {testimonials.map((testimonial) => (
       <article key={v4()} className="message">
         <div className="message-body">
@@ -14,7 +18,8 @@ const Testimonials = ({ testimonials }) => (
       </article>
     ))}
   </div>
-)
+  )
+}
 
 Testimonials.propTypes = {
   testimonials: PropTypes.arrayOf(

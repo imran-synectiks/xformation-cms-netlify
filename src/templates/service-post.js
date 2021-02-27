@@ -9,7 +9,6 @@ import Content, { HTMLContent } from "../components/Content";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Carousel from 'nuka-carousel';
 
-
 export const ServicePostTemplate = ({
   content,
   contentComponent,
