@@ -1,13 +1,10 @@
-import {React, useState} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { v4 } from 'uuid'
+import Carousel from 'nuka-carousel';
 
-const Testimonials = ({ testimonials }) => {
-  const [current, setCurrent] = useState(testimonials[0]);
-  const [active, setActive] = useState(0);
-  console.log(current)
-  return(
-    <div>
+const Testimonials = ({ testimonials }) => (
+  <Carousel>
     {testimonials.map((testimonial) => (
       <article key={v4()} className="message">
         <div className="message-body">
@@ -17,9 +14,8 @@ const Testimonials = ({ testimonials }) => {
         </div>
       </article>
     ))}
-  </div>
-  )
-}
+  </Carousel>
+)
 
 Testimonials.propTypes = {
   testimonials: PropTypes.arrayOf(
