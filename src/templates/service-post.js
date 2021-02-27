@@ -7,6 +7,8 @@ import Layout from "../components/Layout";
 import Testimonials from "../components/Testimonials";
 import Content, { HTMLContent } from "../components/Content";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import Carousel from 'nuka-carousel';
+
 
 export const ServicePostTemplate = ({
   content,
@@ -26,15 +28,16 @@ export const ServicePostTemplate = ({
   return (
     <section className="section">
       {helmet || ""}
-      <div className="container content">
+      <div className="container-fluid content">
         <div className="columns">
-          <div className="column is-10 is-offset-1">
+          <div className="">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
             <p>{description}</p>
             <Testimonials testimonials={testimonials} />
-            <div className='slide'>
+            <div className='slide' style={{marginTop: '20px'}}>
+              <Carousel>
             <div>
               <h3>{page1.heading}</h3>
               <p>{page1.description}</p>
@@ -51,6 +54,7 @@ export const ServicePostTemplate = ({
               <h3>{page4.heading}</h3>
               <p>{page4.description}</p>
             </div>
+            </Carousel>
             </div>
             <PostContent content={content} />
             {tags && tags.length ? (
