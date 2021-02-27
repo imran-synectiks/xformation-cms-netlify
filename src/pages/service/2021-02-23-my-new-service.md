@@ -380,7 +380,7 @@ page4:
 featuredimage: /img/apple-touch-icon.png
 featuredpost: true
 testimonials:
-  - quote: hi
+  - quote: Testimonial One
     author: The Coffee Taster’s Flavor Wheel, the official resource used by coffee
       tasters, has been revised for the first time this year.The Coffee Taster’s
       Flavor Wheel, the official resource used by coffee tasters, has been
@@ -391,7 +391,10 @@ testimonials:
       Flavor Wheel, the official resource used by coffee tasters, has been
       revised for the first time this year.The Coffee Taster’s Flavor Wheel, the
       official resource used by coffee tasters, has been revised.
-    quote: hii
+    quote: Testimonial Two
+  - quote: Testimonial Three
+    author: This Testimonial is added after adding sliding functionality to Pages
+      which will be created based on testimonials.
 tags:
   - My New Service
 ---
