@@ -8,6 +8,8 @@ import Testimonials from "../components/Testimonials";
 import Content, { HTMLContent } from "../components/Content";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Carousel from 'nuka-carousel';
+import { AiOutlineLeft,AiOutlineRight } from "react-icons/ai";
+import { css, cx } from '@emotion/css'
 
 export const ServicePostTemplate = ({
   content,
@@ -29,15 +31,61 @@ export const ServicePostTemplate = ({
       {helmet || ""}
       <div className="container-fluid content">
         <div className="columns">
-          <div className="">
+          <div className=""
+          >
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
             <p>{description}</p>
             <Testimonials testimonials={testimonials} />
-            <div className='slide' style={{marginTop: '20px'}}>
-              <Carousel>
-            <div>
+            <div style={{marginTop: '20px'}}>
+              <Carousel
+               renderBottomCenterControls={false}
+              renderCenterLeftControls={({ previousSlide }) => (
+    <button onClick={previousSlide}
+    className={css`
+    padding: 15px 30px;
+    background: transparent;
+    color: rgba(230, 126, 34, 1);
+    font-size: 45px;
+    border: none;
+    &:hover {
+      color: rgba(0, 0, 0, .8);
+      cursor: pointer;
+    }
+    &:focus {
+      border: none;
+    }
+  `}>
+      <AiOutlineLeft />
+    </button>
+  )}
+  renderCenterRightControls={({ nextSlide }) => (
+    <button onClick={nextSlide}
+    className={css`
+    padding: 15px 30px;
+    background: transparent;
+    color: rgba(230, 126, 34, 1);
+    font-size: 45px;
+    border: none;
+    &:hover {
+      color: rgba(0, 0, 0, .8);
+      cursor: pointer;
+    }
+    &:focus {
+      border: none;
+    }
+  `}>
+      <AiOutlineRight/>
+    </button>
+  )}
+>
+            <div className={
+              css`
+                padding: 3rem 5.1rem;
+                cursor: text
+              `
+            }>
               <h3>{page1.heading}</h3>
               <p>{page1.description}</p>
             </div>
