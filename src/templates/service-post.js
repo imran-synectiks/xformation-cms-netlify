@@ -89,15 +89,30 @@ export const ServicePostTemplate = ({
               <h3>{page1.heading}</h3>
               <p>{page1.description}</p>
             </div>
-            <div>
+            <div className={
+              css`
+                padding: 3rem 5.1rem;
+                cursor: text
+              `
+            }>
               <h3>{page2.heading}</h3>
               <p>{page2.description}</p>
             </div>
-            <div>
+            <div className={
+              css`
+                padding: 3rem 5.1rem;
+                cursor: text
+              `
+            }>
               <h3>{page3.heading}</h3>
               <p>{page3.description}</p>
             </div>
-            <div>
+            <div className={
+              css`
+                padding: 3rem 5.1rem;
+                cursor: text
+              `
+            }>
               <h3>{page4.heading}</h3>
               <p>{page4.description}</p>
             </div>
