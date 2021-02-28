@@ -68,26 +68,6 @@ page1:
     Taster’s Flavor Wheel, the official resource used by coffee tasters, has
     been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
     the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
     time this year.
   image1:
     image: /img/blog-index.jpg
@@ -96,26 +76,6 @@ page2:
   heading: Page Two
   description: The Coffee Taster’s Flavor Wheel, the official resource used by
     coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
     Taster’s Flavor Wheel, the official resource used by coffee tasters, has
     been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
     the official resource used by coffee tasters, has been revised for the first
@@ -237,40 +197,7 @@ page3:
     Taster’s Flavor Wheel, the official resource used by coffee tasters, has
     been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
     the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.
+    time this year.
 page4:
   heading: Page Four
   description: The Coffee Taster’s Flavor Wheel, the official resource used by
@@ -333,40 +260,7 @@ page4:
     Taster’s Flavor Wheel, the official resource used by coffee tasters, has
     been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
     the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.The Coffee Taster’s Flavor Wheel,
-    the official resource used by coffee tasters, has been revised for the first
-    time this year.The Coffee Taster’s Flavor Wheel, the official resource used
-    by coffee tasters, has been revised for the first time this year.The Coffee
-    Taster’s Flavor Wheel, the official resource used by coffee tasters, has
-    been revised for the first time this year.
+    time this year.
 featuredimage: /img/apple-touch-icon.png
 featuredpost: true
 testimonials:
