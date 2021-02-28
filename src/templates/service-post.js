@@ -37,7 +37,7 @@ export const ServicePostTemplate = ({
               {title}
             </h1>
             <p>{description}</p>
-            <Testimonials testimonials={testimonials} />
+            {/* <Testimonials testimonials={testimonials} /> */}
             <div style={{marginTop: '20px'}}>
               <Carousel
                renderBottomCenterControls={false}
@@ -83,7 +83,9 @@ export const ServicePostTemplate = ({
             <div className={
               css`
                 padding: 3rem 5.1rem;
-                cursor: text
+                cursor: text;
+                background: #aee1e1;
+                color: #456268;
               `
             }>
               <h3>{page1.heading}</h3>
@@ -92,7 +94,9 @@ export const ServicePostTemplate = ({
             <div className={
               css`
                 padding: 3rem 5.1rem;
-                cursor: text
+                cursor: text;
+                background:#fdffbc;
+                color: #456268;
               `
             }>
               <h3>{page2.heading}</h3>
@@ -101,7 +105,9 @@ export const ServicePostTemplate = ({
             <div className={
               css`
                 padding: 3rem 5.1rem;
-                cursor: text
+                cursor: text;
+                background: #d4e2d4;
+                color: #456268;
               `
             }>
               <h3>{page3.heading}</h3>
@@ -110,7 +116,9 @@ export const ServicePostTemplate = ({
             <div className={
               css`
                 padding: 3rem 5.1rem;
-                cursor: text
+                cursor: text;
+                background: #c6ebc9;
+                color: #456268;
               `
             }>
               <h3>{page4.heading}</h3>
