@@ -8,7 +8,7 @@ import Testimonials from "../components/Testimonials";
 import Content, { HTMLContent } from "../components/Content";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Carousel from 'nuka-carousel';
-import { AiOutlineLeft,AiOutlineRight } from "react-icons/ai";
+import { AiOutlineLeft,AiOutlineRight,AiFillDownCircle,AiFillUpCircle } from "react-icons/ai";
 import { css, cx } from '@emotion/css'
 
 export const ServicePostTemplate = ({
@@ -27,7 +27,8 @@ export const ServicePostTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
+    <>
+    <section className="section" id='top'>
       {helmet || ""}
       <div className="container-fluid content">
         <div className="columns">
@@ -41,6 +42,7 @@ export const ServicePostTemplate = ({
             <div style={{marginTop: '20px'}}>
               <Carousel
                renderBottomCenterControls={false}
+               div
               renderCenterLeftControls={({ previousSlide }) => (
     <button onClick={previousSlide}
     className={css`
@@ -49,6 +51,9 @@ export const ServicePostTemplate = ({
     color: rgba(230, 126, 34, 1);
     font-size: 45px;
     border: none;
+    position: absolute;
+    bottom: 11rem;
+    left: -1rem;
     &:hover {
       color: rgba(0, 0, 0, .8);
       cursor: pointer;
@@ -68,6 +73,9 @@ export const ServicePostTemplate = ({
     color: rgba(230, 126, 34, 1);
     font-size: 45px;
     border: none;
+    position: absolute;
+    bottom: 11rem;
+    right: -1rem;
     &:hover {
       color: rgba(0, 0, 0, .8);
       cursor: pointer;
@@ -80,49 +88,114 @@ export const ServicePostTemplate = ({
     </button>
   )}
 >
-            <div className={
+            <div>
+              <div className={
               css`
-                padding: 3rem 5.1rem;
+                padding: 16rem 5.1rem;
                 cursor: text;
                 background: #aee1e1;
                 color: #456268;
               `
             }>
               <h3>{page1.heading}</h3>
+              </div>
+              <div className={css`
+                display: flex;
+                justify-content: center;
+              `}>
+              <a href='#page1' className={css`
+                   position: relative;
+                  top: 0rem;
+                  margin: 2rem;
+              `}><AiFillDownCircle className={css`
+                font-size: 2rem;
+              `}/></a>
+              </div>
+              <div id='page1'>
               <p>{page1.description}</p>
+              </div>
+
             </div>
-            <div className={
+            <div>
+              <div  className={
               css`
-                padding: 3rem 5.1rem;
+                padding: 16rem 5.1rem;
                 cursor: text;
                 background:#fdffbc;
                 color: #456268;
               `
             }>
               <h3>{page2.heading}</h3>
+              </div>
+              <div className={css`
+                display: flex;
+                justify-content: center;
+              `}>
+               <a href='#page2' className={css`
+                  position: relative;
+                  top: 0rem;
+                  margin: 2rem;
+              `}><AiFillDownCircle className={css`
+                font-size: 2rem;
+              `}/></a>
+              </div>
+              <div id='page2'>
               <p>{page2.description}</p>
+              </div>
             </div>
-            <div className={
+            <div>
+              <div className={
               css`
-                padding: 3rem 5.1rem;
+                padding: 16rem 5.1rem;
                 cursor: text;
                 background: #d4e2d4;
                 color: #456268;
               `
             }>
               <h3>{page3.heading}</h3>
+              </div>
+              <div className={css`
+                display: flex;
+                justify-content: center;
+              `}>
+              <a href='#page3' className={css`
+                  position: relative;
+                  top: 0rem;
+                  margin: 2rem;
+              `}><AiFillDownCircle className={css`
+                font-size: 2rem;
+              `}/></a>
+              </div>
+              <div id='page3'>
               <p>{page3.description}</p>
+              </div>
             </div>
-            <div className={
+            <div>
+              <div className={
               css`
-                padding: 3rem 5.1rem;
+                padding: 16rem 5.1rem;
                 cursor: text;
                 background: #c6ebc9;
                 color: #456268;
               `
             }>
               <h3>{page4.heading}</h3>
+              </div>
+              <div className={css`
+                display: flex;
+                justify-content: center;
+              `}>
+                <a href='#page4' className={css`
+                  position: relative;
+                  top: 0rem;
+                  margin: 2rem;
+              `}><AiFillDownCircle className={css`
+                font-size: 2rem;
+              `}/></a>
+              </div>
+             <div id='page4'>
               <p>{page4.description}</p>
+              </div>
             </div>
             </Carousel>
             </div>
@@ -143,6 +216,15 @@ export const ServicePostTemplate = ({
         </div>
       </div>
     </section>
+    <div className={css`
+      display: flex;
+      justify-content: center;
+    `}>
+      <a href="#top" ><AiFillUpCircle className={css`
+        font-size: 2rem;
+      `}/></a>
+    </div>
+  </>
   );
 };
 

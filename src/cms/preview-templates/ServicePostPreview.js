@@ -18,11 +18,11 @@ const ServicePostPreview = ({ entry, widgetFor,getAsset }) => {
       }}
       page2={{
         heading: entry.getIn(['data', 'page2', 'heading']),
-        description: entry.getIn(['data', 'page2', 'description']),        
+        description: entry.getIn(['data', 'page2', 'description']),
       }}
       page3={{
         heading: entry.getIn(['data', 'page3', 'heading']),
-        description: entry.getIn(['data', 'page3', 'description']),        
+        description: entry.getIn(['data', 'page3', 'description']),
       }}
       page4={{
         heading: entry.getIn(['data', 'page4', 'heading']),
