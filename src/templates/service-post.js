@@ -23,6 +23,7 @@ export const ServicePostTemplate = ({
   page3,
   page4,
   helmet,
+  slideIndex,
 }) => {
   const PostContent = contentComponent || Content;
 
@@ -259,6 +260,7 @@ ServicePostTemplate.propTypes = {
   testimonials: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  slideIndex: PropTypes.number,
   page1: PropTypes.shape({
     heading: PropTypes.string,
     description: PropTypes.string,
