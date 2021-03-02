@@ -23,7 +23,6 @@ export const ServicePostTemplate = ({
   page3,
   page4,
   helmet,
-  slideIndex,
 }) => {
   const PostContent = contentComponent || Content;
 
