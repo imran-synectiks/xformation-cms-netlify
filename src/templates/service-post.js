@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState  } from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
@@ -25,7 +25,10 @@ export const ServicePostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
-
+  const [state, setState] = useState({
+    // ...state,
+    slideIndex: 0
+  });
   return (
     <>
     <section className="section" id='top'>
@@ -39,10 +42,15 @@ export const ServicePostTemplate = ({
             </h1>
             <p>{description}</p>
             {/* <Testimonials testimonials={testimonials} /> */}
+            <div>
+            <button className="mybtn" onClick={() => setState({ slideIndex: 0 })}>{page1.heading} {state.currentSlide}</button>
+            <button className="mybtn" onClick={() =>  setState({ slideIndex: 1 })}>{page2.heading}</button>
+             <button className="mybtn" onClick={() => setState({ slideIndex: 2 })}>{page3.heading}</button>
+            <button className="mybtn" onClick={() => setState({ slideIndex: 3 })}>{page4.heading}</button>
+          </div>
             <div style={{marginTop: '20px'}}>
               <Carousel
-               renderBottomCenterControls={false}
-               div
+              slideIndex={state.slideIndex}
               renderCenterLeftControls={({ previousSlide }) => (
     <button onClick={previousSlide}
     className={css`
