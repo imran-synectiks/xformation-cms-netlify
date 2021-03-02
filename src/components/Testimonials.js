@@ -25,7 +25,6 @@ const Testimonials = ({ testimonials }) => (
       <AiOutlineLeft />
     </button>
   )}
-  renderBottomCenterControls={false}
   renderCenterRightControls={({ nextSlide }) => (
     <button onClick={nextSlide}
     className={css`

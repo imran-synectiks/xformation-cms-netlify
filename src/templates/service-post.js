@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
@@ -12,7 +12,7 @@ import { AiOutlineLeft,AiOutlineRight,AiFillDownCircle,AiFillUpCircle } from "re
 import { css, cx } from '@emotion/css'
 
 export const ServicePostTemplate = ({
-  content,
+  content, 
   contentComponent,
   description,
   tags,
@@ -26,6 +26,11 @@ export const ServicePostTemplate = ({
 }) => {
   const PostContent = contentComponent || Content;
 
+const [state, setState] = useState({
+  ...state,
+  slideIndex: 0
+});
+
   return (
     <>
     <section className="section" id='top'>
@@ -35,15 +40,32 @@ export const ServicePostTemplate = ({
           <div className=""
           >
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
+              {title} 
             </h1>
             <p>{description}</p>
-            {/* <Testimonials testimonials={testimonials} /> */}
+            {/* <Testimonials testimonials={testimonials} />  */}
+            <div className={
+              css`
+              display: flex;
+              justify-content: space-around;
+              background-color: Black;
+              padding: 1rem;
+              }
+              `
+            }>
+            <button className="mybtn" onClick={() => setState({ slideIndex: 0 })}>{page1.heading} {state.currentSlide}</button>
+            <button className="mybtn" onClick={() =>  setState({ slideIndex: 1 })}>{page2.heading}</button>
+             <button className="mybtn" onClick={() => setState({ slideIndex: 2 })}>{page3.heading}</button>
+            <button className="mybtn" onClick={() => setState({ slideIndex: 3 })}>{page4.heading}</button>
+          </div>
             <div style={{marginTop: '20px'}}>
               <Carousel
-               renderBottomCenterControls={false}
-               div
-              renderCenterLeftControls={({ previousSlide }) => (
+              slideIndex={state.slideIndex}
+              renderBottomCenterControls={false}
+              //  renderBottomCenterControls={({nextSlide}) =>(
+              //    <button onClick={nextSlide}>{ title }</button>
+              //  )}
+               renderCenterLeftControls={({ previousSlide }) => (
     <button onClick={previousSlide}
     className={css`
     padding: 15px 30px;
@@ -198,8 +220,9 @@ export const ServicePostTemplate = ({
               </div>
             </div>
             </Carousel>
+           
             </div>
-            <PostContent content={content} />
+                        <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -216,14 +239,15 @@ export const ServicePostTemplate = ({
         </div>
       </div>
     </section>
-    <div className={css`
+    
+    {/* <div className={css`
       display: flex;
       justify-content: center;
     `}>
       <a href="#top" ><AiFillUpCircle className={css`
         font-size: 2rem;
       `}/></a>
-    </div>
+    </div> */}
   </>
   );
 };
