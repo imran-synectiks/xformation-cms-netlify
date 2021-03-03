@@ -27,7 +27,7 @@ export const ServicePostTemplate = ({
   const PostContent = contentComponent || Content;
 
 const [state, setState] = useState({
-  ...state,
+  // ...state,
   slideIndex: 0
 });
 
@@ -53,7 +53,7 @@ const [state, setState] = useState({
               }
               `
             }>
-            <button className="mybtn" onClick={() => setState({ slideIndex: 0 })}>{page1.heading} {state.currentSlide}</button>
+            <button className="mybtn" onClick={() => setState({ slideIndex: 0 })}>{page1.heading}</button>
             <button className="mybtn" onClick={() =>  setState({ slideIndex: 1 })}>{page2.heading}</button>
              <button className="mybtn" onClick={() => setState({ slideIndex: 2 })}>{page3.heading}</button>
             <button className="mybtn" onClick={() => setState({ slideIndex: 3 })}>{page4.heading}</button>
