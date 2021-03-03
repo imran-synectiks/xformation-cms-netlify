@@ -52,9 +52,11 @@ const [state, setState] = useState({
               css`
               display: flex;
               justify-content: space-around;
-              background-color: Black;
+              background-color: rgba(255,255,255,0.4);
               padding: 1rem;
-              list-style: none;
+              position: absolute;
+              z-index: 1;
+              width: 100%;
               }
               `
             }>
@@ -151,7 +153,7 @@ const [state, setState] = useState({
               css`
                 padding: 16rem 5.1rem;
                 cursor: text;
-                background:#fdffbc;
+                background:#ffaec0;
                 color: #456268;
               `
             }>
