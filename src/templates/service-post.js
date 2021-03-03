@@ -10,6 +10,9 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Carousel from 'nuka-carousel';
 import { AiOutlineLeft,AiOutlineRight,AiFillDownCircle,AiFillUpCircle } from "react-icons/ai";
 import { css, cx } from '@emotion/css'
+import styled from '@emotion/styled'
+import './service.css'
+
 
 export const ServicePostTemplate = ({
   content, 
@@ -28,7 +31,8 @@ export const ServicePostTemplate = ({
 
 const [state, setState] = useState({
   // ...state,
-  slideIndex: 0
+  slideIndex: 0,
+  currentSlide: undefined,
 });
 
   return (
@@ -44,24 +48,28 @@ const [state, setState] = useState({
             </h1>
             <p>{description}</p>
             {/* <Testimonials testimonials={testimonials} />  */}
-            <div className={
+              <div className={
               css`
               display: flex;
               justify-content: space-around;
               background-color: Black;
               padding: 1rem;
+              list-style: none;
               }
               `
             }>
-            <button className="mybtn" onClick={() => setState({ slideIndex: 0 })}>{page1.heading}</button>
-            <button className="mybtn" onClick={() =>  setState({ slideIndex: 1 })}>{page2.heading}</button>
-             <button className="mybtn" onClick={() => setState({ slideIndex: 2 })}>{page3.heading}</button>
-            <button className="mybtn" onClick={() => setState({ slideIndex: 3 })}>{page4.heading}</button>
+               
+            <button className={`${state.slideIndex === 0 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 0 })}>{page1.heading}</button>
+            <button className={`${state.slideIndex === 1 ? 'mybtnactive' : 'mybtn'}`} onClick={() =>  setState({ slideIndex: 1 })}>{page2.heading}</button> 
+             <button className={`${state.slideIndex === 2 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 2 })}>{page3.heading}</button>
+            <button className={`${state.slideIndex === 3 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 3 })}>{page4.heading}</button>
+                
           </div>
             <div style={{marginTop: '20px'}}>
               <Carousel
               slideIndex={state.slideIndex}
-              renderBottomCenterControls={false}
+              currentSlide={state.currentSlide}
+              rendertopCenterControls={true}
               //  renderBottomCenterControls={({nextSlide}) =>(
               //    <button onClick={nextSlide}>{ title }</button>
               //  )}
