@@ -4,7 +4,8 @@
 // Kaldi logo brand color: #FD461E
 $kaldi-red: #D64000
 $kaldi-red-invert: #fff
-
+$slid-btn: #fede02
+$slid-btn-active: #D64000
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
 $body-color: #333
@@ -127,6 +128,16 @@ $menu-label-color: $white-ter
   height: 1em
   vertical-align: middle
   display: inline
+
+  //button
+.mybtn
+  cursor: pointer
+  padding: inherit
+  border: none
+  background-color: $slid-btn
+
+  .mybtnactive
+    background-color: $kaldi-red
 
 // blog roll
 .blog-list-item.is-featured

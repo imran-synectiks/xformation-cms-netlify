@@ -1,0 +1,18 @@
+.mybtn {
+  cursor: pointer;
+  padding: inherit;
+  border: none;
+  background-color: #f5f5f5;
+  color: rgba(29, 24, 24, 0.863);
+  width: 12vw;
+}
+
+.mybtnactive {
+  cursor: pointer;
+  padding: inherit;
+  border: none;
+  background-color: #f5f5f5;
+  color: rgba(29, 24, 24, 0.863);
+  border-bottom: 5px solid #58e23c;
+  width: 12vw;
+}

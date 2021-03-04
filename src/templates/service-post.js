@@ -1,4 +1,4 @@
-import React,{useState  } from "react";
+import React,{useState} from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
@@ -10,6 +10,9 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Carousel from 'nuka-carousel';
 import { AiOutlineLeft,AiOutlineRight,AiFillDownCircle,AiFillUpCircle } from "react-icons/ai";
 import { css, cx } from '@emotion/css'
+import styled from '@emotion/styled'
+import './service.css'
+
 
 export const ServicePostTemplate = ({
   content,
@@ -25,10 +28,13 @@ export const ServicePostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
-  const [state, setState] = useState({
-    // ...state,
-    slideIndex: 0
-  });
+
+const [state, setState] = useState({
+  // ...state,
+  slideIndex: 0,
+  currentSlide: undefined,
+});
+
   return (
     <>
     <section className="section" id='top'>
@@ -41,17 +47,35 @@ export const ServicePostTemplate = ({
               {title}
             </h1>
             <p>{description}</p>
-            {/* <Testimonials testimonials={testimonials} /> */}
-            <div>
-            <button className="mybtn" onClick={() => setState({ slideIndex: 0 })}>{page1.heading} {state.currentSlide}</button>
-            <button className="mybtn" onClick={() =>  setState({ slideIndex: 1 })}>{page2.heading}</button>
-             <button className="mybtn" onClick={() => setState({ slideIndex: 2 })}>{page3.heading}</button>
-            <button className="mybtn" onClick={() => setState({ slideIndex: 3 })}>{page4.heading}</button>
+            {/* <Testimonials testimonials={testimonials} />  */}
+              <div className={
+              css`
+              display: flex;
+              justify-content: space-around;
+              background-color: rgba(255,255,255,0.4);
+              padding: 1rem;
+              position: absolute;
+              z-index: 1;
+              width: 100%;
+              }
+              `
+            }>
+
+            <button className={`${state.slideIndex === 0 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 0 })}>{page1.heading}</button>
+            <button className={`${state.slideIndex === 1 ? 'mybtnactive' : 'mybtn'}`} onClick={() =>  setState({ slideIndex: 1 })}>{page2.heading}</button>
+             <button className={`${state.slideIndex === 2 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 2 })}>{page3.heading}</button>
+            <button className={`${state.slideIndex === 3 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 3 })}>{page4.heading}</button>
+
           </div>
             <div style={{marginTop: '20px'}}>
               <Carousel
               slideIndex={state.slideIndex}
-              renderCenterLeftControls={({ previousSlide }) => (
+              currentSlide={state.currentSlide}
+              rendertopCenterControls={true}
+              //  renderBottomCenterControls={({nextSlide}) =>(
+              //    <button onClick={nextSlide}>{ title }</button>
+              //  )}
+               renderCenterLeftControls={({ previousSlide }) => (
     <button onClick={previousSlide}
     className={css`
     padding: 15px 30px;
@@ -129,7 +153,7 @@ export const ServicePostTemplate = ({
               css`
                 padding: 16rem 5.1rem;
                 cursor: text;
-                background:#fdffbc;
+                background:#ffaec0;
                 color: #456268;
               `
             }>
@@ -206,8 +230,9 @@ export const ServicePostTemplate = ({
               </div>
             </div>
             </Carousel>
+
             </div>
-            <PostContent content={content} />
+                        <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -224,14 +249,15 @@ export const ServicePostTemplate = ({
         </div>
       </div>
     </section>
-    <div className={css`
+
+    {/* <div className={css`
       display: flex;
       justify-content: center;
     `}>
       <a href="#top" ><AiFillUpCircle className={css`
         font-size: 2rem;
       `}/></a>
-    </div>
+    </div> */}
   </>
   );
 };
@@ -243,6 +269,7 @@ ServicePostTemplate.propTypes = {
   testimonials: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  slideIndex: PropTypes.number,
   page1: PropTypes.shape({
     heading: PropTypes.string,
     description: PropTypes.string,
