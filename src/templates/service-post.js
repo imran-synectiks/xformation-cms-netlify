@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
@@ -12,6 +12,9 @@ import { AiOutlineLeft,AiOutlineRight,AiFillDownCircle,AiFillUpCircle } from "re
 import { css, cx } from '@emotion/css'
 import styled from '@emotion/styled'
 import './service.css'
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import ScrollTop from '../components/ScrollTop'
+
 
 
 export const ServicePostTemplate = ({
@@ -25,6 +28,8 @@ export const ServicePostTemplate = ({
   page2,
   page3,
   page4,
+  primaryRef,
+  secondaryRef,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
@@ -33,10 +38,14 @@ const [state, setState] = useState({
   // ...state,
   slideIndex: 0,
   currentSlide: undefined,
+
+  primaryRef: React.useRef(),
+  secondaryRef: React.useRef()
 });
 
   return (
     <>
+
     <section className="section" id='top'>
       {helmet || ""}
       <div className="container-fluid content">
@@ -57,9 +66,7 @@ const [state, setState] = useState({
               position: absolute;
               z-index: 1;
               width: 100%;
-              }
-              `
-            }>
+              }`}>
 
             <button className={`${state.slideIndex === 0 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 0 })}>{page1.heading}</button>
             <button className={`${state.slideIndex === 1 ? 'mybtnactive' : 'mybtn'}`} onClick={() =>  setState({ slideIndex: 1 })}>{page2.heading}</button>
@@ -67,6 +74,7 @@ const [state, setState] = useState({
             <button className={`${state.slideIndex === 3 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 3 })}>{page4.heading}</button>
 
           </div>
+
             <div style={{marginTop: '20px'}}>
               <Carousel
               slideIndex={state.slideIndex}
@@ -120,7 +128,7 @@ const [state, setState] = useState({
     </button>
   )}
 >
-            <div>
+<div>
               <div className={
               css`
                 padding: 16rem 5.1rem;
@@ -229,7 +237,7 @@ const [state, setState] = useState({
               <p>{page4.description}</p>
               </div>
             </div>
-            </Carousel>
+         </Carousel>
 
             </div>
                         <PostContent content={content} />
@@ -258,6 +266,7 @@ const [state, setState] = useState({
         font-size: 2rem;
       `}/></a>
     </div> */}
+    <ScrollTop showBelow={50}/>
   </>
   );
 };
