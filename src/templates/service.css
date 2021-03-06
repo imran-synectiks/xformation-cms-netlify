@@ -33,7 +33,7 @@
   font-size: 45px;
   border: none;
   position: absolute;
-  bottom: 20rem;
+  bottom: 25vh;
   left: -1rem;
 }
 .nabtn-right {
@@ -44,13 +44,13 @@
   border: none;
   position: absolute;
   right: -1rem;
-  bottom: 20rem;
+  bottom: 25vh;
 }
 
 .scrollBtn {
   z-index: 2;
   position: absolute;
-  top: 72vh;
+  top: 82vh;
   color: black;
   right: 50%;
   border: none;
@@ -83,7 +83,8 @@
   }
   .scrollBtn {
     position: absolute;
-    top: 75vh;
+    top: 130vh;
+    left: 45%;
   }
   .mybtn {
     width: auto;
@@ -97,6 +98,8 @@
   }
   .nabtn-right,
   .nabtn-left {
-    bottom: 71rem;
+    /* position: inherit;
+    bottom: 71rem; */
+    display: none;
   }
 }
