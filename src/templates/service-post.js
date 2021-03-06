@@ -15,8 +15,6 @@ import './service.css'
 import ScrollTop from '../components/ScrollTop'
 import ScrollBottom from '../components/ScrollBottom'
 
-
-
 export const ServicePostTemplate = ({
   content,
   contentComponent,
@@ -33,15 +31,17 @@ export const ServicePostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
-
+  const [sliderIndex, setSliderIndex] = useState(0);
 const [state, setState] = useState({
   // ...state,
   slideIndex: 0,
-  currentSlide: undefined,
+  currentSlide: 2,
 
   primaryRef: React.useRef(),
   secondaryRef: React.useRef()
 });
+
+
 
   return (
     <>
@@ -49,6 +49,18 @@ const [state, setState] = useState({
     <section className="section" id='top'>
       {helmet || ""}
       <div className="container-fluid content">
+      {/* <Carousel
+         rendertopCenterControls={true}
+        slideIndex={state.slideIndex}
+        afterSlide={slideIndex => setState({ slideIndex })}
+      >
+        <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide1" />
+        <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide2" />
+        <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide3" />
+        <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide4" />
+        <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide5" />
+        <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide6" />
+      </Carousel> */}
         <div className="columns">
           <div className=""
           >
@@ -68,22 +80,21 @@ const [state, setState] = useState({
               width: 100%;
               }`}>
 
-            <button className={`${state.slideIndex === 0 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 0 })}>{page1.heading}</button>
-            <button className={`${state.slideIndex === 1 ? 'mybtnactive' : 'mybtn'}`} onClick={() =>  setState({ slideIndex: 1 })}>{page2.heading}</button>
-             <button className={`${state.slideIndex === 2 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 2 })}>{page3.heading}</button>
-            <button className={`${state.slideIndex === 3 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 3 })}>{page4.heading}</button>
+            <button className={`${state.slideIndex = 0 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 0 })}>{page1.heading}</button>
+            <button className={`${state.slideIndex = 1 ? 'mybtnactive' : 'mybtn'}`} onClick={() =>  setState({ slideIndex: 1 })}>{page2.heading}</button>
+             <button className={`${state.slideIndex = 2 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 2 })}>{page3.heading}</button>
+            <button className={`${state.slideIndex = 3 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 3 })}>{page4.heading}</button>
 
           </div>
 
+
             <div style={{marginTop: '20px'}}>
-              <Carousel
+              {/* <Carousel
+
               slideIndex={state.slideIndex}
               currentSlide={state.currentSlide}
-              rendertopCenterControls={true}
-              //  renderBottomCenterControls={({nextSlide}) =>(
-              //    <button onClick={nextSlide}>{ title }</button>
-              //  )}
-               renderCenterLeftControls={({ previousSlide }) => (
+
+              renderCenterLeftControls={({ previousSlide }) => (
     <button onClick={previousSlide}
     className={css`
     padding: 15px 30px;
@@ -105,7 +116,7 @@ const [state, setState] = useState({
       <AiOutlineLeft />
     </button>
   )}
-  renderCenterRightControls={({ nextSlide }) => (
+              renderCenterRightControls={({ nextSlide }) => (
     <button onClick={nextSlide}
     className={css`
     padding: 15px 30px;
@@ -127,11 +138,14 @@ const [state, setState] = useState({
       <AiOutlineRight/>
     </button>
   )}
+              renderTopCenterControls={({ currentSlide }) => (
+                <div>Slide: {currentSlide + 1}</div>
+  )}
 >
-<div>
+            <div>
               <div className={
               css`
-                padding: 16rem 5.1rem;
+
                 cursor: text;
                 background: #aee1e1;
                 color: #456268;
@@ -145,15 +159,12 @@ const [state, setState] = useState({
               `}>
 
               </div>
-              <div id='page1'>
-              <p>{page1.description}</p>
-              </div>
-
             </div>
+
             <div>
               <div  className={
               css`
-                padding: 16rem 5.1rem;
+
                 cursor: text;
                 background:#ffaec0;
                 color: #456268;
@@ -165,16 +176,13 @@ const [state, setState] = useState({
                 display: flex;
                 justify-content: center;
               `}>
-
-              </div>
-              <div id='page2'>
-              <p>{page2.description}</p>
               </div>
             </div>
+
             <div>
               <div className={
               css`
-                padding: 16rem 5.1rem;
+
                 cursor: text;
                 background: #d4e2d4;
                 color: #456268;
@@ -186,16 +194,13 @@ const [state, setState] = useState({
                 display: flex;
                 justify-content: center;
               `}>
-
-              </div>
-              <div id='page3'>
-              <p>{page3.description}</p>
               </div>
             </div>
+
             <div>
               <div className={
               css`
-                padding: 16rem 5.1rem;
+
                 cursor: text;
                 background: #c6ebc9;
                 color: #456268;
@@ -207,10 +212,88 @@ const [state, setState] = useState({
                 display: flex;
                 justify-content: center;
               `}>
-
               </div>
-             <div id='page4'>
-              <p>{page4.description}</p>
+            </div>
+         </Carousel> */}
+
+         <Carousel
+              slideIndex={state.slideIndex}
+              currentSlide={state.currentSlide}
+              renderbottomCenterControls={false}
+              renderCenterLeftControls={({ previousSlide }) => (
+    <button onClick={previousSlide}
+    className='nav-btn'>
+      <AiOutlineLeft />
+    </button>
+  )}
+              renderCenterRightControls={({ nextSlide }) => (
+    <button onClick={nextSlide}
+    className='nav-btn'>
+      <AiOutlineRight/>
+    </button>
+  )}
+>
+            <div>
+              <div className={
+              css`
+                padding: 16rem 5.1rem;
+                cursor: text;
+                background: #aee1e1;
+                color: #456268;
+              `
+            }>
+              <h3>{page1.heading}</h3>
+              </div>
+              <div>
+                {page1.description}
+              </div>
+            </div>
+
+            <div>
+              <div  className={
+                css`
+                padding: 16rem 5.1rem;
+                cursor: text;
+                background:#ffaec0;
+                color: #456268;
+                `
+            }>
+              <h3>{page2.heading}</h3>
+              </div>
+              <div>
+              {page2.description}
+              </div>
+            </div>
+
+            <div>
+              <div className={
+              css`
+                padding: 16rem 5.1rem;
+                cursor: text;
+                background: #d4e2d4;
+                color: #456268;
+              `
+            }>
+              <h3>{page3.heading}</h3>
+              </div>
+              <div>
+                {page3.description}
+              </div>
+            </div>
+
+            <div>
+              <div className={
+              css`
+                padding: 16rem 5.1rem;
+                cursor: text;
+                background: #c6ebc9;
+                color: #456268;
+              `
+            }>
+              <h3>{page4.heading}</h3>
+              </div>
+              <div>
+                {page4.description}
               </div>
             </div>
          </Carousel>
