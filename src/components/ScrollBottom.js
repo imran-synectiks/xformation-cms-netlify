@@ -2,6 +2,8 @@ import React,{useState, useEffect} from 'react'
 import {makeStyles} from '@material-ui/core/styles';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import IconButton from '@material-ui/core/IconButton';
+import '../templates/service.css'
+import { BiChevronDown } from "react-icons/bi";
 
 const useStyles = makeStyles((theme) =>({
     toTop: {
@@ -50,9 +52,10 @@ const ScrollBottom = ({
     return (
         <div>
 
-                <IconButton onClick={handleClick} className={classes.toTop}>
-                    <ExpandMoreIcon />
-                </IconButton>
+
+                {/* <IconButton onClick={handleClick} className={classes.toTop}> */}
+                    <BiChevronDown onClick={handleClick} className='scrollBtn'/>
+
 
         </div>
     )

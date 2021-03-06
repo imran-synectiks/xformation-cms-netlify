@@ -51,10 +51,25 @@
   z-index: 2;
   position: absolute;
   top: 72vh;
-  background-color: #dcdcdc;
   color: black;
   right: 50%;
-  margin: 2rem;
+  border: none;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background: #dcdcdc;
+  text-align: center;
+}
+.scrollBtn:hover {
+  transition: 0.3s;
+  color: #397ba6;
+  background-color: #dcdcdc;
+}
+.Mui-focusVisible {
+  transition: 0.3s;
+  color: #397ba6;
+  background-color: #dcdcdc;
 }
 .page-heading {
   padding: 16rem 5.1rem;
@@ -68,7 +83,7 @@
   }
   .scrollBtn {
     position: absolute;
-    top: 92vh;
+    top: 75vh;
   }
   .mybtn {
     width: auto;
