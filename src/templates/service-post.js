@@ -87,14 +87,7 @@ const [state, setState] = useState({
   )}
 >
             <div>
-              <div className={
-              css`
-                padding: 16rem 5.1rem;
-                cursor: text;
-                background: #aee1e1;
-                color: #456268;
-              `
-            }>
+              <div className='page-heading'>
               <h3>{page1.heading}</h3>
               </div>
               <div>
@@ -103,14 +96,7 @@ const [state, setState] = useState({
             </div>
 
             <div>
-              <div  className={
-              css`
-                padding: 16rem 5.1rem;
-                cursor: text;
-                background:#ffaec0;
-                color: #456268;
-              `
-            }>
+              <div className='page-heading'>
               <h3>{page2.heading}</h3>
               </div>
               <div>
@@ -119,14 +105,7 @@ const [state, setState] = useState({
             </div>
 
             <div>
-              <div className={
-              css`
-                padding: 16rem 5.1rem;
-                cursor: text;
-                background: #d4e2d4;
-                color: #456268;
-              `
-            }>
+              <div className='page-heading'>
               <h3>{page3.heading}</h3>
               </div>
               <div>
@@ -135,14 +114,7 @@ const [state, setState] = useState({
             </div>
 
             <div>
-              <div className={
-              css`
-                padding: 16rem 5.1rem;
-                cursor: text;
-                background: #c6ebc9;
-                color: #456268;
-              `
-            }>
+              <div className='page-heading'>
               <h3>{page4.heading}</h3>
               </div>
               <div>

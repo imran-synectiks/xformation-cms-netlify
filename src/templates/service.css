@@ -47,7 +47,29 @@
   bottom: 20rem;
 }
 
+.scrollBtn {
+  z-index: 2;
+  position: absolute;
+  top: 72vh;
+  background-color: #dcdcdc;
+  color: black;
+  right: 50%;
+  margin: 2rem;
+}
+.page-heading {
+  padding: 16rem 5.1rem;
+  cursor: text;
+  background: #aee1e1;
+  color: #456268;
+}
 @media (max-width: 678px) {
+  .page-heading {
+    padding: 9rem 5.1rem;
+  }
+  .scrollBtn {
+    position: absolute;
+    top: 92vh;
+  }
   .mybtn {
     width: auto;
     font-size: 12px;
