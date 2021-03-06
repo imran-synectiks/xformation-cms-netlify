@@ -55,17 +55,7 @@ const [state, setState] = useState({
             </h1>
             <p>{description}</p>
             {/* <Testimonials testimonials={testimonials} />  */}
-              <div className={
-              css`
-              display: flex;
-              justify-content: space-around;
-              background-color: rgba(255,255,255,0.4);
-              padding: 1rem;
-              position: absolute;
-              z-index: 1;
-              width: 100%;
-              }`}>
-
+              <div className='btn-stack'>
             <button className={`${state.slideIndex === 0 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 0 })}>{page1.heading}</button>
             <button className={`${state.slideIndex === 1 ? 'mybtnactive' : 'mybtn'}`} onClick={() =>  setState({ slideIndex: 1 })}>{page2.heading}</button>
              <button className={`${state.slideIndex === 2 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 2 })}>{page3.heading}</button>

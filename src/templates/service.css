@@ -5,9 +5,11 @@
   background-color: #f5f5f5;
   color: rgba(29, 24, 24, 0.863);
   width: 12vw;
+  font-size: 1rem;
 }
 
 .mybtnactive {
+  font-size: 1rem;
   cursor: pointer;
   padding: inherit;
   border: none;
@@ -15,4 +17,24 @@
   color: rgba(29, 24, 24, 0.863);
   border-bottom: 5px solid #58e23c;
   width: 12vw;
+}
+.btn-stack {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fce8e8;
+  padding: 10px;
+  position: relative;
+  top: 1.25rem;
+}
+@media (max-width: 678px) {
+  .mybtn {
+    width: auto;
+    font-size: 12px;
+    padding: 10px;
+  }
+  .mybtnactive {
+    padding: 10px;
+    width: auto;
+    font-size: 12px;
+  }
 }
