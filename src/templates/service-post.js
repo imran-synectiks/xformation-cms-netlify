@@ -12,7 +12,6 @@ import { AiOutlineLeft,AiOutlineRight,AiFillDownCircle,AiFillUpCircle } from "re
 import { css, cx } from '@emotion/css'
 import styled from '@emotion/styled'
 import './service.css'
-import { Splide, SplideSlide } from '@splidejs/react-splide';
 import ScrollTop from '../components/ScrollTop'
 
 
