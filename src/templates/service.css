@@ -7,24 +7,6 @@
   width: 12vw;
 }
 
-.nav-btn {
-  padding: 15px 30px;
-  background: transparent;
-  color: rgba(230, 126, 34, 1);
-  font-size: 45px;
-  border: none;
-  position: absolute;
-  bottom: 11rem;
-  left: -1rem;
-}
-.nav-btn:hover {
-  color: rgba(0, 0, 0, 0.8);
-  cursor: pointer;
-}
-.nav-btn:focus {
-  border: none;
-}
-
 .mybtnactive {
   cursor: pointer;
   padding: inherit;
@@ -33,20 +15,4 @@
   color: rgba(29, 24, 24, 0.863);
   border-bottom: 5px solid #58e23c;
   width: 12vw;
-}
-
-@media only screen and (max-width: 600px) {
-  .mybtn {
-    font-size: 10px;
-    width: auto;
-    padding: 12px;
-  }
-  .mybtnactive {
-    font-size: 10px;
-    width: auto;
-    padding: 12px;
-  }
-  .nav-btn {
-    bottom: 0rem;
-  }
 }
