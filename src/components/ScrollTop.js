@@ -20,15 +20,15 @@ const useStyles = makeStyles((theme) =>({
 }))
 
 const ScrollTop = ({
-    showBelow,
+    showAbove,
 }) => {
 
     const classes = useStyles();
 
-    const [show, setShow] = useState(showBelow ? false : true)
+    const [show, setShow] = useState(showAbove ? false : true)
 
     const handleScroll = () => {
-        if (window.pageYOffset > showBelow) {
+        if (window.pageYOffset > showAbove) {
             if (!show) setShow(true)
         } else {
             if (show) setShow(false)
@@ -40,7 +40,7 @@ const ScrollTop = ({
     }
 
     useEffect(() => {
-        if (showBelow) {
+        if (showAbove) {
             window.addEventListener(`scroll`, handleScroll)
             return () => window.removeEventListener(`scroll`, handleScroll)
         }

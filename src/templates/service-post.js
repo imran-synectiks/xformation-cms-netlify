@@ -13,6 +13,7 @@ import { css, cx } from '@emotion/css'
 import styled from '@emotion/styled'
 import './service.css'
 import ScrollTop from '../components/ScrollTop'
+import ScrollBottom from '../components/ScrollBottom'
 
 
 
@@ -142,13 +143,7 @@ const [state, setState] = useState({
                 display: flex;
                 justify-content: center;
               `}>
-              <a href='#page1' className={css`
-                   position: relative;
-                  top: 0rem;
-                  margin: 2rem;
-              `}><AiFillDownCircle className={css`
-                font-size: 2rem;
-              `}/></a>
+
               </div>
               <div id='page1'>
               <p>{page1.description}</p>
@@ -170,13 +165,7 @@ const [state, setState] = useState({
                 display: flex;
                 justify-content: center;
               `}>
-               <a href='#page2' className={css`
-                  position: relative;
-                  top: 0rem;
-                  margin: 2rem;
-              `}><AiFillDownCircle className={css`
-                font-size: 2rem;
-              `}/></a>
+
               </div>
               <div id='page2'>
               <p>{page2.description}</p>
@@ -197,13 +186,7 @@ const [state, setState] = useState({
                 display: flex;
                 justify-content: center;
               `}>
-              <a href='#page3' className={css`
-                  position: relative;
-                  top: 0rem;
-                  margin: 2rem;
-              `}><AiFillDownCircle className={css`
-                font-size: 2rem;
-              `}/></a>
+
               </div>
               <div id='page3'>
               <p>{page3.description}</p>
@@ -224,20 +207,14 @@ const [state, setState] = useState({
                 display: flex;
                 justify-content: center;
               `}>
-                <a href='#page4' className={css`
-                  position: relative;
-                  top: 0rem;
-                  margin: 2rem;
-              `}><AiFillDownCircle className={css`
-                font-size: 2rem;
-              `}/></a>
+
               </div>
              <div id='page4'>
               <p>{page4.description}</p>
               </div>
             </div>
          </Carousel>
-
+         <ScrollBottom showBelow={200}/>
             </div>
                         <PostContent content={content} />
             {tags && tags.length ? (
@@ -265,7 +242,7 @@ const [state, setState] = useState({
         font-size: 2rem;
       `}/></a>
     </div> */}
-    <ScrollTop showBelow={50}/>
+    <ScrollTop showAbove={50}/>
   </>
   );
 };
