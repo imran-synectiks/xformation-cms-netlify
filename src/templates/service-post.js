@@ -72,45 +72,13 @@ const [state, setState] = useState({
 
               renderCenterLeftControls={({ previousSlide }) => (
     <button onClick={previousSlide}
-    className={css`
-    padding: 15px 30px;
-    background: transparent;
-    color: rgba(230, 126, 34, 1);
-    font-size: 45px;
-    border: none;
-    position: absolute;
-    bottom: 11rem;
-    left: -1rem;
-    &:hover {
-      color: rgba(0, 0, 0, .8);
-      cursor: pointer;
-    }
-    &:focus {
-      border: none;
-    }
-  `}>
+    className='nabtn-left'>
       <AiOutlineLeft />
     </button>
   )}
               renderCenterRightControls={({ nextSlide }) => (
     <button onClick={nextSlide}
-    className={css`
-    padding: 15px 30px;
-    background: transparent;
-    color: rgba(230, 126, 34, 1);
-    font-size: 45px;
-    border: none;
-    position: absolute;
-    bottom: 11rem;
-    right: -1rem;
-    &:hover {
-      color: rgba(0, 0, 0, .8);
-      cursor: pointer;
-    }
-    &:focus {
-      border: none;
-    }
-  `}>
+    className='nabtn-right'>
       <AiOutlineRight/>
     </button>
   )}
