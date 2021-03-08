@@ -324,3 +324,23 @@ collections:
                   },
                 ],
             }
+      - file: "src/pages/slider/index.md"
+        label: "Slider Page"
+        name: "slider"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "slider-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - {
+              label: Slider,
+              name: slider,
+              widget: list,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                ],
+            }

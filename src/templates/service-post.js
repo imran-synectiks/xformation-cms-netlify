@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
@@ -8,7 +8,7 @@ import Testimonials from "../components/Testimonials";
 import Content, { HTMLContent } from "../components/Content";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Carousel from 'nuka-carousel';
-import { AiOutlineLeft,AiOutlineRight,AiFillDownCircle,AiFillUpCircle } from "react-icons/ai";
+import { AiOutlineLeft, AiOutlineRight, AiFillDownCircle, AiFillUpCircle } from "react-icons/ai";
 import { css, cx } from '@emotion/css'
 import styled from '@emotion/styled'
 import './service.css'
@@ -32,118 +32,118 @@ export const ServicePostTemplate = ({
 }) => {
   const PostContent = contentComponent || Content;
 
-const [state, setState] = useState({
-  // ...state,
-  slideIndex: 0,
-  currentSlide: undefined,
+  const [state, setState] = useState({
+    // ...state,
+    slideIndex: 0,
+    currentSlide: undefined,
 
-  primaryRef: React.useRef(),
-  secondaryRef: React.useRef()
-});
+    primaryRef: React.useRef(),
+    secondaryRef: React.useRef()
+  });
 
   return (
     <>
 
-    <section className="section" id='top'>
-      {helmet || ""}
-      <div className="container-fluid content">
-        <div className="columns">
-          <div className=""
-          >
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
-            {/* <Testimonials testimonials={testimonials} />  */}
+      <section className="section" id='top'>
+        {helmet || ""}
+        <div className="container-fluid content">
+          <div className="columns">
+            <div className=""
+            >
+              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+                {title}
+              </h1>
+              <p>{description}</p>
+              {/* <Testimonials testimonials={testimonials} />  */}
               <div className='btn-stack'>
-            <button className={`${state.slideIndex === 0 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 0 })}>{page1.heading}</button>
-            <button className={`${state.slideIndex === 1 ? 'mybtnactive' : 'mybtn'}`} onClick={() =>  setState({ slideIndex: 1 })}>{page2.heading}</button>
-             <button className={`${state.slideIndex === 2 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 2 })}>{page3.heading}</button>
-            <button className={`${state.slideIndex === 3 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 3 })}>{page4.heading}</button>
+                <button className={`${state.slideIndex === 0 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 0 })}>{page1.heading}</button>
+                <button className={`${state.slideIndex === 1 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 1 })}>{page2.heading}</button>
+                <button className={`${state.slideIndex === 2 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 2 })}>{page3.heading}</button>
+                <button className={`${state.slideIndex === 3 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 3 })}>{page4.heading}</button>
 
-          </div>
-
-            <div style={{marginTop: '20px'}}>
-              <Carousel
-
-              slideIndex={state.slideIndex}
-              currentSlide={state.currentSlide}
-              rendertopCenterControls={true}
-
-              renderCenterLeftControls={({ previousSlide }) => (
-    <button onClick={previousSlide}
-    className='nabtn-left'>
-      <AiOutlineLeft />
-    </button>
-  )}
-              renderCenterRightControls={({ nextSlide }) => (
-    <button onClick={nextSlide}
-    className='nabtn-right'>
-      <AiOutlineRight/>
-    </button>
-  )}
-              renderTopCenterControls={({ currentSlide }) => (
-                <div>Slide: {currentSlide + 1}</div>
-  )}
->
-            <div>
-              <div className='page-heading'>
-              <h3>{page1.heading}</h3>
               </div>
-              <div>
+
+              <div style={{ marginTop: '20px' }}>
+                <Carousel
+
+                  slideIndex={state.slideIndex}
+                  currentSlide={state.currentSlide}
+                  rendertopCenterControls={true}
+
+                  renderCenterLeftControls={({ previousSlide }) => (
+                    <button onClick={previousSlide}
+                      className='nabtn-left'>
+                      <AiOutlineLeft />
+                    </button>
+                  )}
+                  renderCenterRightControls={({ nextSlide }) => (
+                    <button onClick={nextSlide}
+                      className='nabtn-right'>
+                      <AiOutlineRight />
+                    </button>
+                  )}
+                  renderTopCenterControls={({ currentSlide }) => (
+                    <div>Slide: {currentSlide + 1}</div>
+                  )}
+                >
+                  <div>
+                    <div className='page-heading'>
+                      <h3>{page1.heading}</h3>
+                    </div>
+                    <div>
                       <p>{page1.description}</p>
-              </div>
-            </div>
+                    </div>
+                  </div>
 
-            <div>
-              <div className='page-heading'>
-              <h3>{page2.heading}</h3>
-              </div>
-              <div>
-                {page2.description}
-              </div>
-            </div>
+                  <div>
+                    <div className='page-heading'>
+                      <h3>{page2.heading}</h3>
+                    </div>
+                    <div>
+                      {page2.description}
+                    </div>
+                  </div>
 
-            <div>
-              <div className='page-heading'>
-              <h3>{page3.heading}</h3>
-              </div>
-              <div>
-                {page3.description}
-              </div>
-            </div>
+                  <div>
+                    <div className='page-heading'>
+                      <h3>{page3.heading}</h3>
+                    </div>
+                    <div>
+                      {page3.description}
+                    </div>
+                  </div>
 
-            <div>
-              <div className='page-heading'>
-              <h3>{page4.heading}</h3>
-              </div>
-              <div>
-                {page4.description}
-              </div>
-            </div>
-         </Carousel>
+                  <div>
+                    <div className='page-heading'>
+                      <h3>{page4.heading}</h3>
+                    </div>
+                    <div>
+                      {page4.description}
+                    </div>
+                  </div>
+                </Carousel>
 
-           <ScrollBottom showBelow={200}/>
-            </div>
-                        <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag) => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
+                <ScrollBottom showBelow={200} />
               </div>
-            ) : null}
+              <PostContent content={content} />
+              {tags && tags.length ? (
+                <div style={{ marginTop: `4rem` }}>
+                  <h4>Tags</h4>
+                  <ul className="taglist">
+                    {tags.map((tag) => (
+                      <li key={tag + `tag`}>
+                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* <div className={css`
+      {/* <div className={css`
       display: flex;
       justify-content: center;
     `}>
@@ -151,8 +151,8 @@ const [state, setState] = useState({
         font-size: 2rem;
       `}/></a>
     </div> */}
-    <ScrollTop showAbove={50}/>
-  </>
+      <ScrollTop showAbove={50} />
+    </>
   );
 };
 
