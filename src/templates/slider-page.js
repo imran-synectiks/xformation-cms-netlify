@@ -7,9 +7,7 @@ export const SliderPageTemplate = ({
   slider,
 }) => {
   return (
-    <section className="section">
-      <Slider slider={slider} />
-    </section>
+    <Slider slider={slider} />
   )
 }
 
@@ -20,7 +18,7 @@ SliderPageTemplate.propTypes = {
 const SliderPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   return (
-    <div className="slider">
+    <div className="slider-container">
       <SliderPageTemplate
         slider={frontmatter.slider}
       />
@@ -50,6 +48,8 @@ export const sliderPageQuery = graphql`
               }
             }
           }
+          name
+          text
         }
       }
     }

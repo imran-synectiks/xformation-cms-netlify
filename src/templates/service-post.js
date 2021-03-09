@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
-import Testimonials from "../components/Testimonials";
 import Content, { HTMLContent } from "../components/Content";
-import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Carousel from 'nuka-carousel';
-import { AiOutlineLeft, AiOutlineRight, AiFillDownCircle, AiFillUpCircle } from "react-icons/ai";
-import { css, cx } from '@emotion/css'
-import styled from '@emotion/styled'
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { v4 } from 'uuid';
 import './service.css'
 import ScrollTop from '../components/ScrollTop'
-import ScrollBottom from '../components/ScrollBottom'
+// import ScrollBottom from '../components/ScrollBottom'
 
 export const ServicePostTemplate = ({
   content,
@@ -21,55 +18,35 @@ export const ServicePostTemplate = ({
   description,
   tags,
   title,
-  testimonials,
-  page1,
-  page2,
-  page3,
-  page4,
-  primaryRef,
-  secondaryRef,
+  page,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
-
-  const [state, setState] = useState({
-    // ...state,
-    slideIndex: 0,
-    currentSlide: undefined,
-
-    primaryRef: React.useRef(),
-    secondaryRef: React.useRef()
-  });
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
     <>
-
       <section className="section" id='top'>
         {helmet || ""}
-        <div className="container-fluid content">
+        <div className="container content">
           <div className="columns">
-            <div className=""
-            >
+            <div className="column is-12">
               <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
                 {title}
               </h1>
               <p>{description}</p>
-              {/* <Testimonials testimonials={testimonials} />  */}
               <div className='btn-stack'>
-                <button className={`${state.slideIndex === 0 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 0 })}>{page1.heading}</button>
-                <button className={`${state.slideIndex === 1 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 1 })}>{page2.heading}</button>
-                <button className={`${state.slideIndex === 2 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 2 })}>{page3.heading}</button>
-                <button className={`${state.slideIndex === 3 ? 'mybtnactive' : 'mybtn'}`} onClick={() => setState({ slideIndex: 3 })}>{page4.heading}</button>
-
+                {page.map((pageContent, index) => (
+                  <button key={v4()} className={`${currentSlide === index ? 'mybtnactive' : 'mybtn'}`} onClick={() => setCurrentSlide(index)}>
+                    {pageContent.heading}
+                  </button>
+                ))}
               </div>
-
               <div style={{ marginTop: '20px' }}>
                 <Carousel
-
-                  slideIndex={state.slideIndex}
-                  currentSlide={state.currentSlide}
+                  afterSlide={slideIndex => setCurrentSlide(slideIndex)}
+                  slideIndex={currentSlide}
                   rendertopCenterControls={true}
-
                   renderCenterLeftControls={({ previousSlide }) => (
                     <button onClick={previousSlide}
                       className='nabtn-left'>
@@ -82,48 +59,19 @@ export const ServicePostTemplate = ({
                       <AiOutlineRight />
                     </button>
                   )}
-                  renderTopCenterControls={({ currentSlide }) => (
-                    <div>Slide: {currentSlide + 1}</div>
-                  )}
                 >
-                  <div>
-                    <div className='page-heading'>
-                      <h3>{page1.heading}</h3>
+                  {page.map((pageContent) => (
+                    <div key={v4()}>
+                      <div className='page-heading'>
+                        <h3 className="has-text-centered has-text-weight-semibold is-size-2">{pageContent.heading}</h3>
+                      </div>
+                      <div className='page-content'>
+                        <p>{pageContent.description}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p>{page1.description}</p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className='page-heading'>
-                      <h3>{page2.heading}</h3>
-                    </div>
-                    <div>
-                      {page2.description}
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className='page-heading'>
-                      <h3>{page3.heading}</h3>
-                    </div>
-                    <div>
-                      {page3.description}
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className='page-heading'>
-                      <h3>{page4.heading}</h3>
-                    </div>
-                    <div>
-                      {page4.description}
-                    </div>
-                  </div>
+                  ))}
                 </Carousel>
-
-                <ScrollBottom showBelow={200} />
+                {/* <ScrollBottom showBelow={200} /> */}
               </div>
               <PostContent content={content} />
               {tags && tags.length ? (
@@ -142,15 +90,6 @@ export const ServicePostTemplate = ({
           </div>
         </div>
       </section>
-
-      {/* <div className={css`
-      display: flex;
-      justify-content: center;
-    `}>
-      <a href="#top" ><AiFillUpCircle className={css`
-        font-size: 2rem;
-      `}/></a>
-    </div> */}
       <ScrollTop showAbove={50} />
     </>
   );
@@ -163,23 +102,12 @@ ServicePostTemplate.propTypes = {
   testimonials: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
-  slideIndex: PropTypes.number,
-  page1: PropTypes.shape({
-    heading: PropTypes.string,
-    description: PropTypes.string,
-  }),
-  page2: PropTypes.shape({
-    heading: PropTypes.string,
-    description: PropTypes.string,
-  }),
-  page3: PropTypes.shape({
-    heading: PropTypes.string,
-    description: PropTypes.string,
-  }),
-  page4: PropTypes.shape({
-    heading: PropTypes.string,
-    description: PropTypes.string,
-  }),
+  page: PropTypes.arrayOf(
+    PropTypes.shape({
+      heading: PropTypes.string,
+      description: PropTypes.string,
+    })
+  ),
 };
 
 const ServicePost = ({ data }) => {
@@ -192,10 +120,7 @@ const ServicePost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         testimonials={post.frontmatter.testimonials}
-        page1={post.frontmatter.page1}
-        page2={post.frontmatter.page2}
-        page3={post.frontmatter.page3}
-        page4={post.frontmatter.page4}
+        page={post.frontmatter.page}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
@@ -234,19 +159,7 @@ export const pageQuery = graphql`
           author
           quote
         }
-        page1 {
-          description
-          heading
-        }
-        page2 {
-          description
-          heading
-        }
-        page3 {
-          description
-          heading
-        }
-        page4 {
+        page {
           description
           heading
         }

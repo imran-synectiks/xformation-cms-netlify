@@ -18,6 +18,7 @@
   border-bottom: 5px solid #58e23c;
   width: 12vw;
 }
+
 .btn-stack {
   display: flex;
   justify-content: space-around;
@@ -26,6 +27,7 @@
   position: relative;
   top: 1.25rem;
 }
+
 .nabtn-left {
   padding: 15px 30px;
   background: transparent;
@@ -36,6 +38,7 @@
   bottom: 25vh;
   left: -1rem;
 }
+
 .nabtn-right {
   padding: 15px 30px;
   background: transparent;
@@ -61,45 +64,81 @@
   background: #dcdcdc;
   text-align: center;
 }
+
 .scrollBtn:hover {
   transition: 0.3s;
   color: #397ba6;
   background-color: #dcdcdc;
 }
+
 .Mui-focusVisible {
   transition: 0.3s;
   color: #397ba6;
   background-color: #dcdcdc;
 }
+
 .page-heading {
   padding: 16rem 5.1rem;
   cursor: text;
   background: #aee1e1;
   color: #456268;
 }
+
+
+
+.content .slider-control-bottomcenter li {
+  margin-top: 0;
+}
+
+.content .page-content {
+  padding-top: 30px;
+}
+
+.slider-control-bottomcenter {
+  top: 550px;
+}
+
+.slider-control-centerright,
+.slider-control-centerleft {
+  top: 500px !important;
+  cursor: pointer;
+}
+
+
 @media (max-width: 678px) {
   .page-heading {
     padding: 9rem 5.1rem;
   }
+
   .scrollBtn {
     position: absolute;
     top: 130vh;
     left: 45%;
   }
+
   .mybtn {
     width: auto;
     font-size: 12px;
     padding: 10px;
   }
+
   .mybtnactive {
     padding: 10px;
     width: auto;
     font-size: 12px;
   }
-  .nabtn-right,
-  .nabtn-left {
-    /* position: inherit;
-    bottom: 71rem; */
-    display: none;
+
+  .slider-control-bottomcenter {
+    top: 300px;
+  }
+
+  .slider-control-centerright,
+  .slider-control-centerleft {
+    top: 390px !important;
+  }
+
+  .slider .is-size-2 {
+    font-size: 2rem !important;
+    margin-bottom: 0;
   }
 }
