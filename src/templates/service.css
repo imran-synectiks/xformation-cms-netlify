@@ -29,25 +29,27 @@
 }
 
 .nabtn-left {
-  padding: 15px 30px;
+  padding: 0px 30px;
   background: transparent;
   color: rgba(230, 126, 34, 1);
   font-size: 45px;
   border: none;
   position: absolute;
-  bottom: 25vh;
+  top: -3%;
   left: -1rem;
+  cursor: pointer;
 }
 
 .nabtn-right {
-  padding: 15px 30px;
+  padding: 0px 30px;
   background: transparent;
   color: rgba(230, 126, 34, 1);
   font-size: 45px;
   border: none;
   position: absolute;
   right: -1rem;
-  bottom: 25vh;
+  top: -3%;
+  cursor: pointer;
 }
 
 .scrollBtn {
@@ -100,8 +102,8 @@
 
 .slider-control-centerright,
 .slider-control-centerleft {
-  top: 500px !important;
-  cursor: pointer;
+  position: fixed !important;
+  transform: translateY(0%) !important;
 }
 
 
@@ -130,11 +132,6 @@
 
   .slider-control-bottomcenter {
     top: 300px;
-  }
-
-  .slider-control-centerright,
-  .slider-control-centerleft {
-    top: 390px !important;
   }
 
   .slider .is-size-2 {

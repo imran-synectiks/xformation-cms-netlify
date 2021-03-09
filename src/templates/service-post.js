@@ -10,7 +10,7 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { v4 } from 'uuid';
 import './service.css'
 import ScrollTop from '../components/ScrollTop'
-// import ScrollBottom from '../components/ScrollBottom'
+import ScrollBottom from '../components/ScrollBottom'
 
 export const ServicePostTemplate = ({
   content,
@@ -71,7 +71,7 @@ export const ServicePostTemplate = ({
                     </div>
                   ))}
                 </Carousel>
-                {/* <ScrollBottom showBelow={200} /> */}
+                <ScrollBottom showBelow={200} />
               </div>
               <PostContent content={content} />
               {tags && tags.length ? (

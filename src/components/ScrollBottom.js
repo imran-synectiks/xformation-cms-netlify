@@ -1,15 +1,13 @@
-import React,{useState, useEffect} from 'react'
-import {makeStyles} from '@material-ui/core/styles';
+import React, { useState, useEffect } from 'react'
+import { makeStyles } from '@material-ui/core/styles';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import IconButton from '@material-ui/core/IconButton';
-import '../templates/service.css'
-import { BiChevronDown } from "react-icons/bi";
 
-const useStyles = makeStyles((theme) =>({
+const useStyles = makeStyles((theme) => ({
     toTop: {
-        zIndex:2,
-        position: 'absolute',
-        top: '72vh',
+        zIndex: 2,
+        position: 'fixed',
+        bottom: '1rem',
         backgroundColor: '#DCDCDC',
         color: 'black',
         "&:hover, &.Mui-focusVisible": {
@@ -17,8 +15,8 @@ const useStyles = makeStyles((theme) =>({
             color: '#397BA6',
             backgroundColor: '#DCDCDC'
         },
-        right: '50%',
-        margin: '2rem'
+        left: '2%',
+        padding: '7px'
     }
 }))
 
@@ -51,12 +49,9 @@ const ScrollBottom = ({
 
     return (
         <div>
-
-
-                {/* <IconButton onClick={handleClick} className={classes.toTop}> */}
-                    <BiChevronDown onClick={handleClick} className='scrollBtn'/>
-
-
+            <IconButton onClick={handleClick} className={classes.toTop}>
+                <ExpandMoreIcon />
+            </IconButton>
         </div>
     )
 }

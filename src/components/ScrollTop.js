@@ -1,11 +1,11 @@
-import React,{useState, useEffect} from 'react'
-import {makeStyles} from '@material-ui/core/styles';
+import React, { useState, useEffect } from 'react'
+import { makeStyles } from '@material-ui/core/styles';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import IconButton from '@material-ui/core/IconButton';
 
-const useStyles = makeStyles((theme) =>({
+const useStyles = makeStyles((theme) => ({
     toTop: {
-        zIndex:2,
+        zIndex: 2,
         position: 'fixed',
         bottom: '1rem',
         backgroundColor: '#DCDCDC',
@@ -15,7 +15,8 @@ const useStyles = makeStyles((theme) =>({
             color: '#397BA6',
             backgroundColor: '#DCDCDC'
         },
-        right: '5%'
+        right: '2%',
+        padding: '7px'
     }
 }))
 
@@ -48,11 +49,9 @@ const ScrollTop = ({
 
     return (
         <div>
-
-                <IconButton onClick={handleClick} className={classes.toTop}>
-                    <ExpandLessIcon />
-                </IconButton>
-
+            <IconButton onClick={handleClick} className={classes.toTop}>
+                <ExpandLessIcon />
+            </IconButton>
         </div>
     )
 }
