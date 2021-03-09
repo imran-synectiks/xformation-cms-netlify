@@ -15,7 +15,7 @@ page:
       The internet was set on fire (pun intended) this week, by what I'm calling
       'fox gate', and chances are you might have seen a meme or two about the
       Firefox logo.
-      - heading: Page Three
+    - heading: Page Three
     description: >-
       The internet was set on fire (pun intended) this week, by what I'm calling
       'fox gate', and chances are you might have seen a meme or two about the
