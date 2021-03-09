@@ -36,11 +36,11 @@ export const ServicePostTemplate = ({
               </h1>
               <p>{description}</p>
               <div className='btn-stack'>
-                {page.map((pageContent, index) => (
+                {page ? page.map((pageContent, index) => (
                   <button key={v4()} className={`${currentSlide === index ? 'mybtnactive' : 'mybtn'}`} onClick={() => setCurrentSlide(index)}>
                     {pageContent.heading}
                   </button>
-                ))}
+                )) : <></>}
               </div>
               <div style={{ marginTop: '20px' }}>
                 <Carousel
@@ -60,7 +60,7 @@ export const ServicePostTemplate = ({
                     </button>
                   )}
                 >
-                  {page.map((pageContent) => (
+                  {page ? page.map((pageContent) => (
                     <div key={v4()}>
                       <div className='page-heading'>
                         <h3 className="has-text-centered has-text-weight-semibold is-size-2">{pageContent.heading}</h3>
@@ -69,7 +69,7 @@ export const ServicePostTemplate = ({
                         <p>{pageContent.description}</p>
                       </div>
                     </div>
-                  ))}
+                  )) : <></>}
                 </Carousel>
                 <ScrollBottom showBelow={200} />
               </div>
