@@ -10,7 +10,7 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { v4 } from 'uuid';
 import './service.css'
 import ScrollTop from '../components/ScrollTop'
-import ScrollBottom from '../components/ScrollBottom'
+// import ScrollBottom from '../components/ScrollBottom'
 
 export const ServicePostTemplate = ({
   content,
@@ -36,11 +36,11 @@ export const ServicePostTemplate = ({
               </h1>
               <p>{description}</p>
               <div className='btn-stack'>
-                {page ? page.map((pageContent, index) => (
+                {page.map((pageContent, index) => (
                   <button key={v4()} className={`${currentSlide === index ? 'mybtnactive' : 'mybtn'}`} onClick={() => setCurrentSlide(index)}>
                     {pageContent.heading}
                   </button>
-                )) : <></>}
+                ))}
               </div>
               <div style={{ marginTop: '20px' }}>
                 <Carousel
@@ -60,7 +60,7 @@ export const ServicePostTemplate = ({
                     </button>
                   )}
                 >
-                  {page ? page.map((pageContent) => (
+                  {page.map((pageContent) => (
                     <div key={v4()}>
                       <div className='page-heading'>
                         <h3 className="has-text-centered has-text-weight-semibold is-size-2">{pageContent.heading}</h3>
@@ -69,9 +69,9 @@ export const ServicePostTemplate = ({
                         <p>{pageContent.description}</p>
                       </div>
                     </div>
-                  )) : <></>}
+                  ))}
                 </Carousel>
-                <ScrollBottom showBelow={200} />
+                {/* <ScrollBottom showBelow={200} /> */}
               </div>
               <PostContent content={content} />
               {tags && tags.length ? (
