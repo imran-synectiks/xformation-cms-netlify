@@ -4,21 +4,22 @@ title: "Just in: small batch of Jamaican Blue Mountain in store next week"
 date: 2017-01-04T15:04:10.000Z
 description: We’re proud to announce that we’ll be offering a small batch of
   Jamaica Blue Mountain coffee beans in our store next week.
-page1:
-  heading: ss
-  description: aa
-  image1:
-    image: /img/chemex.jpg
-    alt: ss
-page2:
-  heading: dd
-  description: ee
-page3:
-  heading: ww
-  description: qq
-page4:
-  heading: ww
-  description: rr
+page:
+  - heading: Page One
+    description: >-
+     The internet was set on fire (pun intended) this week, by what I'm calling
+      'fox gate', and chances are you might have seen a meme or two about the
+      Firefox logo. Many people were pulling
+  - heading: Page Two
+    description: >-
+      The internet was set on fire (pun intended) this week, by what I'm calling
+      'fox gate', and chances are you might have seen a meme or two about the
+      Firefox logo.
+  - heading: Page Three
+    description: >-
+      The internet was set on fire (pun intended) this week, by what I'm calling
+      'fox gate', and chances are you might have seen a meme or two about the
+      Firefox logo.
 featuredpost: true
 testimonials:
   - quote: hi

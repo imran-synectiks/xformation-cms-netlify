@@ -3,21 +3,22 @@ templateKey: service-post
 title: New Service
 date: 2021-02-26T12:46:45.856Z
 description: New Service Description
-page1:
-  heading: Page 1 Heading
-  description: Page 1 Description
-  image1:
-    image: /img/flavor_wheel.jpg
-    alt: NewService
-page2:
-  heading: Page 2 Heading
-  description: Page 2 Description
-page3:
-  heading: Page 3 Heading
-  description: Page 3 Description
-page4:
-  heading: Page 4 Heading
-  description: Page 4 Description
+page:
+  - heading: Page One
+    description: >-
+     The internet was set on fire (pun intended) this week, by what I'm calling
+      'fox gate', and chances are you might have seen a meme or two about the
+      Firefox logo. Many people were pulling
+  - heading: Page Two
+    description: >-
+      The internet was set on fire (pun intended) this week, by what I'm calling
+      'fox gate', and chances are you might have seen a meme or two about the
+      Firefox logo.
+  - heading: Page Three
+    description: >-
+      The internet was set on fire (pun intended) this week, by what I'm calling
+      'fox gate', and chances are you might have seen a meme or two about the
+      Firefox logo.
 testimonials:
   - quote: Testimonals 1
     author: MyTestimonal
