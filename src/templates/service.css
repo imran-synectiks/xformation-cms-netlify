@@ -2,8 +2,8 @@
 	cursor: pointer;
 	padding: inherit;
 	border: none;
-	background-color: #f5f5f5;
-	color: rgba(29, 24, 24, 0.863);
+	background-color: transparent;
+	color: rgba(255, 255, 255, 0.863);
 	width: 12vw;
 	font-size: 1rem;
 }
@@ -13,16 +13,16 @@
 	cursor: pointer;
 	padding: inherit;
 	border: none;
-	background-color: #f5f5f5;
-	color: rgba(29, 24, 24, 0.863);
-	border-bottom: 5px solid #58e23c;
+	background-color: transparent;
+	color: rgba(255, 255, 255, 0.863);
+	border-bottom: 5px solid #ffffdc;
 	width: 12vw;
 }
 
 .btn-stack {
 	display: flex;
 	justify-content: space-around;
-	background-color: #fce8e8;
+	background-color: rgba(0, 0, 0, 0.8);
 	padding: 10px;
 	position: relative;
 	top: 1.25rem;
@@ -108,7 +108,7 @@
 	position: relative;
 	top: 5px;
 	left: -8px;
-	font-size: 1.1rem;
+	font-size: 1.8rem;
 }
 
 @media (max-width: 678px) {
