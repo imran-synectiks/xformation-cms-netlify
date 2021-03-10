@@ -37,7 +37,8 @@ const ScrollBottom = ({
     }
 
     const handleClick = () => {
-        window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
+        window.scrollBy(0, 100);
+        // window[`scrollTo`]({ top: document.body.scrollHeight, behavior: `smooth` })
     }
 
     useEffect(() => {
