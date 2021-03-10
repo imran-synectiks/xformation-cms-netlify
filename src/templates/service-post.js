@@ -6,7 +6,8 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import Carousel from 'nuka-carousel';
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { AiOutlineLeft, AiOutlineRight,AiOutlineArrowDown } from "react-icons/ai";
+import { BsArrowDown } from "react-icons/bs";
 import { v4 } from 'uuid';
 import './service.css'
 import ScrollTop from '../components/ScrollTop'
@@ -31,13 +32,16 @@ export const ServicePostTemplate = ({
         <div className="container content">
           <div className="columns">
             <div className="column is-12">
-              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+              {/* <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
                 {title}
               </h1>
-              <p>{description}</p>
+              <p>{description}</p> */}
               <div className='btn-stack'>
                 {page.map((pageContent, index) => (
                   <button key={v4()} className={`${currentSlide === index ? 'mybtnactive' : 'mybtn'}`} onClick={() => setCurrentSlide(index)}>
+                  <span className='btn-arr-down'>
+                    <BsArrowDown/>
+                  </span>
                     {pageContent.heading}
                   </button>
                 ))}
@@ -71,7 +75,7 @@ export const ServicePostTemplate = ({
                     </div>
                   ))}
                 </Carousel>
-                <ScrollBottom showBelow={200} />
+                <ScrollBottom showBelow={100} />
               </div>
               <PostContent content={content} />
               {tags && tags.length ? (

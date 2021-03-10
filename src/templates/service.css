@@ -1,141 +1,145 @@
 .mybtn {
-  cursor: pointer;
-  padding: inherit;
-  border: none;
-  background-color: #f5f5f5;
-  color: rgba(29, 24, 24, 0.863);
-  width: 12vw;
-  font-size: 1rem;
+	cursor: pointer;
+	padding: inherit;
+	border: none;
+	background-color: transparent;
+	color: rgba(255, 255, 255, 0.863);
+	width: 12vw;
+	font-size: 1rem;
 }
 
 .mybtnactive {
-  font-size: 1rem;
-  cursor: pointer;
-  padding: inherit;
-  border: none;
-  background-color: #f5f5f5;
-  color: rgba(29, 24, 24, 0.863);
-  border-bottom: 5px solid #58e23c;
-  width: 12vw;
+	font-size: 1rem;
+	cursor: pointer;
+	padding: inherit;
+	border: none;
+	background-color: transparent;
+	color: rgba(255, 255, 255, 0.863);
+	border-bottom: 5px solid #ffffdc;
+	width: 12vw;
 }
 
 .btn-stack {
-  display: flex;
-  justify-content: space-around;
-  background-color: #fce8e8;
-  padding: 10px;
-  position: relative;
-  top: 1.25rem;
+	display: flex;
+	justify-content: space-around;
+	background-color: rgba(0, 0, 0, 0.8);
+	padding: 10px;
+	position: relative;
+	top: 1.25rem;
 }
 
 .nabtn-left {
-  padding: 0px 30px;
-  background: transparent;
-  color: rgba(230, 126, 34, 1);
-  font-size: 45px;
-  border: none;
-  position: absolute;
-  top: -3%;
-  left: -1rem;
-  cursor: pointer;
+	padding: 0px 30px;
+	background: transparent;
+	color: rgba(230, 126, 34, 1);
+	font-size: 45px;
+	border: none;
+	position: absolute;
+	top: -3%;
+	left: -1rem;
+	cursor: pointer;
 }
 
 .nabtn-right {
-  padding: 0px 30px;
-  background: transparent;
-  color: rgba(230, 126, 34, 1);
-  font-size: 45px;
-  border: none;
-  position: absolute;
-  right: -1rem;
-  top: -3%;
-  cursor: pointer;
+	padding: 0px 30px;
+	background: transparent;
+	color: rgba(230, 126, 34, 1);
+	font-size: 45px;
+	border: none;
+	position: absolute;
+	right: -1rem;
+	top: -3%;
+	cursor: pointer;
 }
 
 .scrollBtn {
-  z-index: 2;
-  position: absolute;
-  top: 82vh;
-  color: black;
-  right: 50%;
-  border: none;
-  font-size: 2rem;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  background: #dcdcdc;
-  text-align: center;
+	z-index: 2;
+	position: absolute;
+	top: 82vh;
+	color: black;
+	right: 50%;
+	border: none;
+	font-size: 2rem;
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	background: #dcdcdc;
+	text-align: center;
 }
 
 .scrollBtn:hover {
-  transition: 0.3s;
-  color: #397ba6;
-  background-color: #dcdcdc;
+	transition: 0.3s;
+	color: #397ba6;
+	background-color: #dcdcdc;
 }
 
 .Mui-focusVisible {
-  transition: 0.3s;
-  color: #397ba6;
-  background-color: #dcdcdc;
+	transition: 0.3s;
+	color: #397ba6;
+	background-color: #dcdcdc;
 }
 
 .page-heading {
-  padding: 16rem 5.1rem;
-  cursor: text;
-  background: #aee1e1;
-  color: #456268;
+	padding: 16rem 5.1rem;
+	cursor: text;
+	background: #aee1e1;
+	color: #456268;
 }
 
-
-
 .content .slider-control-bottomcenter li {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 .content .page-content {
-  padding-top: 30px;
+	padding-top: 30px;
 }
 
 .slider-control-bottomcenter {
-  top: 550px;
+	top: 550px;
 }
 
 .slider-control-centerright,
 .slider-control-centerleft {
-  position: fixed !important;
-  transform: translateY(0%) !important;
+	position: fixed !important;
+	transform: translateY(0%) !important;
 }
 
+.btn-arr-down {
+	position: relative;
+	top: 5px;
+	left: -8px;
+	font-size: 1.8rem;
+}
 
 @media (max-width: 678px) {
-  .page-heading {
-    padding: 9rem 5.1rem;
-  }
+	.page-heading {
+		padding: 9rem 5.1rem;
+	}
 
-  .scrollBtn {
-    position: absolute;
-    top: 130vh;
-    left: 45%;
-  }
+	.scrollBtn {
+		position: absolute;
+		top: 130vh;
+		left: 45%;
+	}
 
-  .mybtn {
-    width: auto;
-    font-size: 12px;
-    padding: 10px;
-  }
+	.mybtn {
+		width: auto;
+		font-size: 12px;
+		padding: 10px;
+	}
 
-  .mybtnactive {
-    padding: 10px;
-    width: auto;
-    font-size: 12px;
-  }
+	.mybtnactive {
+		padding: 10px;
+		width: auto;
+		font-size: 12px;
+	}
 
-  .slider-control-bottomcenter {
-    top: 300px;
-  }
+	.slider-control-bottomcenter {
+		top: 300px;
+	}
 
-  .slider .is-size-2 {
-    font-size: 2rem !important;
-    margin-bottom: 0;
-  }
+	.slider .is-size-2 {
+		font-size: 2rem !important;
+		margin-bottom: 0;
+	}
 }
