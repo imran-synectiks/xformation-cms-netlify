@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Slider from '../components/Slider'
+import './slider.css'
 
 export const SliderPageTemplate = ({
   slider,

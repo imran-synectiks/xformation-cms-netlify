@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { v4 } from 'uuid'
 import Carousel from 'nuka-carousel';
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { AiOutlineLeft, AiOutlineRight, AiOutlineFullscreen } from "react-icons/ai";
 import { css, cx } from '@emotion/css'
 
 const Slider = ({ slider }) => (
@@ -42,15 +42,19 @@ const Slider = ({ slider }) => (
         <AiOutlineRight />
       </button>
     )}
+    dots={'false'}
   >
     {slider.map((sliderContent) => (
-      <article key={v4()} className="columns slider-content">
-        <div className="column is-12">
-          <div className="image">
-            <a href="#">
-              <img src={sliderContent.image.childImageSharp.fluid.src} alt="" width="500" height="350" />
-            </a>
-          </div>
+      <article key={v4()} className="slider-content">
+        <div className="image">
+          <a className="fullscreen" href="#">
+            <AiOutlineFullscreen />
+          </a>
+          <span>
+            <img src={sliderContent.image.childImageSharp.fluid.src} alt="" />
+          </span>
+        </div>
+        <div className="content">
           <h3 className="has-text-weight-semibold is-size-2">
             {sliderContent.name}
           </h3>
