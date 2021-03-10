@@ -31,10 +31,10 @@ export const ServicePostTemplate = ({
         <div className="container content">
           <div className="columns">
             <div className="column is-12">
-              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+              {/* <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
                 {title}
               </h1>
-              <p>{description}</p>
+              <p>{description}</p> */}
               <div className='btn-stack'>
                 {page.map((pageContent, index) => (
                   <button key={v4()} className={`${currentSlide === index ? 'mybtnactive' : 'mybtn'}`} onClick={() => setCurrentSlide(index)}>
@@ -71,7 +71,7 @@ export const ServicePostTemplate = ({
                     </div>
                   ))}
                 </Carousel>
-                <ScrollBottom showBelow={200} />
+                <ScrollBottom showBelow={100} />
               </div>
               <PostContent content={content} />
               {tags && tags.length ? (
