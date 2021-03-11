@@ -1,6 +1,6 @@
 ---
 templateKey: workflow-page
-title: json
+title: Json workflow
 workflowjson:
   data: >-
     [
