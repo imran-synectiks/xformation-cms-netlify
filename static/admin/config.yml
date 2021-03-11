@@ -68,6 +68,15 @@ collections:
               { label: Author, name: author, widget: string },
             ],
         }
+  - name: "workflowpost"
+    label: "Workflow Post"
+    folder: "src/pages/workflowpost"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "workflow-page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Workflow JSON", name: "workflowjson", widget: "object", fields: [{label: Data, name: data, widget: text}]}
 
   - name: "pages"
     label: "Pages"
