@@ -5,7 +5,7 @@ workflowjson:
   data: >-
     [
             {
-                "title": "New tab with workflow 3",
+                "title": "New tab with workflow latest",
                 "tabTitle": "This is workflow three tab1",
                 "subHeading": "Configure how Graylog should create Events of this kind. You can later use those Events as input on other Conditions, making it possible to build powerful Conditions based on others.",
                 "content": [
