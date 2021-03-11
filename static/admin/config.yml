@@ -302,3 +302,9 @@ collections:
                   { label: Text, name: text, widget: text },
                 ],
             }
+      - file: "src/pages/survey/index.md"
+        label: "Survey"
+        name: "survey"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "survey-page"}
+          - {label: "Survey JSON", name: "surveyjson", widget: "object", fields: [{label: Data, name: data, widget: text}]}

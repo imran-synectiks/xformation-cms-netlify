@@ -8,6 +8,7 @@ import ServicePostPreview from './preview-templates/ServicePostPreview'
 import ProductPagePreview from './preview-templates/ProductPagePreview'
 import SliderPagePreview from './preview-templates/SliderPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
+import SurveyTemplate from './preview-templates/SurveyPreview'
 
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
@@ -18,4 +19,5 @@ CMS.registerPreviewTemplate('products', ProductPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
 CMS.registerPreviewTemplate('service', ServicePostPreview)
 CMS.registerPreviewTemplate('slider', SliderPagePreview)
+CMS.registerPreviewTemplate('survey', SurveyTemplate)
 
