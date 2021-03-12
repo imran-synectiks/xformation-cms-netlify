@@ -33,6 +33,31 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
 
+  - name: "catalogue"
+    label: "Catalogue"
+    folder: "src/pages/catalogue"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: Slider,
+          name: slider,
+          widget: list,
+          fields:
+            [
+              { label: Image, name: image, widget: image },
+              { label: Name, name: name, widget: text },
+              { label: Text, name: text, widget: text },
+            ],
+        }
+
   - name: "service"
     label: "Service"
     folder: "src/pages/service"
