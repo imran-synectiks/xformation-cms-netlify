@@ -42,7 +42,7 @@ class CatalogueRoll extends React.Component {
     }
 }
 
-SliderRoll.propTypes = {
+CatalogueRoll.propTypes = {
     data: PropTypes.shape({
         allMarkdownRemark: PropTypes.shape({
             edges: PropTypes.array,

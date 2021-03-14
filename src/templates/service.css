@@ -6,9 +6,6 @@
 	color: rgba(255, 255, 255, 0.863);
 	width: 12vw;
 	font-size: 1rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .mybtnactive {
@@ -20,16 +17,13 @@
 	color: rgba(255, 255, 255, 0.863);
 	border-bottom: 5px solid #ffffdc;
 	width: 12vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .btn-stack {
 	display: flex;
 	justify-content: space-around;
 	background-color: rgba(0, 0, 0, 0.8);
-	padding: 3px;
+	padding: 10px;
 	position: relative;
 	top: 1.25rem;
 }
