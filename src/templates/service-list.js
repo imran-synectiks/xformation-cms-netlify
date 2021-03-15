@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
-import Carousel from 'nuka-carousel';
 import { AiOutlineLeft, AiOutlineRight, AiOutlineArrowDown } from 'react-icons/ai';
 import { BsArrowDown } from 'react-icons/bs';
 import { v4 } from 'uuid';
@@ -13,30 +12,30 @@ import './service.css';
 import ScrollTop from '../components/ScrollTop';
 import ScrollBottom from '../components/ScrollBottom';
 
-export const ServicePostTemplate = ({ content, contentComponent, description, tags, title, page, helmet }) => {
+export const ServiceListTemplate = ({ content, contentComponent, description, tags, title, page, helmet }) => {
 	const PostContent = contentComponent || Content;
-	const [ currentSlide, setCurrentSlide ] = useState(0);
+	// const [ currentSlide, setCurrentSlide ] = useState(0);
 
 	return (
-		<React.Fragment>
+		<>
 			<section className='section' id='top'>
 				{helmet || ''}
 				<div className='container content'>
 					<div className='columns'>
 						<div className='column is-12'>
 							{/* <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                {title}
               </h1>
               <p>{description}</p> */}
 							<div>
 								{page.map((pageContent) => (
 									<button key={v4()} className=''>
-										{pageContent.heading}
+										{title}
+										{/* {pageContent.heading} */}
 									</button>
 								))}
 							</div>
 
-							<PostContent content={content} />
+							{/* <PostContent content={content} /> */}
 							{tags && tags.length ? (
 								<div style={{ marginTop: `4rem` }}>
 									<h4>Tags</h4>
@@ -54,11 +53,11 @@ export const ServicePostTemplate = ({ content, contentComponent, description, ta
 				</div>
 			</section>
 			<ScrollTop showAbove={50} />
-		</React.Fragment>
+		</>
 	);
 };
 
-ServicePostTemplate.propTypes = {
+ServiceListTemplate.propTypes = {
 	content: PropTypes.node.isRequired,
 	contentComponent: PropTypes.func,
 	description: PropTypes.string,
@@ -73,19 +72,19 @@ ServicePostTemplate.propTypes = {
 	)
 };
 
-const ServicePost = ({ data }) => {
+const ServiceList = ({ data }) => {
 	const { markdownRemark: post } = data;
 
 	return (
 		<Layout>
-			<ServicePostTemplate
+			<ServiceListTemplate
 				content={post.html}
 				contentComponent={HTMLContent}
 				description={post.frontmatter.description}
 				testimonials={post.frontmatter.testimonials}
 				page={post.frontmatter.page}
 				helmet={
-					<Helmet titleTemplate='%s | Service'>
+					<Helmet titleTemplate='%s | Service List'>
 						<title>{`${post.frontmatter.title}`}</title>
 						<meta name='description' content={`${post.frontmatter.description}`} />
 					</Helmet>
@@ -97,13 +96,13 @@ const ServicePost = ({ data }) => {
 	);
 };
 
-ServicePost.propTypes = {
+ServiceList.propTypes = {
 	data: PropTypes.shape({
 		markdownRemark: PropTypes.object
 	})
 };
 
-export default ServicePost;
+export default ServiceList;
 
 export const pageQuery = graphql`
 	query ServiceListPostByID($id: String!) {
@@ -115,10 +114,6 @@ export const pageQuery = graphql`
 				title
 				description
 				tags
-				testimonials {
-					author
-					quote
-				}
 				page {
 					description
 					heading

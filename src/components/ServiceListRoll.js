@@ -47,7 +47,7 @@ export default () => (
 			query ServiceListRollQuery {
 				allMarkdownRemark(
 					sort: { order: DESC, fields: [frontmatter___date] }
-					filter: { frontmatter: { templateKey: { eq: "service-post" } } }
+					filter: { frontmatter: { templateKey: { eq: "service-list" } } }
 				) {
 					edges {
 						node {

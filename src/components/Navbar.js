@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 import github from '../img/github-icon.svg';
 import logo from '../img/logo.svg';
+import ServiceRoll from './ServiceRoll';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
+import { css, cx } from '@emotion/css';
 
 const Navbar = class extends React.Component {
 	constructor(props) {
@@ -62,7 +65,10 @@ const Navbar = class extends React.Component {
 								Blog
 							</Link>
 							<Link className='navbar-item' to='/service'>
-								Service
+								Services
+								<div className='sub-menu'>
+									<ServiceRoll />
+								</div>
 							</Link>
 							<Link className='navbar-item' to='/workflowpost'>
 								Workflow
