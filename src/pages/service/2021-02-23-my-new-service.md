@@ -9,7 +9,7 @@ description: The Coffee Taster’s Flavor Wheel, the official resource used by
   Taster’s Flavor Wheel, the official resource used by coffee tasters, has been
   revised for the first time this year.The Coffee Taster’s Flavor Wheel
 page:
-  - heading: Page One
+  - heading: Product One
     description: >-
       The internet was set on fire (pun intended) this week, by what I'm calling
       'fox gate', and chances are you might have seen a meme or two about the
@@ -52,7 +52,7 @@ page:
 
 
       Recently, JavaScript's popularity has expanded even further through the successful Node.js platform—the most popular cross-platform JavaScript runtime environment outside the browser. Node.js - built using Chrome's V8 JavaScript Engine - allows developers to use JavaScript as a scripting language to automate things on a computer and build fully functional HTTP and Web Sockets servers.    
-  - heading: Page Two
+  - heading: Product Two
     description: >-
       The internet was set on fire (pun intended) this week, by what I'm calling
       'fox gate', and chances are you might have seen a meme or two about the
@@ -95,7 +95,7 @@ page:
 
 
       Recently, JavaScript's popularity has expanded even further through the successful Node.js platform—the most popular cross-platform JavaScript runtime environment outside the browser. Node.js - built using Chrome's V8 JavaScript Engine - allows developers to use JavaScript as a scripting language to automate things on a computer and build fully functional HTTP and Web Sockets servers.
-  - heading: Page Three
+  - heading: Product Three
     description: >-
       The internet was set on fire (pun intended) this week, by what I'm calling
       'fox gate', and chances are you might have seen a meme or two about the
@@ -138,7 +138,7 @@ page:
 
 
       Recently, JavaScript's popularity has expanded even further through the successful Node.js platform—the most popular cross-platform JavaScript runtime environment outside the browser. Node.js - built using Chrome's V8 JavaScript Engine - allows developers to use JavaScript as a scripting language to automate things on a computer and build fully functional HTTP and Web Sockets servers.  
-  - heading: Page Four
+  - heading: Product Four
     description: >-
       The internet was set on fire (pun intended) this week, by what I'm calling
       'fox gate', and chances are you might have seen a meme or two about the
