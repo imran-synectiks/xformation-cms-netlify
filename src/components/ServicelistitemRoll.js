@@ -3,16 +3,27 @@ import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import PreviewCompatibleImage from './PreviewCompatibleImage';
 
-class ServiceListRoll extends React.Component {
+class ServicelistitemRoll extends React.Component {
 	render() {
 		const { data } = this.props;
 		const { edges: posts } = data.allMarkdownRemark;
 
-		return <div className='columns is-multiline'>hi routes</div>;
+		return (
+			<>
+				{posts &&
+					posts.map(({ node: post }) => (
+						<div key={post.id} className='nav-sub-item'>
+							<Link className='sub-font has-text-left' to={post.fields.slug}>
+								{post.frontmatter.title}
+							</Link>
+						</div>
+					))}
+			</>
+		);
 	}
 }
 
-ServiceListRoll.propTypes = {
+ServicelistitemRoll.propTypes = {
 	data: PropTypes.shape({
 		allMarkdownRemark: PropTypes.shape({
 			edges: PropTypes.array
@@ -23,10 +34,10 @@ ServiceListRoll.propTypes = {
 export default () => (
 	<StaticQuery
 		query={graphql`
-			query ServiceListRollQuery {
+			query ServicelistitemRoll {
 				allMarkdownRemark(
 					sort: { order: DESC, fields: [frontmatter___date] }
-					filter: { frontmatter: { templateKey: { eq: "service-list" } } }
+					filter: { frontmatter: { templateKey: { eq: "service-post" } } }
 				) {
 					edges {
 						node {
@@ -36,18 +47,23 @@ export default () => (
 								slug
 							}
 							frontmatter {
-								page {
-									heading
-								}
 								title
 								templateKey
+								date(formatString: "MMMM DD, YYYY")
 								featuredpost
+								featuredimage {
+									childImageSharp {
+										fluid(maxWidth: 120, quality: 100) {
+											...GatsbyImageSharpFluid
+										}
+									}
+								}
 							}
 						}
 					}
 				}
 			}
 		`}
-		render={(data, count) => <ServiceListRoll data={data} count={count} />}
+		render={(data, count) => <ServicelistitemRoll data={data} count={count} />}
 	/>
 );

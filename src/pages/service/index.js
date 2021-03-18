@@ -1,7 +1,7 @@
 import React from 'react';
-
 import Layout from '../../components/Layout';
 import ServiceRoll from '../../components/ServiceRoll';
+import ServicelistitemRoll from '../../components/ServicelistitemRoll';
 
 export default class ServiceIndexPage extends React.Component {
 	render() {

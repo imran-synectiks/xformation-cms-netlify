@@ -13,13 +13,13 @@ class ServiceRoll extends React.Component {
 				{posts &&
 					posts.map(({ node: post }) => (
 						<div className='is-parent column' key={post.id}>
-							{/* <article
+							<article
 								className={`blog-list-item tile is-child box notification ${post.frontmatter
 									.featuredpost
 									? 'is-featured'
-									: ''}`}> */}
-							<header>
-								{/* {post.frontmatter.featuredimage ? (
+									: ''}`}>
+								<header>
+									{post.frontmatter.featuredimage ? (
 										<div className='featured-thumbnail'>
 											<PreviewCompatibleImage
 												imageInfo={{
@@ -28,26 +28,26 @@ class ServiceRoll extends React.Component {
 												}}
 											/>
 										</div>
-									) : null} */}
-								<p className='post-meta'>
-									<Link
-										className='title has-text-primary sub-font .has-text-left'
-										to={post.fields.slug}>
-										{post.frontmatter.title}
+									) : null}
+									<p className='post-meta'>
+										<Link
+											className='title has-text-primary sub-font .has-text-left'
+											to={post.fields.slug}>
+											{post.frontmatter.title}
+										</Link>
+										<span> &bull; </span>
+										<span className='subtitle is-size-5 is-block'>{post.frontmatter.date}</span>
+									</p>
+								</header>
+								<p>
+									{post.excerpt}
+									<br />
+									<br />
+									<Link className='button' to={post.fields.slug}>
+										Keep Reading →
 									</Link>
-									{/* <span> &bull; </span>
-									<span className='subtitle is-size-5 is-block'>{post.frontmatter.date}</span> */}
 								</p>
-							</header>
-							{/* <p>
-								{post.excerpt}
-								<br />
-								<br />
-								<Link className='button' to={post.fields.slug}>
-									Keep Reading →
-								</Link>
-							</p> */}
-							{/* </article> */}
+							</article>
 						</div>
 					))}
 			</div>

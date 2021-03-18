@@ -83,17 +83,36 @@ html
 
 .margin-top-0
   margin-top: 0 !important
-.sub-menu
+
+.main-sub-menu
   display: none
 
-.navbar-item:hover .sub-menu
+.sub-menu-list
+  display: none
+
+.sub-menu:hover .sub-menu-list
   display: flex
+  flex-direction: column
   position: absolute
-  top: 4rem
-  width: 70vw
-  background-color: white
-  left: -15rem
-  height: auto
+  top: -0.05rem
+  left: 14.5rem
+  width: 35.8vw
+  height: 59.4vh
+  background: white
+
+.navbar-item:hover .main-sub-menu
+  position: absolute
+  top: 3rem
+  width: 17vw
+  left: 0rem
+  height: 60vh
+  background: #f9f3f3
+  text-align: left
+  padding: 0.6rem 0.9rem
+  border-top: 5px solid white
+
+  .nav-sub-item
+    margin: 0.5rem 1rem
 
   .sub-menu p
     font-size: 1rem !important

@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 import github from '../img/github-icon.svg';
 import logo from '../img/logo.svg';
-import ServiceRoll from './ServiceRoll';
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
+import ServicelistitemRoll from './ServicelistitemRoll';
+import { BsArrowRight } from 'react-icons/bs';
 import { css, cx } from '@emotion/css';
+import './navbar.css'
 
 const Navbar = class extends React.Component {
 	constructor(props) {
@@ -65,9 +66,24 @@ const Navbar = class extends React.Component {
 								Blog
 							</Link>
 							<Link className='navbar-item' to='/service'>
-								Services
-								<div className='sub-menu'>
-									<ServiceRoll />
+								Services & Consulting
+								<div className='main-sub-menu'>
+										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Product One <BsArrowRight className='sub-icon'/>
+											<div className='sub-menu-list'>
+												<Link to='/service/2021-02-23-automation/'>Product 1 One</Link>
+												<Link to='/service/2021-02-23-automation/'>Product 1 Two</Link>
+												<Link to='/service/2021-02-23-automation/'>Product 1 Three</Link>
+												<Link to='/service/2021-02-23-automation/'>Product 1 Four</Link>
+											</div>
+										</Link>
+										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Product Two <BsArrowRight className='sub-icon'/>
+											<div className='sub-menu-list'>
+												<Link to='/service/2021-02-23-automation/'>Product 2 One</Link>
+												<Link to='/service/2021-02-23-automation/'>Product 2 Two</Link>
+												<Link to='/service/2021-02-23-automation/'>Product 2 Three</Link>
+												<Link to='/service/2021-02-23-automation/'>Product 2 Four</Link>
+											</div>
+										</Link>
 								</div>
 							</Link>
 							<Link className='navbar-item' to='/workflowpost'>
