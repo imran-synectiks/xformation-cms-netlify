@@ -7,7 +7,7 @@ import { BsArrowRight } from 'react-icons/bs';
 import { css, cx } from '@emotion/css';
 import './navbar.css'
 
-const Navbar = class extends React.Component {
+const Mobilenav = class extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -27,11 +27,11 @@ const Navbar = class extends React.Component {
 				// set the class in state for the navbar accordingly
 				this.state.active
 					? this.setState({
-						navBarActiveClass: 'is-active'
-					})
+							navBarActiveClass: 'is-active'
+						})
 					: this.setState({
-						navBarActiveClass: ''
-					});
+							navBarActiveClass: ''
+						});
 			}
 		);
 	};
@@ -68,15 +68,15 @@ const Navbar = class extends React.Component {
 							<Link className='navbar-item' to='/service'>
 								Services & Consulting
 								<div className='main-sub-menu'>
-										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Automation<BsArrowRight className='sub-icon'/>
-											<div className='default-active'>
+										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Product One <BsArrowRight className='sub-icon'/>
+											<div className='sub-menu-list'>
 												<Link to='/service/2021-02-23-automation/'>Product 1 One</Link>
 												<Link to='/service/2021-02-23-automation/'>Product 1 Two</Link>
 												<Link to='/service/2021-02-23-automation/'>Product 1 Three</Link>
 												<Link to='/service/2021-02-23-automation/'>Product 1 Four</Link>
 											</div>
 										</Link>
-										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Analytics<BsArrowRight className='sub-icon'/>
+										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Product Two <BsArrowRight className='sub-icon'/>
 											<div className='sub-menu-list'>
 												<Link to='/service/2021-02-23-automation/'>Product 2 One</Link>
 												<Link to='/service/2021-02-23-automation/'>Product 2 Two</Link>
@@ -104,9 +104,6 @@ const Navbar = class extends React.Component {
 							<Link className='navbar-item' to='/catalogue'>
 								Catalogue
 							</Link>
-							<Link className='navbar-item' to='/scenario'>
-								Scenario
-							</Link>
 						</div>
 						<div className='navbar-end has-text-centered'>
 							<a
@@ -126,4 +123,4 @@ const Navbar = class extends React.Component {
 	}
 };
 
-export default Navbar;
+export default Mobilenav;

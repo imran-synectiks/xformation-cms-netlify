@@ -12,10 +12,11 @@ import { v4 } from 'uuid';
 import './service.css';
 import ScrollTop from '../components/ScrollTop';
 import ScrollBottom from '../components/ScrollBottom';
+import servicesublist from '../pages/servicemenu/servicesublist.js';
 
-export const ServicePostTemplate = ({ content, contentComponent, description, tags, title, page, helmet }) => {
+export const ServiceListPostTemplate = ({ content, contentComponent, description, tags, title, page, helmet }) => {
 	const PostContent = contentComponent || Content;
-	const [ currentSlide, setCurrentSlide ] = useState(0);
+	// const [ currentSlide, setCurrentSlide ] = useState(0);
 
 	return (
 		<React.Fragment>
@@ -24,52 +25,8 @@ export const ServicePostTemplate = ({ content, contentComponent, description, ta
 				<div className='container content'>
 					<div className='columns'>
 						<div className='column is-12'>
-							{/* <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                {title}
-              </h1>
-              <p>{description}</p> */}
 							<div className='btn-stack'>
-								{page.map((pageContent, index) => (
-									<button
-										key={v4()}
-										className={`${currentSlide === index ? 'mybtnactive' : 'mybtn'}`}
-										onClick={() => setCurrentSlide(index)}>
-										<span className='btn-arr-down'>
-											<BsArrowDown />
-										</span>
-										{pageContent.heading}
-									</button>
-								))}
-							</div>
-							<div style={{ marginTop: '20px' }}>
-								<Carousel
-									afterSlide={(slideIndex) => setCurrentSlide(slideIndex)}
-									slideIndex={currentSlide}
-									rendertopCenterControls={true}
-									renderCenterLeftControls={({ previousSlide }) => (
-										<button onClick={previousSlide} className='nabtn-left'>
-											<AiOutlineLeft />
-										</button>
-									)}
-									renderCenterRightControls={({ nextSlide }) => (
-										<button onClick={nextSlide} className='nabtn-right'>
-											<AiOutlineRight />
-										</button>
-									)}>
-									{page.map((pageContent) => (
-										<div key={v4()}>
-											<div className='page-heading'>
-												<h3 className='has-text-centered has-text-weight-semibold is-size-2'>
-													{pageContent.heading}
-												</h3>
-											</div>
-											<div className='page-content'>
-												<p>{pageContent.description}</p>
-											</div>
-										</div>
-									))}
-								</Carousel>
-								<ScrollBottom showBelow={100} />
+								{page.map((pageContent) => <button key={v4()}>{pageContent.heading}</button>)}
 							</div>
 							<PostContent content={content} />
 							{tags && tags.length ? (
@@ -108,12 +65,12 @@ ServicePostTemplate.propTypes = {
 	)
 };
 
-const ServicePost = ({ data }) => {
+const ServiceListPost = ({ data }) => {
 	const { markdownRemark: post } = data;
 
 	return (
 		<Layout>
-			<ServicePostTemplate
+			<ServiceListPostTemplate
 				content={post.html}
 				contentComponent={HTMLContent}
 				description={post.frontmatter.description}
@@ -132,16 +89,16 @@ const ServicePost = ({ data }) => {
 	);
 };
 
-ServicePost.propTypes = {
+ServiceListPost.propTypes = {
 	data: PropTypes.shape({
 		markdownRemark: PropTypes.object
 	})
 };
 
-export default ServicePost;
+export default ServiceListPost;
 
 export const pageQuery = graphql`
-	query ServicePostByID($id: String!) {
+	query ServiceListPostByID($id: String!) {
 		markdownRemark(id: { eq: $id }) {
 			id
 			html

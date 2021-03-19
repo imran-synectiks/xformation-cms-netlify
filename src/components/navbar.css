@@ -1,0 +1,48 @@
+.sub-menu{
+	margin:  .5rem 0rem;
+	padding: .5rem 1rem;
+	width: 17vw;
+}
+.sub-menu-list a{
+	margin-top:.5rem;
+	padding: .5rem 1rem;
+}
+.sub-icon{
+	display:none;
+}
+.sub-menu:hover .sub-icon{
+	display: block;
+	position: absolute;
+    top: 1.5rem;
+    left: 11rem;
+    font-size: 1.8rem;
+    color: white;
+}
+
+a.navbar-item:hover .main-sub-menu{
+	display: flex;
+	flex-direction: column;
+}
+.main-sub-menu:hover .sub-menu{
+	display:block;
+}
+
+.sub-menu:hover{
+	background: #23689b;
+	color: white;
+}
+.default-active{
+	position: absolute;
+    left: 17rem;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 86vw;
+    height: 60vh;
+    top: 0rem;
+    z-index: 0;
+}
+.default-active a{
+		margin-top:.5rem;
+	padding: .5rem 1rem;
+}

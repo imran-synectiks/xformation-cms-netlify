@@ -84,6 +84,43 @@ html
 .margin-top-0
   margin-top: 0 !important
 
+.main-sub-menu
+  display: none
+
+.sub-menu-list
+  display: none
+
+.sub-menu:hover .sub-menu-list
+  display: flex
+  flex-direction: column
+  position: absolute
+  top: -0.05rem
+  left: 17rem
+  width: 83vw
+  height: 59.4vh
+  background: white
+
+.navbar-item:hover .main-sub-menu
+  position: absolute
+  top: 3rem
+  width: 100vw
+  left: -27rem
+  height: 60vh
+  background: #f9f3f3
+  text-align: left
+  padding: 0.6rem 1.5rem
+  border-top: 5px solid white
+
+  .nav-sub-item
+    margin: 0.5rem 1rem
+
+  .sub-menu p
+    font-size: 1rem !important
+
+.sub-font
+  font-size: 1rem !important
+  textalign: left
+
 .navbar-item .icon
   color: $primary
 // Override for use of svg's from https://simpleicons.org/
