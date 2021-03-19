@@ -52,6 +52,7 @@ page:
 
 
       Recently, JavaScript's popularity has expanded even further through the successful Node.js platform—the most popular cross-platform JavaScript runtime environment outside the browser. Node.js - built using Chrome's V8 JavaScript Engine - allows developers to use JavaScript as a scripting language to automate things on a computer and build fully functional HTTP and Web Sockets servers.
+      Recently, JavaScript's popularity has expanded even further through the successful Node.js platform—the most popular cross-platform JavaScript runtime environment outside the browser. Node.js - built using Chrome's V8 JavaScript Engine - allows developers to use JavaScript as a scripting language to automate things on a computer and build fully functional HTTP and Web Sockets servers.
   - heading: Product Two
     description: >-
       The internet was set on fire (pun intended) this week, by what I'm calling
@@ -137,6 +138,7 @@ page:
       In November 1996, Netscape began working with ECMA International to make JavaScript an industry standard. Since then, the standardized JavaScript is called ECMAScript and specified under ECMA-262, whose latest (eleventh, ES2020) edition is available as of June 2020.
 
 
+      Recently, JavaScript's popularity has expanded even further through the successful Node.js platform—the most popular cross-platform JavaScript runtime environment outside the browser. Node.js - built using Chrome's V8 JavaScript Engine - allows developers to use JavaScript as a scripting language to automate things on a computer and build fully functional HTTP and Web Sockets servers.
       Recently, JavaScript's popularity has expanded even further through the successful Node.js platform—the most popular cross-platform JavaScript runtime environment outside the browser. Node.js - built using Chrome's V8 JavaScript Engine - allows developers to use JavaScript as a scripting language to automate things on a computer and build fully functional HTTP and Web Sockets servers.
   - heading: Product Four
     description: >-

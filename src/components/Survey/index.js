@@ -39,7 +39,8 @@ class SurveyCreator extends React.Component {
     render() {
         const { data } = this.state;
         var model = new Survey.Model(data);
-        window.survey = model;
+        var w = window || {};
+        w.survey = model;
         return (
             // <div>
             <Survey.Survey model={model} />
