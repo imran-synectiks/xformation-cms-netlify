@@ -2,8 +2,6 @@ import React from 'react';
 import * as Survey from "survey-react";
 import 'survey-react/survey.css';
 
-const window = window;
-
 class SurveyCreator extends React.Component {
     constructor(props) {
         super(props);
@@ -41,7 +39,6 @@ class SurveyCreator extends React.Component {
     render() {
         const { data } = this.state;
         var model = new Survey.Model(data);
-        window.survey = model;
         return (
             <Survey.Survey model={model} />
         );
