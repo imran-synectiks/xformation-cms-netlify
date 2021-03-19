@@ -68,7 +68,7 @@ const Navbar = class extends React.Component {
 							<Link className='navbar-item' to='/service'>
 								Services & Consulting
 								<div className='main-sub-menu'>
-										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Product One <BsArrowRight className='sub-icon'/>
+										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Automation<BsArrowRight className='sub-icon'/>
 											<div className='default-active'>
 												<Link to='/service/2021-02-23-automation/'>Product 1 One</Link>
 												<Link to='/service/2021-02-23-automation/'>Product 1 Two</Link>
@@ -76,7 +76,7 @@ const Navbar = class extends React.Component {
 												<Link to='/service/2021-02-23-automation/'>Product 1 Four</Link>
 											</div>
 										</Link>
-										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Product Two <BsArrowRight className='sub-icon'/>
+										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Analytics<BsArrowRight className='sub-icon'/>
 											<div className='sub-menu-list'>
 												<Link to='/service/2021-02-23-automation/'>Product 2 One</Link>
 												<Link to='/service/2021-02-23-automation/'>Product 2 Two</Link>
