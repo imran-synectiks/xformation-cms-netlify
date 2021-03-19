@@ -31,3 +31,18 @@ a.navbar-item:hover .main-sub-menu{
 	background: #23689b;
 	color: white;
 }
+.default-active{
+	position: absolute;
+    left: 17rem;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 86vw;
+    height: 60vh;
+    top: 0rem;
+    z-index: 0;
+}
+.default-active a{
+		margin-top:.5rem;
+	padding: .5rem 1rem;
+}

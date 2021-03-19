@@ -69,7 +69,7 @@ const Navbar = class extends React.Component {
 								Services & Consulting
 								<div className='main-sub-menu'>
 										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Product One <BsArrowRight className='sub-icon'/>
-											<div className='sub-menu-list'>
+											<div className='default-active'>
 												<Link to='/service/2021-02-23-automation/'>Product 1 One</Link>
 												<Link to='/service/2021-02-23-automation/'>Product 1 Two</Link>
 												<Link to='/service/2021-02-23-automation/'>Product 1 Three</Link>
