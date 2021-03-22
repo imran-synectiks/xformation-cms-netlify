@@ -28,11 +28,11 @@ const Navbar = class extends React.Component {
 				// set the class in state for the navbar accordingly
 				this.state.active
 					? this.setState({
-						navBarActiveClass: 'is-active'
-					})
+							navBarActiveClass: 'is-active'
+						})
 					: this.setState({
-						navBarActiveClass: ''
-					});
+							navBarActiveClass: ''
+						});
 			}
 		);
 	};
@@ -46,8 +46,8 @@ const Navbar = class extends React.Component {
 						<Link to='/' className='navbar-item' title='Logo'>
 							<img src={logo} alt='Kaldi' style={{ width: '88px' }} />
 						</Link> */}
-						{/* Hamburger menu */}
-						{/* <div
+					{/* Hamburger menu */}
+					{/* <div
 							className={`navbar-burger burger ${this.state.navBarActiveClass}`}
 							data-target='navMenu'
 							onClick={() => this.toggleHamburger()}>
@@ -56,7 +56,7 @@ const Navbar = class extends React.Component {
 							<span />
 						</div> */}
 					{/* </div> */}
-						<Mobilenav/>
+					<Mobilenav />
 					<div id='navMenu' className='navbar-menu'>
 						<div className='navbar-start has-text-centered'>
 							<Link className='navbar-item' to='/about'>
@@ -71,23 +71,25 @@ const Navbar = class extends React.Component {
 							<Link className='navbar-item' to='/service'>
 								Services & Consulting
 								<div className='main-sub-menu'>
-								{/* <ServicelistitemRoll/> */}
-										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Automation<BsArrowRight className='sub-icon'/>
-											<div className='default-active'>
-												<Link to='/service/2021-02-23-automation/'>Product 1 One</Link>
-												<Link to='/service/2021-02-23-automation/'>Product 1 Two</Link>
-												<Link to='/service/2021-02-23-automation/'>Product 1 Three</Link>
-												<Link to='/service/2021-02-23-automation/'>Product 1 Four</Link>
-											</div>
-										</Link>
-										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Analytics<BsArrowRight className='sub-icon'/>
-											<div className='sub-menu-list'>
-												<Link to='/service/2021-02-23-automation/'>Product 2 One</Link>
-												<Link to='/service/2021-02-23-automation/'>Product 2 Two</Link>
-												<Link to='/service/2021-02-23-automation/'>Product 2 Three</Link>
-												<Link to='/service/2021-02-23-automation/'>Product 2 Four</Link>
-											</div>
-										</Link>
+									{/* <ServicelistitemRoll/> */}
+									<Link className='sub-menu' to='/service/2021-02-23-automation/'>
+										Automation<BsArrowRight className='sub-icon' />
+										<div className='default-active'>
+											<Link to='/service/2021-02-23-automation/'>Automation One</Link>
+											<Link to='/service/2021-02-23-automation/'>Automation Two</Link>
+											<Link to='/service/2021-02-23-automation/'>Automation Three</Link>
+											<Link to='/service/2021-02-23-automation/'>Automation Four</Link>
+										</div>
+									</Link>
+									<Link className='sub-menu' to='/service/2021-02-23-automation/'>
+										Analytics<BsArrowRight className='sub-icon' />
+										<div className='sub-menu-list'>
+											<Link to='/service/2021-02-23-automation/'>Analytics One</Link>
+											<Link to='/service/2021-02-23-automation/'>Analytics Two</Link>
+											<Link to='/service/2021-02-23-automation/'>Analytics Three</Link>
+											<Link to='/service/2021-02-23-automation/'>Analytics Four</Link>
+										</div>
+									</Link>
 								</div>
 							</Link>
 							<Link className='navbar-item' to='/workflowpost'>

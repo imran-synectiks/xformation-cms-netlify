@@ -66,7 +66,7 @@ const Mobilenav = class extends React.Component {
 							<Link className='navbar-item' to='/blog'>
 								Blog
 							</Link> */}
-							 <Collapsible trigger="Products & Solutions">
+							<Collapsible trigger='Products & Solutions'>
 								<div className=''>
 									<div>
 										<h6 className='sub-title'>Analytics</h6>
@@ -78,7 +78,7 @@ const Mobilenav = class extends React.Component {
 										</div>
 									</div>
 									<div>
-									<h6 className='sub-title'>Automation</h6>
+										<h6 className='sub-title'>Automation</h6>
 										<div className='sub-drop'>
 											<Link to='/service/2021-02-23-automation/'>Automation One</Link>
 											<Link to='/service/2021-02-23-automation/'>Automation Two</Link>
@@ -87,9 +87,9 @@ const Mobilenav = class extends React.Component {
 										</div>
 									</div>
 								</div>
-							 </Collapsible>
+							</Collapsible>
 
-							 <Collapsible trigger="Services & Consulting">
+							<Collapsible trigger='Services & Consulting'>
 								<div className=''>
 									<div>
 										<h6 className='sub-title'>Analytics</h6>
@@ -101,7 +101,7 @@ const Mobilenav = class extends React.Component {
 										</div>
 									</div>
 									<div>
-									<h6 className='sub-title'>Automation</h6>
+										<h6 className='sub-title'>Automation</h6>
 										<div className='sub-drop'>
 											<Link to='/service/2021-02-23-automation/'>Automation One</Link>
 											<Link to='/service/2021-02-23-automation/'>Automation Two</Link>
@@ -110,8 +110,7 @@ const Mobilenav = class extends React.Component {
 										</div>
 									</div>
 								</div>
-							 </Collapsible>
-
+							</Collapsible>
 
 							<Link className='navbar-item' to='/workflowpost'>
 								Workflow
