@@ -1,22 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import ScenarioSlider from '../components/ScenarioSlider'
 import SelectScenario from '../components/SelectScenario'
-import './scenario-slider.css'
+import { AiFillCloseCircle } from "react-icons/ai";
+import './scenario.css'
 
 export const ScenarioPageTemplate = ({
   selectScenario,
   slider,
 }) => {
+  const [showSelectScenario, setShowSelectScenario] = useState(false);
+  const [hideSelectScenario, setHideSelectScenario] = useState(true);
+
+  function onClickSelectScenario() {
+    setShowSelectScenario(true);
+    setHideSelectScenario(false);
+  };
+
+  function onClickSelectScenarioclose() {
+    setShowSelectScenario(false);
+    setHideSelectScenario(true);
+  };
+
   return (
     <>
-      <SelectScenario
-        selectScenario={selectScenario}
-      />
-      <ScenarioSlider
-        slider={slider}
-      />
+      <div className={`scenario-select-container ${showSelectScenario === true ? 'active' : ''}`}>
+        {hideSelectScenario &&
+          <button className="button is-link scenario-btn" onClick={onClickSelectScenario}>Select Scenario</button>
+        }
+        {showSelectScenario &&
+          <div className="select-scenario-left">
+            <button className="close-btn" onClick={onClickSelectScenarioclose}>
+              <AiFillCloseCircle />
+            </button>
+            <SelectScenario
+              selectScenario={selectScenario}
+            />
+          </div>
+        }
+      </div>
+      <div className={`scenario-slider-container ${showSelectScenario === true ? 'select-scenario' : ''}`}>
+        <ScenarioSlider
+          slider={slider}
+        />
+      </div>
     </>
   )
 }
@@ -29,12 +57,10 @@ ScenarioPageTemplate.propTypes = {
 const ScenarioPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   return (
-    <div className="scenario-slider-container">
-      <ScenarioPageTemplate
-        selectScenario={frontmatter.selectScenario}
-        slider={frontmatter.slider}
-      />
-    </div>
+    <ScenarioPageTemplate
+      selectScenario={frontmatter.selectScenario}
+      slider={frontmatter.slider}
+    />
   )
 }
 
