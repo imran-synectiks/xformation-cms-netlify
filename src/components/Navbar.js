@@ -41,10 +41,11 @@ const Navbar = class extends React.Component {
 		return (
 			<nav className='navbar is-transparent' role='navigation' aria-label='main-navigation'>
 				<div className='container'>
-					<div className='navbar-brand'>
+					{/* <div className='navbar-brand'> */}
+					{/*
 						<Link to='/' className='navbar-item' title='Logo'>
 							<img src={logo} alt='Kaldi' style={{ width: '88px' }} />
-						</Link>
+						</Link> */}
 						{/* Hamburger menu */}
 						{/* <div
 							className={`navbar-burger burger ${this.state.navBarActiveClass}`}
@@ -54,8 +55,8 @@ const Navbar = class extends React.Component {
 							<span />
 							<span />
 						</div> */}
+					{/* </div> */}
 						<Mobilenav/>
-					</div>
 					<div id='navMenu' className='navbar-menu'>
 						<div className='navbar-start has-text-centered'>
 							<Link className='navbar-item' to='/about'>
