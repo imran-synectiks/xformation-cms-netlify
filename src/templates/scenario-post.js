@@ -7,7 +7,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import './scenario.css'
 
 export const ScenarioPageTemplate = ({
-  selectScenario,
+  scenarios,
   slider,
 }) => {
   const [showSelectScenario, setShowSelectScenario] = useState(false);
@@ -29,16 +29,14 @@ export const ScenarioPageTemplate = ({
         {hideSelectScenario &&
           <button className="button is-link scenario-btn" onClick={onClickSelectScenario}>Select Scenario</button>
         }
-        {showSelectScenario &&
-          <div className="select-scenario-left">
-            <button className="close-btn" onClick={onClickSelectScenarioclose}>
-              <AiFillCloseCircle />
-            </button>
-            <SelectScenario
-              selectScenario={selectScenario}
-            />
-          </div>
-        }
+        <div className="select-scenario-left">
+          <button className="close-btn" onClick={onClickSelectScenarioclose}>
+            <AiFillCloseCircle />
+          </button>
+          <SelectScenario
+            scenarios={scenarios}
+          />
+        </div>
       </div>
       <div className={`scenario-slider-container ${showSelectScenario === true ? 'select-scenario' : ''}`}>
         <ScenarioSlider
@@ -50,7 +48,7 @@ export const ScenarioPageTemplate = ({
 }
 
 ScenarioPageTemplate.propTypes = {
-  selectScenario: PropTypes.array,
+  scenarios: PropTypes.array,
   slider: PropTypes.array,
 }
 
@@ -58,7 +56,7 @@ const ScenarioPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   return (
     <ScenarioPageTemplate
-      selectScenario={frontmatter.selectScenario}
+      scenarios={frontmatter.scenarios}
       slider={frontmatter.slider}
     />
   )
@@ -78,15 +76,25 @@ export const scenarioPageQuery = graphql`
   query ScenarioPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
-        selectScenario {
+        scenarios {
           image {
             childImageSharp {
-              fluid(maxWidth: 80, quality: 100) {
+              fluid(maxWidth: 60, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
           }
           name
+          subItems {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 60, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            name
+          }
         }
         slider {
           image {

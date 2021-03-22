@@ -6,6 +6,7 @@ import PhotoswipeUIDefault from 'photoswipe/dist/photoswipe-ui-default'
 import 'photoswipe/dist/photoswipe.css'
 import 'photoswipe/dist/default-skin/default-skin.css'
 import { CustomGallery, Item, DefaultLayout } from 'react-photoswipe-gallery'
+import { Scrollbars } from 'react-custom-scrollbars';
 
 const ScenarioSlider = ({ slider, moredetails }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -37,89 +38,91 @@ const ScenarioSlider = ({ slider, moredetails }) => {
       <CustomGallery layoutRef={layoutRef} ui={PhotoswipeUIDefault}>
         {slider.map((sliderContent, index) => (
           <article key={v4()} className={`slider-content ${currentSlide === index ? 'active' : ''}`}>
-            <div className="item-image">
-              <Item
-                original={sliderContent.image.childImageSharp.fluid.src}
-                thumbnail={sliderContent.image.childImageSharp.fluid.src}
-                width="1920"
-                height="1280"
-              >
-                {({ ref, open }) => (
-                  <div ref={ref} onClick={open}>
-                    <button className="fullscreen">
-                      <AiOutlineFullscreen />
-                    </button>
-                    <img
-                      src={sliderContent.image.childImageSharp.fluid.src}
-                      alt={sliderContent.name}
-                      title={sliderContent.name}
-                      width="600"
-                      height="480"
-                    />
+            <Scrollbars>
+              <div className="item-image">
+                <Item
+                  original={sliderContent.image.childImageSharp.fluid.src}
+                  thumbnail={sliderContent.image.childImageSharp.fluid.src}
+                  width="1920"
+                  height="1280"
+                >
+                  {({ ref, open }) => (
+                    <div ref={ref} onClick={open}>
+                      <button className="fullscreen">
+                        <AiOutlineFullscreen />
+                      </button>
+                      <img
+                        src={sliderContent.image.childImageSharp.fluid.src}
+                        alt={sliderContent.name}
+                        title={sliderContent.name}
+                      />
+                    </div>
+                  )}
+                </Item>
+              </div>
+              <div className="item-content">
+                <div className="columns is-multiline">
+                  <div className="column is-10">
+                    <h3 className="has-text-weight-semibold is-size-2">
+                      {sliderContent.name}
+                    </h3>
                   </div>
-                )}
-              </Item>
-            </div>
-            <div className="item-content">
-              <div className="columns is-multiline">
-                <div className="column is-10">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    {sliderContent.name}
-                  </h3>
-                </div>
-                <div className="column is-2">
-                  <button className="button is-link float-right" onClick={onClickMoreDetails}>More details</button>
-                  {showMoreDetails &&
-                    <div
-                      className="more-details-content"
-                      style={{
-                        backgroundImage: `url(${sliderContent.image.childImageSharp.fluid.src})`,
-                      }}
-                    >
-                      <div className="details-content-inner">
-                        <button className="close-btn" onClick={onClickMoreDetailsclose}>
-                          <AiFillCloseCircle />
-                        </button>
-                        <div className="container">
-                          <div className="columns is-multiline">
-                            <div className="column is-8">
-                              <h3 className="has-text-weight-semibold is-size-2">
-                                {sliderContent.moreDetails.moreDetailsName}
-                              </h3>
-                              <p>
-                                {sliderContent.moreDetails.moreDetailsText}
-                              </p>
-                            </div>
-                            <div className="column is-4">
-                              {
-                                sliderContent.moreDetails.moreDetailsImage.map((image, index) =>
-                                  <div key={v4()} className="image">
-                                    <img
-                                      src={image.image.childImageSharp.fluid.src}
-                                      alt={sliderContent.moreDetails.moreDetailsName}
-                                      title={sliderContent.moreDetails.moreDetailsName}
-                                      width="300"
-                                      height="200"
-                                    />
-                                  </div>
-                                )
-                              }
+                  <div className="column is-2">
+                    <button className="button is-link float-right" onClick={onClickMoreDetails}>More details</button>
+                    {showMoreDetails &&
+                      <div
+                        className="more-details-content"
+                        style={{
+                          backgroundImage: `url(${sliderContent.image.childImageSharp.fluid.src})`,
+                        }}
+                      >
+                        <Scrollbars>
+                          <div className="details-content-inner">
+                            <button className="close-btn" onClick={onClickMoreDetailsclose}>
+                              <AiFillCloseCircle />
+                            </button>
+                            <div className="container">
+                              <div className="columns is-multiline">
+                                <div className="column is-8">
+                                  <h3 className="has-text-weight-semibold is-size-2">
+                                    {sliderContent.moreDetails.moreDetailsName}
+                                  </h3>
+                                  <p>
+                                    {sliderContent.moreDetails.moreDetailsText}
+                                  </p>
+                                </div>
+                                <div className="column is-4">
+                                  {
+                                    sliderContent.moreDetails.moreDetailsImage.map((image, index) =>
+                                      <div key={v4()} className="image">
+                                        <img
+                                          src={image.image.childImageSharp.fluid.src}
+                                          alt={sliderContent.moreDetails.moreDetailsName}
+                                          title={sliderContent.moreDetails.moreDetailsName}
+                                          width="300"
+                                          height="200"
+                                        />
+                                      </div>
+                                    )
+                                  }
+                                </div>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        </Scrollbars>
                       </div>
-                    </div>
-                  }
+                    }
+                  </div>
+                </div>
+                <div className="columns is-multiline">
+                  <div className="column is-12">
+                    <p>
+                      {sliderContent.text}
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="columns is-multiline">
-                <div className="column is-12">
-                  <p>
-                    {sliderContent.text}
-                  </p>
-                </div>
-              </div>
-            </div>
+            </Scrollbars>
           </article>
         ))}
         <ul className="pager">
