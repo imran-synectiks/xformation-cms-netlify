@@ -15,6 +15,7 @@ class ServicelistitemRoll extends React.Component {
 						<div key={post.id} className='nav-sub-item'>
 							<Link className='sub-font has-text-left' to={post.fields.slug}>
 								{post.frontmatter.title}
+								{/* {post.frontmatter.page.heading} */}
 							</Link>
 						</div>
 					))}
@@ -47,9 +48,6 @@ export default () => (
 								slug
 							}
 							frontmatter {
-									page{
-											heading
-										}
 								title
 								templateKey
 								date(formatString: "MMMM DD, YYYY")

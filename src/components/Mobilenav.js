@@ -7,6 +7,8 @@ import { BsArrowRight } from 'react-icons/bs';
 import { css, cx } from '@emotion/css';
 import './navbar.css';
 import Collapsible from 'react-collapsible';
+import { Accordion, AccordionItem } from 'react-light-accordion';
+import 'react-light-accordion/demo/css/index.css';
 
 const Mobilenav = class extends React.Component {
 	constructor(props) {
@@ -66,52 +68,53 @@ const Mobilenav = class extends React.Component {
 							<Link className='navbar-item' to='/blog'>
 								Blog
 							</Link> */}
-							<Collapsible trigger='Products & Solutions'>
-								<div className=''>
-									<div>
-										<h6 className='sub-title'>Analytics</h6>
-										<div className='sub-drop'>
-											<Link to='/service/2021-02-23-automation/'>Analytics One</Link>
-											<Link to='/service/2021-02-23-automation/'>Analytics Two</Link>
-											<Link to='/service/2021-02-23-automation/'>Analytics Three</Link>
-											<Link to='/service/2021-02-23-automation/'>Analytics Four</Link>
+							<Accordion atomic={true}>
+								<AccordionItem title='Products & Solutions'>
+									<div className=''>
+										<div>
+											<h6 className='sub-title'>Analytics</h6>
+											<div className='sub-drop'>
+												<Link to='/service/2021-02-23-automation/'>Analytics One</Link>
+												<Link to='/service/2021-02-23-automation/'>Analytics Two</Link>
+												<Link to='/service/2021-02-23-automation/'>Analytics Three</Link>
+												<Link to='/service/2021-02-23-automation/'>Analytics Four</Link>
+											</div>
+										</div>
+										<div>
+											<h6 className='sub-title'>Automation</h6>
+											<div className='sub-drop'>
+												<Link to='/service/2021-02-23-automation/'>Automation One</Link>
+												<Link to='/service/2021-02-23-automation/'>Automation Two</Link>
+												<Link to='/service/2021-02-23-automation/'>Automation Three</Link>
+												<Link to='/service/2021-02-23-automation/'>Automation Four</Link>
+											</div>
 										</div>
 									</div>
-									<div>
-										<h6 className='sub-title'>Automation</h6>
-										<div className='sub-drop'>
-											<Link to='/service/2021-02-23-automation/'>Automation One</Link>
-											<Link to='/service/2021-02-23-automation/'>Automation Two</Link>
-											<Link to='/service/2021-02-23-automation/'>Automation Three</Link>
-											<Link to='/service/2021-02-23-automation/'>Automation Four</Link>
-										</div>
-									</div>
-								</div>
-							</Collapsible>
+								</AccordionItem>
 
-							<Collapsible trigger='Services & Consulting'>
-								<div className=''>
-									<div>
-										<h6 className='sub-title'>Analytics</h6>
-										<div className='sub-drop'>
-											<Link to='/service/2021-02-23-automation/'>Analytics One</Link>
-											<Link to='/service/2021-02-23-automation/'>Analytics Two</Link>
-											<Link to='/service/2021-02-23-automation/'>Analytics Three</Link>
-											<Link to='/service/2021-02-23-automation/'>Analytics Four</Link>
+								<AccordionItem title='Services & Consulting'>
+									<div className=''>
+										<div>
+											<h6 className='sub-title'>Analytics</h6>
+											<div className='sub-drop'>
+												<Link to='/service/2021-02-23-automation/'>Analytics One</Link>
+												<Link to='/service/2021-02-23-automation/'>Analytics Two</Link>
+												<Link to='/service/2021-02-23-automation/'>Analytics Three</Link>
+												<Link to='/service/2021-02-23-automation/'>Analytics Four</Link>
+											</div>
+										</div>
+										<div>
+											<h6 className='sub-title'>Automation</h6>
+											<div className='sub-drop'>
+												<Link to='/service/2021-02-23-automation/'>Automation One</Link>
+												<Link to='/service/2021-02-23-automation/'>Automation Two</Link>
+												<Link to='/service/2021-02-23-automation/'>Automation Three</Link>
+												<Link to='/service/2021-02-23-automation/'>Automation Four</Link>
+											</div>
 										</div>
 									</div>
-									<div>
-										<h6 className='sub-title'>Automation</h6>
-										<div className='sub-drop'>
-											<Link to='/service/2021-02-23-automation/'>Automation One</Link>
-											<Link to='/service/2021-02-23-automation/'>Automation Two</Link>
-											<Link to='/service/2021-02-23-automation/'>Automation Three</Link>
-											<Link to='/service/2021-02-23-automation/'>Automation Four</Link>
-										</div>
-									</div>
-								</div>
-							</Collapsible>
-
+								</AccordionItem>
+							</Accordion>
 							<Link className='navbar-item' to='/workflowpost'>
 								Workflow
 							</Link>
