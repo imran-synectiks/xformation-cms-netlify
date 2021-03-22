@@ -11,6 +11,7 @@ import IndexPagePreview from './preview-templates/IndexPagePreview';
 import SurveyTemplate from './preview-templates/SurveyPreview';
 import WorkflowTemplate from './preview-templates/WorkflowPreview';
 import CataloguePagePreview from './preview-templates/CataloguePagePreview';
+import ScenarioPagePreview from './preview-templates/ScenarioPagePreview';
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
@@ -24,3 +25,4 @@ CMS.registerPreviewTemplate('slider', SliderPagePreview);
 CMS.registerPreviewTemplate('survey', SurveyTemplate);
 CMS.registerPreviewTemplate('workflow', WorkflowTemplate);
 CMS.registerPreviewTemplate('catalogue', CataloguePagePreview);
+CMS.registerPreviewTemplate('scenario', ScenarioPagePreview);

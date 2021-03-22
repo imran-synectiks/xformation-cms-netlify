@@ -28,11 +28,11 @@ const Navbar = class extends React.Component {
 				// set the class in state for the navbar accordingly
 				this.state.active
 					? this.setState({
-							navBarActiveClass: 'is-active'
-						})
+						navBarActiveClass: 'is-active'
+					})
 					: this.setState({
-							navBarActiveClass: ''
-						});
+						navBarActiveClass: ''
+					});
 			}
 		);
 	};
@@ -107,6 +107,9 @@ const Navbar = class extends React.Component {
 							</Link>
 							<Link className='navbar-item' to='/catalogue'>
 								Catalogue
+							</Link>
+							<Link className='navbar-item' to='/scenario'>
+								Scenario
 							</Link>
 						</div>
 					</div>
