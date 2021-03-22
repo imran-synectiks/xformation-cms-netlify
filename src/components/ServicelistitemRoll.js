@@ -47,6 +47,9 @@ export default () => (
 								slug
 							}
 							frontmatter {
+									page{
+											heading
+										}
 								title
 								templateKey
 								date(formatString: "MMMM DD, YYYY")

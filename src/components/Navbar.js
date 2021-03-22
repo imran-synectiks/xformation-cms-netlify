@@ -5,7 +5,8 @@ import logo from '../img/logo.svg';
 import ServicelistitemRoll from './ServicelistitemRoll';
 import { BsArrowRight } from 'react-icons/bs';
 import { css, cx } from '@emotion/css';
-import './navbar.css'
+import './navbar.css';
+import Mobilenav from './Mobilenav';
 
 const Navbar = class extends React.Component {
 	constructor(props) {
@@ -45,16 +46,17 @@ const Navbar = class extends React.Component {
 							<img src={logo} alt='Kaldi' style={{ width: '88px' }} />
 						</Link>
 						{/* Hamburger menu */}
-						<div
+						{/* <div
 							className={`navbar-burger burger ${this.state.navBarActiveClass}`}
 							data-target='navMenu'
 							onClick={() => this.toggleHamburger()}>
 							<span />
 							<span />
 							<span />
-						</div>
+						</div> */}
+						<Mobilenav/>
 					</div>
-					<div id='navMenu' className={`navbar-menu ${this.state.navBarActiveClass}`}>
+					<div id='navMenu' className='navbar-menu'>
 						<div className='navbar-start has-text-centered'>
 							<Link className='navbar-item' to='/about'>
 								About
@@ -68,6 +70,7 @@ const Navbar = class extends React.Component {
 							<Link className='navbar-item' to='/service'>
 								Services & Consulting
 								<div className='main-sub-menu'>
+								{/* <ServicelistitemRoll/> */}
 										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Automation<BsArrowRight className='sub-icon'/>
 											<div className='default-active'>
 												<Link to='/service/2021-02-23-automation/'>Product 1 One</Link>
@@ -104,17 +107,6 @@ const Navbar = class extends React.Component {
 							<Link className='navbar-item' to='/catalogue'>
 								Catalogue
 							</Link>
-						</div>
-						<div className='navbar-end has-text-centered'>
-							<a
-								className='navbar-item'
-								href='https://github.com/netlify-templates/gatsby-starter-netlify-cms'
-								target='_blank'
-								rel='noopener noreferrer'>
-								<span className='icon'>
-									<img src={github} alt='Github' />
-								</span>
-							</a>
 						</div>
 					</div>
 				</div>

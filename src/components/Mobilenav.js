@@ -5,7 +5,7 @@ import logo from '../img/logo.svg';
 import ServicelistitemRoll from './ServicelistitemRoll';
 import { BsArrowRight } from 'react-icons/bs';
 import { css, cx } from '@emotion/css';
-import './navbar.css'
+import './navbar.css';
 
 const Mobilenav = class extends React.Component {
 	constructor(props) {
@@ -41,20 +41,17 @@ const Mobilenav = class extends React.Component {
 			<nav className='navbar is-transparent' role='navigation' aria-label='main-navigation'>
 				<div className='container'>
 					<div className='navbar-brand'>
-						<Link to='/' className='navbar-item' title='Logo'>
-							<img src={logo} alt='Kaldi' style={{ width: '88px' }} />
-						</Link>
 						{/* Hamburger menu */}
 						<div
 							className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-							data-target='navMenu'
+							data-target='navMob'
 							onClick={() => this.toggleHamburger()}>
 							<span />
 							<span />
 							<span />
 						</div>
 					</div>
-					<div id='navMenu' className={`navbar-menu ${this.state.navBarActiveClass}`}>
+					<div id='navMob' className={`navbar-menu ${this.state.navBarActiveClass}`}>
 						<div className='navbar-start has-text-centered'>
 							<Link className='navbar-item' to='/about'>
 								About
@@ -68,22 +65,24 @@ const Mobilenav = class extends React.Component {
 							<Link className='navbar-item' to='/service'>
 								Services & Consulting
 								<div className='main-sub-menu'>
-										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Product One <BsArrowRight className='sub-icon'/>
-											<div className='sub-menu-list'>
-												<Link to='/service/2021-02-23-automation/'>Product 1 One</Link>
-												<Link to='/service/2021-02-23-automation/'>Product 1 Two</Link>
-												<Link to='/service/2021-02-23-automation/'>Product 1 Three</Link>
-												<Link to='/service/2021-02-23-automation/'>Product 1 Four</Link>
-											</div>
-										</Link>
-										<Link className='sub-menu' to='/service/2021-02-23-automation/'>Product Two <BsArrowRight className='sub-icon'/>
-											<div className='sub-menu-list'>
-												<Link to='/service/2021-02-23-automation/'>Product 2 One</Link>
-												<Link to='/service/2021-02-23-automation/'>Product 2 Two</Link>
-												<Link to='/service/2021-02-23-automation/'>Product 2 Three</Link>
-												<Link to='/service/2021-02-23-automation/'>Product 2 Four</Link>
-											</div>
-										</Link>
+									<Link className='sub-menu' to='/service/2021-02-23-automation/'>
+										Product One <BsArrowRight className='sub-icon' />
+										<div className='sub-menu-list'>
+											<Link to='/service/2021-02-23-automation/'>Product 1 One</Link>
+											<Link to='/service/2021-02-23-automation/'>Product 1 Two</Link>
+											<Link to='/service/2021-02-23-automation/'>Product 1 Three</Link>
+											<Link to='/service/2021-02-23-automation/'>Product 1 Four</Link>
+										</div>
+									</Link>
+									<Link className='sub-menu' to='/service/2021-02-23-automation/'>
+										Product Two <BsArrowRight className='sub-icon' />
+										<div className='sub-menu-list'>
+											<Link to='/service/2021-02-23-automation/'>Product 2 One</Link>
+											<Link to='/service/2021-02-23-automation/'>Product 2 Two</Link>
+											<Link to='/service/2021-02-23-automation/'>Product 2 Three</Link>
+											<Link to='/service/2021-02-23-automation/'>Product 2 Four</Link>
+										</div>
+									</Link>
 								</div>
 							</Link>
 							<Link className='navbar-item' to='/workflowpost'>
