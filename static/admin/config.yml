@@ -33,6 +33,83 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
 
+  - name: "catalogue"
+    label: "Catalogue"
+    folder: "src/pages/catalogue"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "catalogue-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: Slider,
+          name: slider,
+          widget: list,
+          fields:
+            [
+              { label: Image, name: image, widget: image },
+              { label: Name, name: name, widget: text },
+              { label: Text, name: text, widget: text },
+            ],
+        }
+  - name: "scenario"
+    label: "Scenario"
+    folder: "src/pages/scenario"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "scenario-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: Select Scenario,
+          name: selectScenario,
+          widget: list,
+          fields:
+            [
+              { label: Image, name: image, widget: image },
+              { label: Name, name: name, widget: text },
+            ],
+        }
+      - {
+          label: Slider,
+          name: slider,
+          widget: list,
+          fields:
+            [
+              { label: Image, name: image, widget: image },
+              { label: Name, name: name, widget: text },
+              { label: Text, name: text, widget: text },
+              {
+                label: More Details,
+                name: moreDetails,
+                widget: object,
+                fields:
+                  [
+                    { label: More Details Name, name: moreDetailsName, widget: text },
+                    { label: More Details Text, name: moreDetailsText, widget: text },
+                    { 
+                      label: More Details Image, 
+                      name: moreDetailsImage, 
+                      widget: list,
+                      fields:
+                        [
+                          { label: Image, name: image, widget: image },
+                        ], 
+                    },                    
+                  ],
+              }
+            ],
+        }
   - name: "service"
     label: "Service"
     folder: "src/pages/service"
@@ -68,7 +145,15 @@ collections:
               { label: Author, name: author, widget: string },
             ],
         }
-
+  - name: "workflowpost"
+    label: "Workflow Post"
+    folder: "src/pages/workflowpost"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "workflow-page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Workflow JSON", name: "workflowjson", widget: "object", fields: [{label: Data, name: data, widget: text}]}
   - name: "pages"
     label: "Pages"
     files:

@@ -23,7 +23,7 @@
 	display: flex;
 	justify-content: space-around;
 	background-color: rgba(0, 0, 0, 0.8);
-	padding: 10px;
+	padding: 2px;
 	position: relative;
 	top: 1.25rem;
 }
