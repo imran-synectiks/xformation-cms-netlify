@@ -152,11 +152,11 @@ Surveyjson:
                         "type": "checkbox",
                         "name": "How would you describe the project prioritization process in your company?",
                         "choices": [
-                        "Budgetary planning cycle (year, quarter)",
-                        "Small projects & iterative products",
-                        "Planning cadence (weeks)",
-                        "Continuous experimentation and releases",
-                        "Continuous planning"
+                        "Budgetary planning cycle year, quarter",
+                        "Small projects & iterative product",
+                        "Planning cadence weeks",
+                        "Continuous experimentation and release",
+                        "Continuous plannings"
                         ]
                     }
                 ]
@@ -402,7 +402,7 @@ Surveyjson:
                         "choices": [
                         "Central Log collection and search tool is present and team is trained on that.",
                         "You have intelligent log analysis tools present that continuously gives insights to application services reliability & performance.",
-                        "Your log analysis tools are integrated with ITSM tool to raise alerts depending on log analysis results."
+                        "Your log analysis tools are integrated with ITSM tool to raise alerts depending on log analysis result."
                         ]
                     }
                 ]
