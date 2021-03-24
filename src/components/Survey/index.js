@@ -1,26 +1,44 @@
 import React from 'react';
 import * as Survey from "survey-react";
 import 'survey-react/survey.css';
-import { Pie } from 'react-chartjs-2';
+import { Pie, Line } from 'react-chartjs-2';
 
 class SurveyCreator extends React.Component {
     piechartdata;
+    linePointChart;
     constructor(props) {
         super(props);
         let data = [];
         if (props.data) {
             data = JSON.parse(props.data);
         }
+
         this.state = {
             data: data,
             isCompletesurvey: false,
         };
+
         this.piechartdata = {
             labels: ['', '', '', '', ''],
             datasets: [
             ]
         };
+
+        this.linePointChart = {
+            labels: ['Q’s Culture & Skills', 'Q’s Build & Deploy', 'Q’s Tests', 'Q’s Design & Architecture', 'Q’s Operations', 'Q’s Design & Architecture', 'Q’s Operations'],
+            datasets: [{
+                // label: 'My First dataset',
+                backgroundColor: 'red',
+                borderColor: 'red',
+                data: [],
+                fill: false,
+                pointRadius: 10,
+                pointHoverRadius: 15,
+                showLine: false
+            }]
+        };
     }
+
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.data !== this.props.data && this.props.data) {
             let isError = false;
@@ -76,6 +94,7 @@ class SurveyCreator extends React.Component {
             }
             count = count / this.data[key].length;
             let color = this.setchartColor(count);
+            this.linePointChart.datasets[0].data.push(count)
             this.piechartdata.datasets.push({
                 backgroundColor: [color, "#f4f4f4"],
                 data: [count, 100 - count]
@@ -110,7 +129,9 @@ class SurveyCreator extends React.Component {
         model.completedHtml = "<span></span>";
         return (
             <div>
-                {!isCompletesurvey && <Survey.Survey onComplete={this.onComplete} model={model} />}
+                {!isCompletesurvey &&
+                    <Survey.Survey onComplete={this.onComplete} model={model} />
+                }
                 {isCompletesurvey && <div>
                     <Pie
                         data={this.piechartdata}
@@ -118,6 +139,36 @@ class SurveyCreator extends React.Component {
                             legend: {
                                 display: true,
                                 position: 'bottom'
+                            }
+                        }}
+                    />
+                    <Line
+                        data={this.linePointChart}
+                        options={{
+                            responsive: true,
+                            legend: {
+                                display: false,
+                            },
+                            elements: {
+                                point: {
+                                    pointStyle: 'circle'
+                                }
+                            },
+                            scales: {
+                                xAxes: [{
+                                    gridLines: {
+                                        drawOnChartArea: false
+                                    }
+                                }],
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true,
+                                        stepSize: 20
+                                    },
+                                    gridLines: {
+                                        drawOnChartArea: false
+                                    }
+                                }]
                             }
                         }}
                     />
