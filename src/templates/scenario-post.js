@@ -11,38 +11,55 @@ export const ScenarioPageTemplate = ({
   slider,
 }) => {
   const [showSelectScenario, setShowSelectScenario] = useState(false);
-  const [hideSelectScenario, setHideSelectScenario] = useState(true);
+  const [showUseCase, setShowUseCase] = useState(false);
+  const [useCase, setUseCase] = useState(null);
 
   function onClickSelectScenario() {
     setShowSelectScenario(true);
-    setHideSelectScenario(false);
   };
 
-  function onClickSelectScenarioclose() {
+  function onClickSelectScenarioClose() {
     setShowSelectScenario(false);
-    setHideSelectScenario(true);
   };
+
+  function onClickUseCase(uc) {
+    if (uc.useCaseSlider) {
+      setUseCase(uc);
+      setShowUseCase(true);
+    }
+  }
+  function onClickUseCaseClose() {
+    setShowUseCase(false);
+  }
 
   return (
     <>
-      <div className={`scenario-select-container ${showSelectScenario === true ? 'active' : ''}`}>
-        {hideSelectScenario &&
-          <button className="button is-link scenario-btn" onClick={onClickSelectScenario}>Select Scenario</button>
-        }
-        <div className="select-scenario-left">
-          <button className="close-btn" onClick={onClickSelectScenarioclose}>
-            <AiFillCloseCircle />
-          </button>
-          <SelectScenario
-            scenarios={scenarios}
-          />
-        </div>
-      </div>
-      <div className={`scenario-slider-container ${showSelectScenario === true ? 'select-scenario' : ''}`}>
-        <ScenarioSlider
-          slider={slider}
+      <div className={`scenario-select-container ${showSelectScenario === true ? 'active' : ''} ${showUseCase === true ? 'active-usecase' : ''}`}>
+        <button className="button is-link scenario-btn" onClick={onClickSelectScenario}>Select Scenario</button>
+        <SelectScenario
+          scenarios={scenarios}
+          onClickUseCase={onClickUseCase}
+          onClickCloseScenario={onClickSelectScenarioClose}
         />
       </div>
+      <div className={`scenario-slider-container ${showSelectScenario === true ? 'select-scenario' : ''} ${showUseCase === true ? 'select-usecase' : ''}`}>
+        <ScenarioSlider
+          slider={slider}
+          showMoreDetailsButton={true}
+        />
+      </div>
+      {showUseCase &&
+        <div className={`scenario-slider-container ${showUseCase === true ? 'select-usecase' : ''}`}>
+          <button className="close-btn" onClick={() => { onClickUseCaseClose(useCase) }}>
+            <AiFillCloseCircle />
+          </button>
+          <ScenarioSlider
+            slider={useCase.useCaseSlider}
+            showMoreDetailsButton={false}
+            onClickUseCaseClose={onClickUseCaseClose}
+          />
+        </div>
+      }
     </>
   )
 }
@@ -94,6 +111,17 @@ export const scenarioPageQuery = graphql`
               }
             }
             name
+            useCaseSlider {
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 2048, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              name
+              text
+            }
           }
         }
         slider {

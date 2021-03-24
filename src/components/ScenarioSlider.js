@@ -8,7 +8,7 @@ import 'photoswipe/dist/default-skin/default-skin.css'
 import { CustomGallery, Item, DefaultLayout } from 'react-photoswipe-gallery'
 import { Scrollbars } from 'react-custom-scrollbars';
 
-const ScenarioSlider = ({ slider, moredetails }) => {
+const ScenarioSlider = ({ slider, showMoreDetailsButton }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showMoreDetails, setShowMoreDetails] = useState(false);
   const layoutRef = useRef()
@@ -67,52 +67,55 @@ const ScenarioSlider = ({ slider, moredetails }) => {
                       {sliderContent.name}
                     </h3>
                   </div>
-                  <div className="column is-2">
-                    <button className="button is-link float-right" onClick={onClickMoreDetails}>More details</button>
-                    {showMoreDetails &&
-                      <div
-                        className="more-details-content"
-                        style={{
-                          backgroundImage: `url(${sliderContent.image.childImageSharp.fluid.src})`,
-                        }}
-                      >
-                        <Scrollbars>
-                          <div className="details-content-inner">
-                            <button className="close-btn" onClick={onClickMoreDetailsclose}>
-                              <AiFillCloseCircle />
-                            </button>
-                            <div className="container">
-                              <div className="columns is-multiline">
-                                <div className="column is-8">
-                                  <h3 className="has-text-weight-semibold is-size-2">
-                                    {sliderContent.moreDetails.moreDetailsName}
-                                  </h3>
-                                  <p>
-                                    {sliderContent.moreDetails.moreDetailsText}
-                                  </p>
-                                </div>
-                                <div className="column is-4">
-                                  {
-                                    sliderContent.moreDetails.moreDetailsImage.map((image, index) =>
-                                      <div key={v4()} className="image">
-                                        <img
-                                          src={image.image.childImageSharp.fluid.src}
-                                          alt={sliderContent.moreDetails.moreDetailsName}
-                                          title={sliderContent.moreDetails.moreDetailsName}
-                                          width="300"
-                                          height="200"
-                                        />
-                                      </div>
-                                    )
-                                  }
+                  {
+                    showMoreDetailsButton &&
+                    <div className="column is-2">
+                      <button className="button is-link float-right more-details-btn" onClick={onClickMoreDetails}>More details</button>
+                      {showMoreDetails &&
+                        <div
+                          className="more-details-content"
+                          style={{
+                            backgroundImage: `url(${sliderContent.image.childImageSharp.fluid.src})`,
+                          }}
+                        >
+                          <Scrollbars>
+                            <div className="details-content-inner">
+                              <button className="close-btn" onClick={onClickMoreDetailsclose}>
+                                <AiFillCloseCircle />
+                              </button>
+                              <div className="container">
+                                <div className="columns is-multiline">
+                                  <div className="column is-8">
+                                    <h3 className="has-text-weight-semibold is-size-2">
+                                      {sliderContent.moreDetails.moreDetailsName}
+                                    </h3>
+                                    <p>
+                                      {sliderContent.moreDetails.moreDetailsText}
+                                    </p>
+                                  </div>
+                                  <div className="column is-4">
+                                    {
+                                      sliderContent.moreDetails.moreDetailsImage.map((image, index) =>
+                                        <div key={v4()} className="image">
+                                          <img
+                                            src={image.image.childImageSharp.fluid.src}
+                                            alt={sliderContent.moreDetails.moreDetailsName}
+                                            title={sliderContent.moreDetails.moreDetailsName}
+                                            width="300"
+                                            height="200"
+                                          />
+                                        </div>
+                                      )
+                                    }
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </Scrollbars>
-                      </div>
-                    }
-                  </div>
+                          </Scrollbars>
+                        </div>
+                      }
+                    </div>
+                  }
                 </div>
                 <div className="columns is-multiline">
                   <div className="column is-12">
@@ -167,7 +170,6 @@ ScenarioSlider.propTypes = {
       ),
     })
   ),
-
 }
 
 export default ScenarioSlider
