@@ -25,24 +25,27 @@ const SelectScenario = ({ scenarios, onClickUseCase, onClickCloseScenario }) => 
         <Scrollbars
           className="scenarioleft-scrollbars"
         >
-          <ul>
-            {scenarios.map((scenario) => (
-              <li key={v4()}>
-                <div className={`item ${selectedScenario === scenario ? 'active' : ''}`} onClick={() => onClickSubSelectScenario(scenario)}>
-                  <div className="image">
-                    <img
-                      src={scenario.image.childImageSharp.fluid.src}
-                      alt={scenario.name}
-                      title={scenario.name}
-                      width="60"
-                      height="60"
-                    />
+          {
+            scenarios &&
+            <ul>
+              {scenarios.map((scenario) => (
+                <li key={v4()}>
+                  <div className={`item ${selectedScenario === scenario ? 'active' : ''}`} onClick={() => onClickSubSelectScenario(scenario)}>
+                    <div className="image">
+                      <img
+                        src={scenario.image.childImageSharp.fluid.src}
+                        alt={scenario.name}
+                        title={scenario.name}
+                        width="60"
+                        height="60"
+                      />
+                    </div>
+                    <div className="name">{scenario.name}</div>
                   </div>
-                  <div className="name">{scenario.name}</div>
-                </div>
-              </li>
-            ))}
-          </ul>
+                </li>
+              ))}
+            </ul>
+          }
         </Scrollbars>
         {selectedScenario &&
           <div className="sub-scenario-container">

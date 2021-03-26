@@ -71,15 +71,15 @@ collections:
         }
       - { label: "Title", name: "title", widget: "string" }
       - {
-          label: Select Scenario,
-          name: selectScenario,
+          label: Actors List,
+          name: scenarios,
           widget: list,
           fields:
             [
               { label: Image, name: image, widget: image },
               { label: Name, name: name, widget: text },
               {
-                label: Sub Items,
+                label: Use Cases,
                 name: subItems,
                 widget: list,
                 fields:

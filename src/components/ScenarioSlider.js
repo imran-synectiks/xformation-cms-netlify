@@ -41,8 +41,8 @@ const ScenarioSlider = ({ slider, showMoreDetailsButton }) => {
             <Scrollbars>
               <div className="item-image">
                 <Item
-                  original={sliderContent.image.childImageSharp.fluid.src}
-                  thumbnail={sliderContent.image.childImageSharp.fluid.src}
+                  original={sliderContent.image && sliderContent.image.childImageSharp ? sliderContent.image.childImageSharp.fluid.src : sliderContent.image}
+                  thumbnail={sliderContent.image && sliderContent.image.childImageSharp ? sliderContent.image.childImageSharp.fluid.src : sliderContent.image}
                   width="1920"
                   height="1280"
                 >
@@ -52,7 +52,7 @@ const ScenarioSlider = ({ slider, showMoreDetailsButton }) => {
                         <AiOutlineFullscreen />
                       </button>
                       <img
-                        src={sliderContent.image.childImageSharp.fluid.src}
+                        src={sliderContent.image && sliderContent.image.childImageSharp ? sliderContent.image.childImageSharp.fluid.src : sliderContent.image}
                         alt={sliderContent.name}
                         title={sliderContent.name}
                       />
@@ -75,7 +75,7 @@ const ScenarioSlider = ({ slider, showMoreDetailsButton }) => {
                         <div
                           className="more-details-content"
                           style={{
-                            backgroundImage: `url(${sliderContent.image.childImageSharp.fluid.src})`,
+                            backgroundImage: `url(${sliderContent.image && sliderContent.image.childImageSharp ? sliderContent.image.childImageSharp.fluid.src : sliderContent.image})`,
                           }}
                         >
                           <Scrollbars>
@@ -98,7 +98,7 @@ const ScenarioSlider = ({ slider, showMoreDetailsButton }) => {
                                       sliderContent.moreDetails.moreDetailsImage.map((image, index) =>
                                         <div key={v4()} className="image">
                                           <img
-                                            src={image.image.childImageSharp.fluid.src}
+                                            src={image.image && image.image.childImageSharp ? image.image.childImageSharp.fluid.src : image.image}
                                             alt={sliderContent.moreDetails.moreDetailsName}
                                             title={sliderContent.moreDetails.moreDetailsName}
                                             width="300"

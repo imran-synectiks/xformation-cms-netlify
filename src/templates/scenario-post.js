@@ -71,6 +71,7 @@ ScenarioPageTemplate.propTypes = {
 
 const ScenarioPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
+  debugger;
   return (
     <ScenarioPageTemplate
       scenarios={frontmatter.scenarios}
