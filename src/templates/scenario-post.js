@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import ScenarioSlider from '../components/ScenarioSlider'
-import SelectScenario from '../components/SelectScenario'
+import ScenarioSlider from '../components/Scenario/ScenarioSlider'
+import SelectScenario from '../components/Scenario/SelectScenario'
 import { AiFillCloseCircle } from "react-icons/ai";
 import './scenario.css'
 
