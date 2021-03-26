@@ -78,7 +78,28 @@ collections:
             [
               { label: Image, name: image, widget: image },
               { label: Name, name: name, widget: text },
-            ],
+              {
+                label: Sub Items,
+                name: subItems,
+                widget: list,
+                fields:
+                  [
+                    { label: Image, name: image, widget: image },
+                    { label: Name, name: name, widget: text },  
+                    {
+                      label: Use Case Slider,
+                      name: useCaseSlider,
+                      widget: list,
+                      fields:
+                        [
+                          { label: Image, name: image, widget: image },
+                          { label: Name, name: name, widget: text },
+                          { label: Text, name: text, widget: text },                   
+                        ]
+                    }                 
+                  ]
+              }
+            ]
         }
       - {
           label: Slider,
