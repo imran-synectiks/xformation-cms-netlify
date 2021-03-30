@@ -11,7 +11,13 @@ class Navbar extends React.Component {
 		this.state = {
 			active: false,
 			navBarActiveClass: '',
-			activeMenu: 0
+			activeMenu: 0,
+			subMenuActive: false,
+			navBarSubMenuActiveClass: '',
+			defaultMenuActive: false,
+			defaultMenuActiveClass: '',
+			subMenuActive: false,
+			subMenuActiveClass: ''
 		};
 	}
 
@@ -27,6 +33,40 @@ class Navbar extends React.Component {
 					})
 					: this.setState({
 						navBarActiveClass: ''
+					});
+			}
+		);
+	};
+
+	defaultMenu = () => {
+		this.setState(
+			{
+				defaultMenuActive: !this.state.defaultMenuActive
+			},
+			() => {
+				this.state.defaultMenuActive
+					? this.setState({
+						defaultMenuActiveClass: 'active'
+					})
+					: this.setState({
+						defaultMenuActiveClass: ''
+					});
+			}
+		);
+	};
+
+	toggleSubMenu = () => {
+		this.setState(
+			{
+				subMenuActive: !this.state.subMenuActive
+			},
+			() => {
+				this.state.subMenuActive
+					? this.setState({
+						subMenuActiveClass: 'active'
+					})
+					: this.setState({
+						subMenuActiveClass: ''
 					});
 			}
 		);
@@ -59,7 +99,7 @@ class Navbar extends React.Component {
 						</div>
 					</div>
 					<div id="navMenu" className={`navbar-menu ${this.state.navBarActiveClass}`}>
-						<div className="navbar-start has-text-centered">
+						<div className="navbar-start">
 							<ul className="navbar-nav">
 								<li className="navbar-item">
 									<Link to="/about" className="navbar-link">About</Link>
@@ -72,7 +112,12 @@ class Navbar extends React.Component {
 								</li>
 								<li className="navbar-item dropdown">
 									<Link to="/service" className="navbar-link">Services & Consulting</Link>
-									<div className='main-sub-menu'>
+									<span
+										onClick={() => this.defaultMenu()}
+										className={`toggle ${this.state.defaultMenuActiveClass}`}
+									>
+									</span>
+									<div className={`main-sub-menu ${this.state.defaultMenuActiveClass}`}>
 										<ul className="default-active">
 											{posts.map(({ node: post }, index) => (
 												<li onMouseOver={() => this.onMouseOver(index)} key={post.id} className={`${activeMenu === index ? 'active' : ''}`}>
@@ -80,7 +125,12 @@ class Navbar extends React.Component {
 														{post.frontmatter.title}
 														<BsArrowRight className='sub-icon' />
 													</Link>
-													<ul className="sub-menu">
+													<span
+														onClick={() => this.toggleSubMenu()}
+														className={`toggle ${this.state.subMenuActiveClass}`}
+													>
+													</span>
+													<ul className={`sub-menu ${this.state.subMenuActiveClass}`}>
 														{post.frontmatter.page.map((heading, index) => (
 															<li key={post.heading}>
 																<Link to={`${post.fields.slug.slice(0, -1)}#${index}`} className="navbar-link">
