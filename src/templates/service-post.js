@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import { Helmet } from 'react-helmet';
@@ -15,8 +16,24 @@ import ScrollBottom from '../components/ScrollBottom';
 
 export const ServicePostTemplate = ({ content, contentComponent, description, tags, title, page, helmet }) => {
 	const PostContent = contentComponent || Content;
-	const [ currentSlide, setCurrentSlide ] = useState(0);
-
+	// const [ currentSlide, setCurrentSlide ] = useState(0);
+	let slideIndex = typeof window !== 'undefined' ? window.location.hash : '';
+	slideIndex = parseInt(slideIndex.replace('#', ''));
+	if (isNaN(slideIndex)) {
+		slideIndex = 0;
+	}
+	if (typeof window !== 'undefined') {
+		window.onhashchange = () => {
+			console.log("ha ha");
+			let slideIndex = typeof window !== 'undefined' ? window.location.hash : '';
+			slideIndex = parseInt(slideIndex.replace('#', ''));
+			if (isNaN(slideIndex)) {
+				slideIndex = 0;
+			}
+			setCurrentSlide(slideIndex);
+		};
+	}
+	const [currentSlide, setCurrentSlide] = useState(slideIndex);
 	return (
 		<React.Fragment>
 			<section className='section' id='top'>

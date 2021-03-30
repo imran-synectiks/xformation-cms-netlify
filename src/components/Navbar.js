@@ -1,125 +1,163 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import github from '../img/github-icon.svg';
-import logo from '../img/logo.svg';
-import ServicelistitemRoll from './ServicelistitemRoll';
-import { BsArrowRight } from 'react-icons/bs';
-import { css, cx } from '@emotion/css';
+import PropTypes from 'prop-types'
+import { Link, graphql, StaticQuery } from 'gatsby';
 import './navbar.css';
-import Mobilenav from './Mobilenav';
+import logo from '../img/logo.png';
+import { BsArrowRight } from 'react-icons/bs';
 
-const Navbar = class extends React.Component {
+class Navbar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			active: false,
-			navBarActiveClass: ''
+			navBarActiveClass: '',
+			activeMenu: 0
 		};
 	}
 
 	toggleHamburger = () => {
-		// toggle the active boolean in the state
 		this.setState(
 			{
 				active: !this.state.active
 			},
-			// after state has been updated,
 			() => {
-				// set the class in state for the navbar accordingly
 				this.state.active
 					? this.setState({
-							navBarActiveClass: 'is-active'
-						})
+						navBarActiveClass: 'is-active'
+					})
 					: this.setState({
-							navBarActiveClass: ''
-						});
+						navBarActiveClass: ''
+					});
 			}
 		);
 	};
 
+	onMouseOver = (index) => {
+		this.setState({
+			activeMenu: index
+		});
+	};
+
 	render() {
+		const { data } = this.props;
+		const { edges: posts } = data.allMarkdownRemark;
+		const { activeMenu } = this.state;
 		return (
 			<nav className='navbar is-transparent' role='navigation' aria-label='main-navigation'>
 				<div className='container'>
-					{/* <div className='navbar-brand'> */}
-					{/*
-						<Link to='/' className='navbar-item' title='Logo'>
+					<div className='navbar-brand'>
+						<Link to='/' className='logo' title='Logo'>
 							<img src={logo} alt='Kaldi' style={{ width: '88px' }} />
-						</Link> */}
-					{/* Hamburger menu */}
-					{/* <div
+						</Link>
+						<div
 							className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-							data-target='navMenu'
+							data-target='navMob'
 							onClick={() => this.toggleHamburger()}>
 							<span />
 							<span />
 							<span />
-						</div> */}
-					{/* </div> */}
-					<Mobilenav />
-					<div id='navMenu' className='navbar-menu'>
-						<div className='navbar-start has-text-centered'>
-							<Link className='navbar-item' to='/about'>
-								About
-							</Link>
-							<Link className='navbar-item' to='/products'>
-								Products
-							</Link>
-							<Link className='navbar-item' to='/blog'>
-								Blog
-							</Link>
-							{/* <ServicelistitemRoll /> */}
-							<Link className='navbar-item' to='/service'>
-								Services & Consulting
-								<div className='main-sub-menu'>
-									{/* <ServicelistitemRoll/> */}
-									<Link className='sub-menu' to='/service/2021-02-23-automation/'>
-										Automation<BsArrowRight className='sub-icon' />
-										<div className='default-active'>
-											<Link to='/service/2021-02-23-automation/'>Automation One</Link>
-											<Link to='/service/2021-02-23-automation/'>Automation Two</Link>
-											<Link to='/service/2021-02-23-automation/'>Automation Three</Link>
-											<Link to='/service/2021-02-23-automation/'>Automation Four</Link>
-										</div>
-									</Link>
-									<Link className='sub-menu' to='/service/2021-02-23-automation/'>
-										Analytics<BsArrowRight className='sub-icon' />
-										<div className='sub-menu-list'>
-											<Link to='/service/2021-02-23-automation/'>Analytics One</Link>
-											<Link to='/service/2021-02-23-automation/'>Analytics Two</Link>
-											<Link to='/service/2021-02-23-automation/'>Analytics Three</Link>
-											<Link to='/service/2021-02-23-automation/'>Analytics Four</Link>
-										</div>
-									</Link>
-								</div>
-							</Link>
-							<Link className='navbar-item' to='/workflowpost'>
-								Workflow
-							</Link>
-							<Link className='navbar-item' to='/contact'>
-								Contact
-							</Link>
-							<Link className='navbar-item' to='/contact/examples'>
-								Form Examples
-							</Link>
-							<Link className='navbar-item' to='/slider'>
-								Slider
-							</Link>
-							<Link className='navbar-item' to='/survey'>
-								Survey Form
-							</Link>
-							<Link className='navbar-item' to='/catalogue'>
-								Catalogue
-							</Link>
-							<Link className='navbar-item' to='/scenario'>
-								Scenario
-							</Link>
+						</div>
+					</div>
+					<div id="navMenu" className={`navbar-menu ${this.state.navBarActiveClass}`}>
+						<div className="navbar-start has-text-centered">
+							<ul className="navbar-nav">
+								<li className="navbar-item">
+									<Link to="/about" className="navbar-link">About</Link>
+								</li>
+								<li className="navbar-item">
+									<Link to="/products" className="navbar-link">Products</Link>
+								</li>
+								<li className="navbar-item">
+									<Link to="/blog" className="navbar-link">Blog</Link>
+								</li>
+								<li className="navbar-item dropdown">
+									<Link to="/service" className="navbar-link">Services & Consulting</Link>
+									<div className='main-sub-menu'>
+										<ul className="default-active">
+											{posts.map(({ node: post }, index) => (
+												<li onMouseOver={() => this.onMouseOver(index)} key={post.id} className={`${activeMenu === index ? 'active' : ''}`}>
+													<Link to={post.fields.slug} className="navbar-link">
+														{post.frontmatter.title}
+														<BsArrowRight className='sub-icon' />
+													</Link>
+													<ul className="sub-menu">
+														{post.frontmatter.page.map((heading, index) => (
+															<li key={post.heading}>
+																<Link to={`${post.fields.slug.slice(0, -1)}#${index}`} className="navbar-link">
+																	{heading.heading}
+																</Link>
+															</li>
+														))}
+													</ul>
+												</li>
+											))}
+										</ul>
+									</div>
+								</li>
+								<li className="navbar-item">
+									<Link to="/workflowpost" className="navbar-link">Workflow</Link>
+								</li>
+								<li className="navbar-item">
+									<Link to="/contact" className="navbar-link">Contact</Link>
+								</li>
+								<li className="navbar-item">
+									<Link to="/contact/examples" className="navbar-link">Form Examples</Link>
+								</li>
+								<li className="navbar-item">
+									<Link to="/slider" className="navbar-link">Slider</Link>
+								</li>
+								<li className="navbar-item">
+									<Link to="/survey" className="navbar-link">Survey Form</Link>
+								</li>
+								<li className="navbar-item">
+									<Link to="/catalogue" className="navbar-link">Catalogue</Link>
+								</li>
+								<li className="navbar-item">
+									<Link to="/scenario" className="navbar-link">Scenario</Link>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</nav>
 		);
 	}
-};
+}
 
-export default Navbar;
+Navbar.propTypes = {
+	data: PropTypes.shape({
+		allMarkdownRemark: PropTypes.shape({
+			edges: PropTypes.array,
+		}),
+	}),
+}
+
+export default () => (
+	<StaticQuery
+		query={graphql`
+			query NavbarQuery {
+				allMarkdownRemark(
+					sort: { order: DESC, fields: [frontmatter___date] }
+					filter: { frontmatter: { templateKey: { eq: "service-post" } } }
+				) {
+					edges {
+						node {
+							excerpt(pruneLength: 400)
+							id
+							fields {
+								slug
+							}
+							frontmatter {
+								title
+								page {
+									heading
+								}
+							}
+						}
+					}
+				}
+			}
+		`}
+		render={(data, count) => <Navbar data={data} count={count} />}
+	/>
+)
