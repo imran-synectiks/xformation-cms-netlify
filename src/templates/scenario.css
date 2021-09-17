@@ -85,6 +85,7 @@ body {
   padding: 20px;
   position: relative;
   z-index: 1;
+  bottom: -60px;
 }
 
 .scenario-slider-container .slider-content .item-content h3 {
@@ -124,7 +125,7 @@ body {
   border: none;
   position: absolute;
   top: auto;
-  bottom: 40px;
+  bottom: 100px;
   left: auto;
   right: 50px;
   cursor: pointer;
@@ -153,8 +154,8 @@ body {
   border: none;
   position: absolute;
   top: auto;
-  bottom: 15px;
-  right: 15px;
+  bottom: 72px;
+  right: 18px;
   cursor: pointer;
   z-index: 0;
 }

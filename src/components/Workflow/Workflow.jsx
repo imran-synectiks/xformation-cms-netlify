@@ -21,7 +21,7 @@ export class Workflow extends Component {
                 activeIndex: 0,
             });
         }
-    }
+    };
 
     navigateTab(index) {
         const { data } = this.state;
@@ -31,7 +31,7 @@ export class Workflow extends Component {
                 activeIndex: index
             });
         }
-    }
+    };
 
     onClickNext = () => {
         const { activeIndex } = this.state;
@@ -95,7 +95,7 @@ export class Workflow extends Component {
             );
         }
         return retData;
-    }
+    };
 
     onChangeComponent = (e, componentIndex, type) => {
         const { activeIndex } = this.state;
@@ -119,7 +119,7 @@ export class Workflow extends Component {
             }
         }
         return tabData;
-    }
+    };
 
     render() {
         const { data, activeIndex, loading } = this.state;
