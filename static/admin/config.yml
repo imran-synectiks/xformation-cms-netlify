@@ -413,3 +413,8 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "survey-page"}
           - {label: "Survey JSON", name: "surveyjson", widget: "object", fields: [{label: Data, name: data, widget: text}]}
+      - file: "src/pages/pagebuilder/index.md"
+        label: "Page builder"
+        name: "pagebuilder"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "page-builder-page"}
