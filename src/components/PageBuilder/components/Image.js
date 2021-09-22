@@ -107,21 +107,27 @@ export class Image extends Component {
         const { imageContent, shownImage, showEditorPanel, showEditorPanelTab, padding_top, padding_bottom, description, placeHolder, url } = this.state;
         return (
             <div className={`d-flex content pt-${padding_top} pb-${padding_bottom}`}>
-                <div className='col-8 pl-0'>
+                <div className='col-md-9 pl-0'>
                     <div className="d-flex align-items-center justify-content-center left-content">
                         <div className="row align-items-center justify-content-center">
-                            <div className="col-6">
+                            <div className="col-md-6">
                                 <img src={url} alt="" />
                             </div>
-                            <div className="col-6">
+                            <div className="col-md-6">
                                 <p>{description}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="col-4 pr-0">
-                    <div className="d-flex flex-row-reverse right-content">
-                        <div className="paragraph-content">
+                <div className="col-md-3 pr-0">
+                    <div className="d-flex flex-wrap right-content">
+                        <div className="d-block w-100 editor-buttons">
+                            <i className="fal fa-arrow-down"></i>
+                            <i className="fal fa-copy"></i>
+                            <i className="fal fa-trash" onClick={this.clearContent}></i>
+                            <i className="fal fa-pen" onClick={() => this.setProperties({})}></i>
+                        </div>
+                        <div className="d-block w-100 paragraph-content">
                             <div className="paragraph-toggle" onClick={this.showImageContent}>
                                 Image Full Width <i className="fas fa-caret-down"></i>
                             </div>
@@ -141,10 +147,10 @@ export class Image extends Component {
                                         {shownImage === 2 &&
                                             <div className="image-text">
                                                 <div className="row align-items-center justify-content-center">
-                                                    <div className="col-6">
+                                                    <div className="col-md-6">
                                                         <img src={verticalImage} alt="" />
                                                     </div>
-                                                    <div className="col-6 pl-0">
+                                                    <div className="col-md-6 pl-0">
                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                                                     </div>
                                                 </div>
@@ -153,13 +159,13 @@ export class Image extends Component {
                                         {shownImage === 3 &&
                                             <div className="carousel">
                                                 <div className="d-flex align-items-center justify-content-center">
-                                                    <div className="col-1 px-0 text-center">
+                                                    <div className="col-md-1 px-0 text-center">
                                                         <i className="far fa-angle-left"></i>
                                                     </div>
-                                                    <div className="col-10 px-0 text-center">
+                                                    <div className="col-md-10 px-0 text-center">
                                                         <img src={horizontalImage} alt="" />
                                                     </div>
-                                                    <div className="col-1 px-0 text-center">
+                                                    <div className="col-md-1 px-0 text-center">
                                                         <i className="far fa-angle-right"></i>
                                                     </div>
                                                 </div>
@@ -199,12 +205,7 @@ export class Image extends Component {
                                 </div>
                             }
                         </div>
-                        <div className="editor-buttons">
-                            <i className="fal fa-arrow-down"></i>
-                            <i className="fal fa-copy"></i>
-                            <i className="fal fa-trash" onClick={this.clearContent}></i>
-                            <i className="fal fa-pen" onClick={() => this.setProperties({})}></i>
-                        </div>
+
                     </div>
                 </div>
             </div>

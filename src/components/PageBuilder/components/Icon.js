@@ -72,7 +72,7 @@ export class Icon extends Component {
         if (ListingData) {
             for (let i = 0; i < ListingData.length; i++) {
                 retData.push(
-                    <div className="col-4">
+                    <div className="col-md-4">
                         <p><img src={iconImage} alt="" className="mb-2 w-50" /></p>
                         <p>
                             {ListingData[i].value}
@@ -110,16 +110,22 @@ export class Icon extends Component {
         const { iconContent, shownIcon, showEditorPanel, showEditorPanelTab, padding_top, padding_bottom } = this.state;
         return (
             <div className={`d-flex content pt-${padding_top} pb-${padding_bottom}`}>
-                <div className='col-8 pl-0'>
+                <div className='col-md-9 pl-0'>
                     <div className="d-flex flex-row flex-wrap text-center left-content">
                         <div className="row">
                             {this.displayIconList()}
                         </div>
                     </div>
                 </div>
-                <div className="col-4 pr-0">
-                    <div className="d-flex flex-row-reverse right-content">
-                        <div className="paragraph-content">
+                <div className="col-md-3 pr-0">
+                    <div className="d-flex flex-wrap right-content">
+                        <div className="d-block w-100 editor-buttons">
+                            <i className="fal fa-arrow-down"></i>
+                            <i className="fal fa-copy"></i>
+                            <i className="fal fa-trash" onClick={this.clearContent}></i>
+                            <i className="fal fa-pen" onClick={() => this.setProperties()}></i>
+                        </div>
+                        <div className="d-block w-100 paragraph-content">
                             <div className="paragraph-toggle" onClick={this.showIconContent}>
                                 {`Column Icon & Text`} <i className="fas fa-caret-down"></i>
                             </div>
@@ -129,7 +135,7 @@ export class Icon extends Component {
                                         {shownIcon === 0 &&
                                             <div className="d-block text-center column-list">
                                                 <div className="row">
-                                                    <div className="col-12">
+                                                    <div className="col-md-12">
                                                         <p><img src={iconImage} alt="" className="mb-2 w-50" /></p>
                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                                                     </div>
@@ -139,11 +145,11 @@ export class Icon extends Component {
                                         {shownIcon === 1 &&
                                             <div className="d-block text-center column-list">
                                                 <div className="row">
-                                                    <div className="col-6">
+                                                    <div className="col-md-6">
                                                         <p><img src={iconImage} alt="" className="mb-2 w-50" /></p>
                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                                                     </div>
-                                                    <div className="col-6">
+                                                    <div className="col-md-6">
                                                         <p><img src={iconImage} alt="" className="mb-2 w-50" /></p>
                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                                                     </div>
@@ -153,15 +159,15 @@ export class Icon extends Component {
                                         {shownIcon === 2 &&
                                             <div className="d-block text-center column-list">
                                                 <div className="d-flex">
-                                                    <div className="col-4 pl-0">
+                                                    <div className="col-md-4 pl-0">
                                                         <p><img src={iconImage} alt="" className="mb-2 w-50" /></p>
                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                                                     </div>
-                                                    <div className="col-4 pl-0">
+                                                    <div className="col-md-4 pl-0">
                                                         <p><img src={iconImage} alt="" className="mb-2 w-50" /></p>
                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                                                     </div>
-                                                    <div className="col-4 pl-0">
+                                                    <div className="col-md-4 pl-0">
                                                         <p><img src={iconImage} alt="" className="mb-2 w-50" /></p>
                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                                                     </div>
@@ -182,12 +188,6 @@ export class Icon extends Component {
                                     </ul>
                                 </div>
                             }
-                        </div>
-                        <div className="editor-buttons">
-                            <i className="fal fa-arrow-down"></i>
-                            <i className="fal fa-copy"></i>
-                            <i className="fal fa-trash" onClick={this.clearContent}></i>
-                            <i className="fal fa-pen" onClick={() => this.setProperties()}></i>
                         </div>
                     </div>
                 </div>

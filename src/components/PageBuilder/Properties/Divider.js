@@ -69,7 +69,7 @@ export class Divider extends Component {
                         {showEditorPanelTab === 0 &&
                             <div className="tab-settings">
                                 <div className="row">
-                                    <div className="col-6">
+                                    <div className="col-md-6">
                                         <div className="form-group">
                                             <label>Padding Top</label>
                                             <select className="form-control" name="padding_top" onChange={this.handleStateChange}>
@@ -81,7 +81,7 @@ export class Divider extends Component {
                                             </select>
                                         </div>
                                     </div>
-                                    <div className="col-6">
+                                    <div className="col-md-6">
                                         <div className="form-group">
                                             <label>Padding Bottom</label>
                                             <select className="form-control" name="padding_bottom" onChange={this.handleStateChange}>
@@ -95,7 +95,7 @@ export class Divider extends Component {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-6">
+                                    <div className="col-md-6">
                                         <div className="form-group">
                                             <label>Background Color</label>
                                             <div className="d-flex background">

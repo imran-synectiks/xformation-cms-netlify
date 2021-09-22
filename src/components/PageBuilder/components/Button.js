@@ -74,14 +74,14 @@ export class Button extends Component {
         const { showEditorPanel, showEditorPanelTab, title, padding_top, padding_bottom } = this.state;
         return (
             <div className={`d-flex content pt-${padding_top} pb-${padding_bottom}`}>
-                <div className='col-8 pl-0'>
-                    <div className="d-flex align-items-center justify-content-center left-content position-relative">
+                <div className='col-md-9 pl-0'>
+                    <div className="d-flex align-items-center justify-content-start left-content position-relative">
                         <button className="btn btn-primary">{title}</button>
                     </div>
                 </div>
-                <div className="col-4 pr-0">
-                    <div className="d-flex flex-row-reverse right-content">
-                        <div className="editor-buttons">
+                <div className="col-md-3 pr-0">
+                    <div className="d-flex flex-wrap right-content">
+                        <div className="d-block w-100 editor-buttons">
                             <i className="fal fa-arrow-down"></i>
                             <i className="fal fa-copy"></i>
                             <i className="fal fa-trash" onClick={this.clearContent}></i>

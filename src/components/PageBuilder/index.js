@@ -231,13 +231,13 @@ export class PageEditor extends Component {
                 <div className="d-block page-heading">
                     <div className="container-fluid">
                         <div className="row">
-                            <div className="col-6">
+                            <div className="col-md-6">
                                 <h2>Topic 1 | page 1</h2>
                             </div>
-                            <div className="col-6">
+                            <div className="col-md-6">
                                 <div className="d-block text-right">
                                     <button className="btn btn-primary preview-btn">Preview</button>
-                                    <button className="btn btn-primary mr-2" onClick={this.showCreateWorkflow}>Create Workflow</button>
+                                    <button className="btn btn-primary" onClick={this.showCreateWorkflow}>Create Workflow</button>
                                 </div>
                             </div>
                         </div>
@@ -255,7 +255,7 @@ export class PageEditor extends Component {
                 {!showEditorPage &&
                     <>
                         <div className="right-container">
-                            <div style={{ height: 'calc(100% - 0px)', display: 'flex', paddingLeft: '15px', paddingRight: '15px' }}>
+                            <div style={{ height: 'calc(100% - 0px)', display: 'flex', paddingLeft: '0px', paddingRight: '0px' }}>
                                 <Scrollbars
                                     style={{ maxHeight: '100%' }}
                                 >
