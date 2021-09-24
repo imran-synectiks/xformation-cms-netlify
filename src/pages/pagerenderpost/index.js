@@ -1,7 +1,6 @@
 import React from 'react'
-
 import Layout from '../../components/Layout'
-// import WorkflowRoll from '../../components/WorkflowRoll'
+import PageRendererRoll from '../../components/PageRendererRoll'
 
 export default class RenderIndexPage extends React.Component {
   render() {
@@ -25,13 +24,13 @@ export default class RenderIndexPage extends React.Component {
             test
           </h1>
         </div>
-        {/* <section className="section">
+        <section className="section">
           <div className="container">
             <div className="content">
-              <WorkflowRoll />
+              <PageRendererRoll />
             </div>
           </div>
-        </section> */}
+        </section>
       </Layout>
     )
   }

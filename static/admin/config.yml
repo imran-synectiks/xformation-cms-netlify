@@ -174,6 +174,15 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "workflow-page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Workflow JSON", name: "workflowjson", widget: "object", fields: [{label: Data, name: data, widget: text}]}
+  - name: "pagerenderpost"
+      label: "PageRender Post"
+      folder: "src/pages/pagerenderpost"
+      create: true
+      slug: "{{slug}}"
+      fields:
+        - {label: "Template Key", name: "templateKey", widget: "hidden", default: "page-renderer-page"}
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "PageRender JSON", name: "pagerendererjson", widget: "object", fields: [{label: Data, name: data, widget: text}]}
   - name: "pages"
     label: "Pages"
     files:

@@ -25,7 +25,6 @@ PageRenderTemplate.propTypes = {
 
 const PageRenderPage = ({ data }) => {
     const { frontmatter } = data.markdownRemark;
-
     return (
         <Layout>
             <PageRenderTemplate
@@ -40,7 +39,7 @@ PageRenderPage.propTypes = {
         markdownRemark: PropTypes.shape({
             frontmatter: PropTypes.object,
         }),
-    }),
+    })
 }
 
 export default PageRenderPage
