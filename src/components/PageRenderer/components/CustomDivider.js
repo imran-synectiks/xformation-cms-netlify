@@ -1,3 +1,4 @@
+import { withWidth } from '@material-ui/core';
 import React, { Component } from 'react';
 export class CustomDivider extends React.Component {
     constructor(props) {
@@ -9,7 +10,7 @@ export class CustomDivider extends React.Component {
         return (
             <div className={containerClass} style={{ paddingTop: style.padding_top, padding_bottom: style.padding_bottom, backgroundColor: style.bgColor }}>
                 <div className="paragraph-toggle">
-                    {`Divider`} <i className="fas fa-caret-down"></i>
+                    <div style={{ display: "flex", Width: "100%", borderBottom: style.border }}></div>
                 </div>
             </div>
         );

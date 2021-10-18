@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 export class CustomList extends React.Component {
     constructor(props) {
         super(props);
@@ -23,7 +24,7 @@ export class CustomList extends React.Component {
         const { containerClass, style } = this.props;
         return (
             <div className={containerClass} style={{ paddingTop: style.padding_top, padding_bottom: style.padding_bottom, backgroundColor: style.bgColor }}>
-                <ul>
+                <ul style={{ padding: 0, margin: 0, listStyle: "none", }}>
                     {this.displayListing()}
                 </ul>
             </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import iconImage from '../../PageBuilder/img/icon-image.png'
 export class CustomIcon extends React.Component {
     constructor(props) {
         super(props);
@@ -10,8 +11,8 @@ export class CustomIcon extends React.Component {
         if (ListingData) {
             for (let i = 0; i < ListingData.length; i++) {
                 retData.push(
-                    <div className="col-4">
-                        {/* <p><img src={iconImage} alt="" className="mb-2 w-50" /></p> */}
+                    <div className="col-md-4">
+                        <p><img src={iconImage} alt="" className="mb-2 w-50" /></p>
                         <p>
                             {ListingData[i].value}
                         </p>
@@ -26,12 +27,8 @@ export class CustomIcon extends React.Component {
         const { containerClass, style } = this.props;
         return (
             <div className={containerClass} style={{ paddingTop: style.padding_top, padding_bottom: style.padding_bottom, backgroundColor: style.bgColor }}>
-                <div className='col-8 pl-0'>
-                    <div className="d-flex flex-row flex-wrap text-center left-content">
-                        <div className="row">
-                            {this.displayIconList()}
-                        </div>
-                    </div>
+                <div className="row">
+                    {this.displayIconList()}
                 </div>
             </div>
         );
