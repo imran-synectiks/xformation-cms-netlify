@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import PageRendererComponent from '../components/PageRenderer';
+import { PageRendererComponent } from '../components/PageRenderer';
 
 export const PageRenderTemplate = ({
     pagerendererjson
 }) => {
-    const data = pagerendererjson ? pagerendererjson.data : '[]';
+    const data = pagerendererjson ? JSON.parse(pagerendererjson.data) : [];
     return (
         <section className="section">
             <div className="container content">
